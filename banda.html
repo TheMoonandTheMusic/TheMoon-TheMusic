@@ -1,0 +1,855 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FLEETWOOD MAC | The Rumours Era Tribute</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fdf8f8",
+                        "secondary": "#5e604d",
+                        "surface-container-low": "#f7f3f2",
+                        "on-tertiary-fixed-variant": "#484828",
+                        "tertiary-fixed-dim": "#cac99f",
+                        "tertiary": "#60603e",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#e1e1c9",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-high": "#ebe7e6",
+                        "on-tertiary-fixed": "#1d1d03",
+                        "on-secondary-fixed-variant": "#474836",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#858383",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e6e5b9",
+                        "surface-container": "#f1edec",
+                        "on-secondary-container": "#636451",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#ddd9d8",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "primary": "#000000",
+                        "secondary-fixed": "#e4e4cc",
+                        "surface-container-highest": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "primary-fixed": "#e5e2e1",
+                        "outline": "#747878",
+                        "inverse-on-surface": "#f4f0ef",
+                        "tertiary-container": "#aead85",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-container": "#414122",
+                        "on-primary-fixed-variant": "#474746",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "surface-bright": "#fdf8f8",
+                        "background": "#fdf8f8",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            opacity: 0.15;
+            z-index: 50;
+        }
+        .text-underline-draw {
+            position: relative;
+        }
+        .text-underline-draw::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+        .text-underline-draw:hover::after {
+            width: 100%;
+        }
+        .member-card {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .member-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(26, 26, 26, 0.08);
+        }
+        .member-tab-active {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+        .sepia-effect {
+            filter: sepia(0.3) contrast(1.1) brightness(0.9);
+        }
+        #history-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        #history-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #history-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.2);
+            border-radius: 3px;
+        }
+        #history-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-40 border-b border-on-surface/10 bg-surface/95 backdrop-blur-md">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-20">
+<a href="index.html" class="flex items-center gap-3 no-underline">
+                <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
+                <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
+            </a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps cursor-pointer" href="banda.html">The Band</a>
+<a class="text-on-surface-variant font-medium font-label-caps hover:text-primary transition-colors duration-300" href="albumes.html">Discography</a>
+<a class="text-on-surface-variant font-medium font-label-caps hover:text-primary transition-colors duration-300" href="canciones.html">The Ranking</a>
+<a class="text-on-surface-variant font-medium font-label-caps hover:text-primary transition-colors duration-300" href="eventos.html">Events</a><a class="text-on-surface-variant font-medium font-label-caps hover:text-primary transition-colors duration-300" href="logros.html">Achievements</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer text-primary" data-icon="music_note">music_note</span>
+<span class="material-symbols-outlined cursor-pointer md:hidden" data-icon="menu">menu</span>
+</div>
+ </div>
+<button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-on-surface/5">
+
+<div class="relative z-10 max-w-[1200px] mx-auto px-margin-desktop text-center">
+<span class="font-label-caps text-secondary mb-4 block tracking-[0.3em] uppercase">Est. 1967 • London, UK</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 max-w-4xl mx-auto italic">
+                A Chain Never Broken.
+            </h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                From the blues-rock origins of Peter Green to the mystical pop-rock zenith of Rumours, Fleetwood Mac remains the definitive soundtrack to a generation’s heartbreaks and triumphs.
+            </p>
+<a href="albumes.html" class="bg-primary text-surface px-10 py-4 font-label-caps tracking-widest hover:bg-secondary transition-all duration-300 transform active:scale-95 inline-block no-underline">
+                EXPLORE THE ARCHIVE
+            </a>
+</div>
+</header>
+<!-- History Timeline -->
+<section class="py-24 md:py-32 bg-surface" id="history">
+<div class="max-w-[1200px] mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row gap-16 items-start sticky top-32" id="history-flex">
+<div class="md:w-1/3">
+<h2 class="font-display-lg text-headline-md mb-6">A Legacy of <br>Constant Flux</h2>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                        The history of Fleetwood Mac is not just a timeline of music, but a saga of shifting alliances, internal turmoil, and artistic reinvention.
+                    </p>
+<div class="space-y-3 sidebar-nav">
+<a href="#era-formation" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1967</span>
+<span class="font-body-md font-medium">Formation in London</span>
+</a>
+<a href="#era-postgreen" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1970</span>
+<span class="font-body-md font-medium">The Post-Green Years</span>
+</a>
+<a href="#era-cali" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1975</span>
+<span class="font-body-md font-medium">Buckingham-Nicks Join</span>
+</a>
+<a href="#era-rumours" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1977</span>
+<span class="font-body-md font-medium">Rumours</span>
+</a>
+<a href="#era-tusk" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1979</span>
+<span class="font-body-md font-medium">The Tusk Experiment</span>
+</a>
+<a href="#era-mirage" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1982</span>
+<span class="font-body-md font-medium">Mirage</span>
+</a>
+<a href="#era-tango" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1987</span>
+<span class="font-body-md font-medium">Tango in the Night</span>
+</a>
+<a href="#era-decline" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1990</span>
+<span class="font-body-md font-medium">The Long Farewell</span>
+</a>
+<a href="#era-dance" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">1997</span>
+<span class="font-body-md font-medium">The Dance</span>
+</a>
+<a href="#era-syw" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">2003</span>
+<span class="font-body-md font-medium">Say You Will</span>
+</a>
+<a href="#era-final" class="sidebar-link flex items-center gap-4 border-l-2 border-outline/30 pl-6 py-2 no-underline text-inherit hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="font-label-caps text-secondary">2022</span>
+<span class="font-body-md font-medium">The Final Chapter</span>
+</a>
+</div>
+</div>
+<div class="md:w-2/3 border-l border-on-surface/10 pl-8 md:pl-16 relative" id="history-articles">
+<div class="sticky top-0 z-10 -ml-8 md:-ml-16 pl-8 md:pl-16" style="height:0">
+<div class="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div id="history-scroll" class="space-y-20 overflow-y-auto">
+
+<article class="history-article">
+<h3 id="era-formation" class="font-display-lg text-headline-sm mb-4 italic">1967 — The Blues Origins (July 1967 – May 1970)</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Fleetwood Mac was born in London in July 1967, when guitarist Peter Green—who had replaced Eric Clapton in John Mayall's Bluesbreakers and grown restless—decided to form his own band. He recruited drummer Mick Fleetwood, whom he had met during his brief stint in Peter Green's Shotgun Express, and bassist John McVie, his former Bluesbreakers bandmate. McVie was initially reluctant, hesitant to leave the stability of Mayall's outfit, but Green's persistence won him over. The band was named after the rhythm section: Fleetwood and McVie—a decision that ensured the name would outlast every founding member.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The original lineup as a four-piece featured Green on guitar, Fleetwood on drums, McVie on bass, and guitarist Jeremy Spencer, an Elmore James disciple with a fiery slide-guitar style. Their early singles and debut album were released under the billing "Peter Green's Fleetwood Mac". Their debut single "I Believe My Time Ain't Long" (1967) led to their first album <em>Fleetwood Mac</em> (February 1968), which climbed to #4 on the UK charts. The second album <em>Mr. Wonderful</em> (August 1968), produced by Mike Vernon, featured a horn section and a rawer, live-in-studio feel.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The breakthrough came in November 1968 with "Albatross"—a slow, reverb-soaked instrumental inspired by the surf-rock of The Shadows. It reached #1 on the UK Singles Chart in January 1969 and became the band's first international hit. Guitarist Danny Kirwan, an 18-year-old prodigy from south London, joined the band in August 1968 as a third guitarist, adding a more melodic, gentle dimension. The Green-era masterpieces followed in rapid succession: "Black Magic Woman" (later immortalized by Santana), "Man of the World" (a deeply melancholic #2 UK hit), and the side-long suite "Oh Well" which fused flamenco-style acoustic guitar with hard rock. The album <em>Then Play On</em> (September 1969) was the band's first to blend blues with progressive and folk elements.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            By early 1970, Peter Green's mental state was in steep decline. Heavy LSD use had triggered schizophrenia, and he became withdrawn, delusional, and erratic. His final performance with the band took place on May 20, 1970, in Munich, Germany, during a chaotic European tour. He walked offstage mid-set and never returned. The blues giant was gone, but the band he built refused to die.
+                        </p>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="h-64 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover sepia-effect hero-parallax" data-alt="A vintage, grainy black and white photograph of three young men standing in a gritty London street in the late 1960s. They are wearing mod-style clothing, leather jackets, and bell-bottom jeans. The lighting is overcast and atmospheric, capturing the raw energy of the British blues scene. The composition is artistic and editorial, echoing the Fleetwood Mac retro aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAI2dTi9i4YGsXu-Ngnb6prKzNVR7oILI2nJOt4jWbVY75kWl95mVvpINpzxLBeBuaw-TS_VKcKXW63uUVEs7PSYyn_nUKaJbHx-oK0PjwLOFtHSu5tzNuFsYMbCl2RbocjPiO5WIqMf2sXeS8X_eavt9mLhYumeDVD3TDphoMfSe9N5NjfB9jJAq6iakAVcH40r4wi8c19EBZ9cOfFJ9BvjAHfXVaz6rfM8ykkd7UndGZfVtM0R8zOS22iVm5NnWUGEdlgGL9Mnc">
+</div>
+<div class="h-64 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover sepia-effect hero-parallax" data-alt="Close-up shot of a vintage 1960s Gibson Les Paul guitar leaning against a Marshall amplifier in a dimly lit studio. The wood grain of the guitar is rich and detailed, illuminated by a warm, low-key amber glow. Smoke curls gently in the background, suggesting a late-night recording session during the band's formation years." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfHkrfMgqEzUc0pAqw4CMFKJhFKYw8o3jPyqnSdCZP5hQnjCM0CaqhFJp6P23iLUshjiwb_cGh3g9LWkIB6MoDPR6AZKkXQI5ZWT-JC8cHsz8vLc8-nTVau0MNk-VQ0sOf2KDZJJt4TFmcD1xSk9esKAnY6YnaPIVc9GWIwbX2bdFP3LwMMrBOM0_3bmNe2uZxHHYPZMCY38yw8_xhx0u4GN-b56_evpNZJiQ7yxzjxspRwOcIK_AT9YQBbPEey1yNJQkIfg70aI">
+</div>
+</div>
+</article>
+
+<article class="history-article">
+<h3 id="era-postgreen" class="font-display-lg text-headline-sm mb-4 italic">1970-1974 — The Post-Green Wilderness</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            After Green's departure, the band could easily have crumbled. Instead they pressed on with Kirwan and Spencer, soon recruiting a newly married Christine McVie (née Perfect) in July 1970. A classically trained pianist and vocalist who had been a member of Chicken Shack and had married John McVie in 1968, she formally joined the band to add keyboards and a warm, soulful voice that would become indispensable.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Their first post-Green album <em>Kiln House</em> (September 1970) was a curious hybrid: retro-rockabilly covers and Kirwan originals, featuring a sleeve painting by Christine McVie. In February 1971, during a tour of Los Angeles, Jeremy Spencer vanished without warning after leaving his hotel room, having abruptly left to join the Children of God religious cult. Looking for a replacement, the band was introduced by a mutual friend to American guitarist and vocalist Bob Welch. Welch brought a distinct Californian soft-rock sensibility that would slowly nudge the band away from the blues and toward the melodic rock they would later master.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            With Welch on board, the band released <em>Future Games</em> (September 1971), a hazy, pastoral album that marked a decisive shift toward the West Coast sound. The title track and "Sands of Time" hinted at the sophistication to come. <em>Bare Trees</em> (March 1972) was Kirwan's finest hour, featuring his poignant compositions "Dust" and "Bare Trees". But Kirwan's own mental health unraveled: he became increasingly difficult, drank heavily, and suffered a breakdown on stage during a 1972 US tour, smashing his guitar and refusing to go on. He was fired shortly after.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Welch and Christine McVie stepped up, guiding the band through <em>Penguin</em> (March 1973) and <em>Mystery to Me</em> (October 1973), which included the hypnotic Welch classic "Hypnotized", an FM radio staple in America. <em>Heroes Are Hard to Find</em> (September 1974) was Welch's final album with the band; frustrated by the lack of a major commercial breakthrough and exhausted by legal dramas surrounding a fake version of the band sent on tour by their manager, he left to form the power trio Paris. At the end of 1974, Fleetwood Mac was a band without a guitarist, without a label direction, and without a clear future.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-cali" class="font-display-lg text-headline-sm mb-4 italic">1975 — The Californian Rebirth</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The turning point came at Sound City Studios in Los Angeles in late 1974. Mick Fleetwood was scouting the studio and was played a track called "Frozen Love" from a struggling duo called Buckingham Nicks, produced by Keith Olsen. Blown away by the guitar work, Fleetwood looked up the pair. When Bob Welch resigned shortly after, Fleetwood reached out to Lindsey Buckingham, who insisted that he and his musical and romantic partner, Stevie Nicks, were a package deal. On New Year's Eve 1974, they officially joined Fleetwood Mac. They accepted without hesitation—they had been dropped by Polydor, were living on Nicks' waitressing wages, and had nothing to lose.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The newly constituted band entered Sound City Studios in February 1975. The chemistry was electric and volatile. Buckingham's obsessive production style, Nicks' mystical-sensual lyricism, Christine McVie's impeccable pop craft, and the iron rhythm section of Fleetwood and John McVie produced an album that redefined the band. <em>Fleetwood Mac</em> (July 1975) steadily climbed the charts, reaching #1 on the Billboard 200 over a year after its release in September 1976. The breakout singles "Over My Head" (US #20), "Say You Love Me" (US #11), and "Rhiannon" (US #11) became radio staples. "Rhiannon" in particular became Nicks' signature performance—a shape-shifting, intense masterpiece inspired by a novel about a Welsh goddess. The album sold millions of copies and spent 136 weeks on the chart.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-rumours" class="font-display-lg text-headline-sm mb-4 italic">1976-1977 — Rumours: Heartbreak at #1</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Success brought immense pressure—and the pressure destroyed their personal relationships. In February 1976, the band entered the Record Plant in Sausalito, California, to record the follow-up. The atmosphere was toxic: Christine and John McVie's marriage was ending after eight years, though they continued sitting side by side in the studio. Lindsey Buckingham and Stevie Nicks were in the final, vicious stages of their romantic relationship, communicating through their songs rather than direct conversation. Mick Fleetwood's marriage was also collapsing as he discovered his wife's infidelity. "We were barely speaking," Fleetwood recalled. "But we kept playing."
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The sessions stretched over a year, moving from Sausalito to various studios in Los Angeles, including the Record Plant in LA where they crossed paths with the Eagles, who were working on <em>Hotel California</em>. Cocaine fueled late-night, 24-hour sessions, and the technical studio costs ballooned. The tension was unbearable—and it produced a masterpiece. "Go Your Own Way" was Buckingham's raw, accusatory indictment of Nicks, featuring an iconic ascending guitar riff. "Dreams" was Nicks' reply—a floating, atmospheric refutation built on a simple two-chord progression that became the band's only US #1 single. "The Chain" was the sole composition credited to all five members, stitched together from fragments of discarded rhythm tracks and a famous bass progression written by John McVie. "Don't Stop", "You Make Loving Fun", and "Songbird" (Christine's transcendent solo piano piece) showed McVie at her melodic peak.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            <em>Rumours</em> was released on February 4, 1977. It hit #1 on the Billboard 200 in April and stayed there for 31 non-consecutive weeks. It won the Grammy for Album of the Year (1978) and has sold over 40 million copies worldwide, making it one of the best-selling albums of all time. It remains the definitive document of heartbreak transformed into art.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-tusk" class="font-display-lg text-headline-sm mb-4 italic">1978-1980 — Tusk: The Anti-Rumours</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Rather than capitalize on the commercial <em>Rumours</em> formula, Lindsey Buckingham insisted on a radical departure. Recording began in early 1978 at the Village Recorder in Los Angeles, where the band constructed a custom, state-of-the-art studio environment. Buckingham commandeered parts of the process to experiment with tape loops, unconventional microphone placements, and a lo-fi, post-punk production aesthetic. The project cost over $1.4 million—making it the most expensive rock album ever recorded up to that time.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The resulting double album, <em>Tusk</em> (October 1979), was a sprawling 20-track labyrinth. The title track featured the University of Southern California Trojan Marching Band, recorded live at Dodger Stadium. "Sara" was Nicks' haunting, 6-minute centerpiece. "Think About Me", "Storms", and "Sisters of the Moon" offered moments of classic Mac accessibility mixed with experimental edge. The album sold around 4 million copies upon release—a massive success for any other band, but labeled a disappointment by Warner Bros. following the astronomical heights of <em>Rumours</em>. The subsequent world tour was physically and financially draining, marked by growing internal divides.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Yet <em>Tusk</em>'s reputation has grown enormously over time. Modern critics often cite it as a masterpiece of avant-garde pop, and its influence can be heard extensively in modern indie rock. It remains the band's boldest, strangest, and most fascinating artistic statement.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-mirage" class="font-display-lg text-headline-sm mb-4 italic">1981-1982 — Mirage: The Return to Form</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            After a live album (<em>Fleetwood Mac Live</em>, 1980) and a brief hiatus during which members pursued solo projects—most notably Nicks' solo debut <em>Bella Donna</em> (1981), which went quadruple-platinum and established her as a superstar in her own right—the band regrouped at Château d'Hérouville in France in late 1981 to record their next effort away from the distractions of Los Angeles.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The result was <em>Mirage</em> (June 1982), a deliberate return to the polished, radio-friendly pop-rock sound of the mid-70s. "Hold Me" (US #4) was a shimmering McVie-Buckingham collaboration accompanied by a highly stylized music video. "Gypsy" (US #12) was Nicks' nostalgic reflection on her pre-fame bohemian life. "Love in Store" and "Oh Diane" added depth, and the album hit #1 on the Billboard 200. However, the tour that followed was brief. Buckingham, frustrated by the band's creative constraints, poured his energy into his experimental solo work <em>Go Insane</em> (1984), while Nicks continued her solo momentum with <em>The Wild Heart</em> (1983) and <em>Rock a Little</em> (1985).
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-tango" class="font-display-lg text-headline-sm mb-4 italic">1985-1987 — Tango in the Night: The Digital Dawn</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            By 1985, the musical landscape had changed drastically, dominated by synth-pop and digital production. Mick Fleetwood, facing severe financial struggles, urged the band to reunite. Buckingham agreed, taking the creative reins and treating the project with the technical precision of a solo album. Recording took place primarily at Buckingham's home studio in Los Angeles between 1985 and 1987, utilizing modern technology like the Fairlight CMI sampler.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            <em>Tango in the Night</em> (April 1987) was a massive commercial triumph, becoming their second-biggest selling studio album, fueled by massive success in the UK and Europe. "Big Love" (US #5) featured Buckingham's aggressive vocal arrangement and intricate guitar work. "Everywhere" (US #14, UK #4) and "Little Lies" (US #4) showcased Christine McVie at her absolute commercial peak, while "Seven Wonders" (US #19) featured Nicks' signature vocals.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Behind the scenes, however, the sessions were agonizingly difficult. Stevie Nicks was battling a severe addiction to Klonopin and spent limited time in the studio. Just weeks before the promotional tour was set to begin, Buckingham called a band meeting and announced he was quitting. The friction had reached a boiling point; he felt he could no longer grow creatively within the group environment. Guitarists Billy Burnette and Rick Vito were hastily hired to fill his shoes on the road.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-decline" class="font-display-lg text-headline-sm mb-4 italic">1988-1995 — The Long Farewell</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The Buckingham-less lineup released <em>Behind the Mask</em> (April 1990). While it reached #1 in the UK and sold respectably, it lacked the creative spark of the classic lineup. The singles "Save Me" and "Skies the Limit" performed modestly. Exhausted by the band dynamics and eager to focus entirely on her solo career, Stevie Nicks left the band following the conclusion of the 1990 tour.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            With both Buckingham and Nicks gone, the core trio of Fleetwood, John McVie, and Christine McVie soldiered on. They recruited singer Bekka Bramlett and guitarist Dave Mason, releasing <em>Time</em> (October 1995). The album was a commercial disaster, failing to chart on the Billboard 200 entirely. Disillusioned and ready for peace, Christine McVie officially retired from the band and moved back to the English countryside. Fleetwood Mac appeared to be completely over.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-dance" class="font-display-lg text-headline-sm mb-4 italic">1997-1998 — The Dance: A Resurrection</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            In 1996, the classic five members crossed paths and began discussing a reunion. The formal reunion resulted in a live concert recorded over two nights in May 1997 at Warner Bros. Studios in Burbank, California. Released as <em>The Dance</em>, the live album and MTV television special reignited global interest in the band. It debuted at #1 on the Billboard 200, sold millions of copies, and earned several Grammy nominations.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The accompanying tour was a massive success. The live arrangements breathed new life into old classics; "The Chain" opened the set with incredible intensity, and Nicks' performance of "Silver Springs"—a legendary <em>Rumours</em> B-side—became a centerpiece of the show. On January 12, 1998, the classic lineup (along with Peter Green, dreadlocked and quiet, playing guitar) was inducted into the Rock and Roll Hall of Fame. Yet following the tour, Christine McVie quietly withdrew again, reinforcing her retirement and her severe fear of flying.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-syw" class="font-display-lg text-headline-sm mb-4 italic">2003-2014 — Say You Will & The Christine Years</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            In 2002, the remaining four members—Fleetwood, John McVie, Buckingham, and Nicks—regrouped to record a new studio album. Released as a single CD format, <em>Say You Will</em> (April 2003) was a lengthy 18-track album showcasing Buckingham's edgy alternative-rock tracks against Nicks' melodic songwriting. Supported by hits like "Peacekeeper", the album debuted at #3 on the Billboard 200 and kicked off a massive, highly profitable world tour.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            For the next decade, Fleetwood Mac toured periodically as a four-piece. Then, in 2013, Christine McVie made a surprise appearance with the band at London's O2 Arena. Realizing how much she missed the stage, she officially un-retired in early 2014. The subsequent "On With the Show" tour (2014-2015) featured all five classic members together again for the first time in 16 years, playing to sold-out arenas worldwide.
+                        </p>
+</article>
+
+<article class="history-article">
+<h3 id="era-final" class="font-display-lg text-headline-sm mb-4 italic">2018-2024 — The Final Chapter</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            In early 2018, tensions peaked yet again. During preparations for a new tour, disagreements arose regarding the schedule and setlist. The fallout resulted in Lindsey Buckingham being abruptly fired from the band. Buckingham filed a lawsuit for breach of contract, which was settled out of court later that year. To fill the massive void, the band recruited Mike Campbell (of Tom Petty and the Heartbreakers) and Neil Finn (of Crowded House) for an extensive global tour. While successful, the classic internal chemistry was permanently altered.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            The true final blow came on November 30, 2022, when Christine McVie passed away peacefully in a hospital at the age of 79 following a brief illness. The loss completely devastated her bandmates and the music world. Nicks penned a beautiful, heartbroken letter to her "best friend in the whole world," while Fleetwood expressed that a part of his soul had flown away.
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            In the years following her passing, the remaining members made it clear that the book on Fleetwood Mac has closed. Mick Fleetwood stated in interviews that without Christine, the band simply cannot exist. John McVie has stepped entirely away from public life, and the remaining members have focused on their respective solo legacies. After more than five decades, 17 studio albums, countless line-up changes, and unmatched interpersonal drama, the chain that held Fleetwood Mac together was finally, peacefully broken.
+                        </p>
+</article>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Band Members Section -->
+<section class="py-24 md:py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-caps text-secondary tracking-widest uppercase mb-4 block">The Lineup</span>
+<h2 class="font-display-lg text-headline-md md:text-display-lg">The Alchemists</h2>
+</div>
+<!-- Member Selector Interface -->
+<div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-16 border-b border-on-surface/10 pb-4" id="member-tabs">
+<button class="member-tab font-label-caps tracking-widest transition-all pb-2 member-tab-active" data-member="mick" onclick="showMember('mick')">MICK FLEETWOOD</button>
+<button class="member-tab font-label-caps tracking-widest transition-all pb-2 text-on-surface-variant hover:text-primary" data-member="john" onclick="showMember('john')">JOHN MCVIE</button>
+<button class="member-tab font-label-caps tracking-widest transition-all pb-2 text-on-surface-variant hover:text-primary" data-member="stevie" onclick="showMember('stevie')">STEVIE NICKS</button>
+<button class="member-tab font-label-caps tracking-widest transition-all pb-2 text-on-surface-variant hover:text-primary" data-member="lindsey" onclick="showMember('lindsey')">LINDSEY BUCKINGHAM</button>
+<button class="member-tab font-label-caps tracking-widest transition-all pb-2 text-on-surface-variant hover:text-primary" data-member="christine" onclick="showMember('christine')">CHRISTINE MCVIE</button>
+</div>
+<!-- Member Display Area -->
+<div class="relative min-h-[600px]" id="member-content">
+<!-- Mick Fleetwood -->
+<div class="member-profile grid md:grid-cols-2 gap-12 items-center opacity-100 transition-opacity duration-500" id="mick">
+<div class="relative group">
+<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
+<div class="bg-surface shadow-lg p-3 member-card">
+<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Mick Fleetwood" src="fleetwood.jpg" style="object-position: center;">
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="drum_click">drag_click</span>
+<span class="font-label-caps text-secondary">FOUNDER / DRUMS</span>
+</div>
+<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Mick Fleetwood</h3>
+<p class="text-on-surface-variant mb-8 text-lg">
+                            The rhythmic anchor and tall, eccentric heart of the band. Mick's distinctive percussion style and towering presence kept the band together through decades of upheaval.
+                        </p>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
+<p class="text-body-md text-on-surface-variant">Cheyne Walk, The Bo Street Runners, and Peter Green's Shotgun Express.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-primary mb-2">NOTABLE CONTRIBUTIONS</h4>
+<p class="text-body-md text-on-surface-variant">The Chain, Tusk (The marching band concept), World Turning.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- John McVie -->
+<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="john">
+<div class="relative group">
+<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
+<div class="bg-surface shadow-lg p-3 member-card">
+<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="John McVie 1970s" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Fleetwood_mac_john_mcvie.jpg" style="object-position: center;">
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="music_video">music_video</span>
+<span class="font-label-caps text-secondary">BASS GUITAR</span>
+</div>
+<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">John McVie</h3>
+<p class="text-on-surface-variant mb-8 text-lg">
+                            The silent strength behind the Mac sound. John's melodic bass lines provided the sophisticated foundation that allowed the band's pop sensibilities to soar.
+                        </p>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
+<p class="text-body-md text-on-surface-variant">John Mayall &amp; the Bluesbreakers (The definitive UK blues apprenticeship).</p>
+</div>
+<div>
+<h4 class="font-label-caps text-primary mb-2">NOTABLE CONTRIBUTIONS</h4>
+<p class="text-body-md text-on-surface-variant">The foundational bass melody of 'The Chain', Dreams, Rhiannon.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stevie Nicks -->
+<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="stevie">
+<div class="relative group">
+<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
+<div class="bg-surface shadow-lg p-3 member-card">
+<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Stevie Nicks" src="nicks.jpg" style="object-position: center;">
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-secondary">VOCALS / SONGWRITER</span>
+</div>
+<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Stevie Nicks</h3>
+<p class="text-on-surface-variant mb-8 text-lg">
+                            The high priestess of rock. Stevie brought a mystical, poetic sensibility and an iconic vocal rasp that defined the band's most legendary hits.
+                        </p>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
+<p class="text-body-md text-on-surface-variant">Fritz (opening for Hendrix and Janis Joplin), Buckingham Nicks.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4>
+<p class="text-body-md text-on-surface-variant">Dreams, Rhiannon, Landslide, Gold Dust Woman, Silver Springs.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Lindsey Buckingham -->
+<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="lindsey">
+<div class="relative group">
+<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
+<div class="bg-surface shadow-lg p-3 member-card">
+<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Lindsey Buckingham 1977" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Lindsey_Buckingham_1977.jpg" style="object-position: 45% center;">
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+<span class="font-label-caps text-secondary">LEAD GUITAR / VOCALS</span>
+</div>
+<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Lindsey Buckingham</h3>
+<p class="text-on-surface-variant mb-8 text-lg">
+                            The sonic architect. Lindsey’s intricate fingerpicking and obsessive production style transformed the band into a studio powerhouse.
+                        </p>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
+<p class="text-body-md text-on-surface-variant">Fritz, Buckingham Nicks (working as a session musician and cleaning houses).</p>
+</div>
+<div>
+<h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4>
+<p class="text-body-md text-on-surface-variant">Go Your Own Way, Tusk, Big Love, Never Going Back Again.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Christine McVie -->
+<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="christine">
+<div class="relative group">
+<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
+<div class="bg-surface shadow-lg p-3 member-card">
+<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Christine McVie 1977" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Christine_McVie_-_Fleetwood_Mac_(1977).jpg" style="object-position: center;">
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="piano">piano</span>
+<span class="font-label-caps text-secondary">KEYBOARDS / VOCALS</span>
+</div>
+<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Christine McVie</h3>
+<p class="text-on-surface-variant mb-8 text-lg">
+                            The perfect pop songwriter. Christine’s warm vocals and melodic piano compositions provided the commercial and emotional balance to the band's edgier elements.
+                        </p>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
+<p class="text-body-md text-on-surface-variant">Chicken Shack (The UK blues scene’s breakout female vocalist).</p>
+</div>
+<div>
+<h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4>
+<p class="text-body-md text-on-surface-variant">Don't Stop, Songbird, You Make Loving Fun, Everywhere, Little Lies.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Discography Bento Grid -->
+<section class="py-24 md:py-32 bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-headline-md mb-16">The Sonic Archive</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container border border-on-surface/5 p-8 flex flex-col justify-end relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Close up of the Rumours album cover artwork showing Mick Fleetwood and Stevie Nicks. The image is stylized with a paper texture overlay and deep charcoal shadows. Elegant, minimalist lighting highlights the iconic pose. High resolution, editorial music magazine style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0_OiMD5we4SHBksJX6QFEJZnFRGIx1zPWZ8gqUwU2vYuCAr7deZMf0L3oJkt336CdnqgE-XOAG4PCxqDZ_eA1EwQXIMlpNNuXSZuh4C9JLKAo-aPU60qg2DjWEZodknVxS54ivSHqHkigGp20pFQ9DDD636RI74_Y-b23N0wWe1vEn3PaegnUW2f9Xpca08keviKUKeVYI33wSgwMbnnWsrz8qlOT0UGr2rCiKDjhreDA6gjZ1_FBH_Ie91ggCUzTYbZIO71dZFo">
+<div class="relative z-10 bg-surface/80 backdrop-blur-sm p-6">
+<span class="font-label-caps text-primary block mb-2">MASTERPIECE</span>
+<h3 class="font-display-lg text-headline-sm italic">Rumours (1977)</h3>
+<p class="text-on-surface-variant mt-2">The definitive portrait of heartbreak and resilience.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-secondary-container p-8 flex flex-col justify-center border border-on-surface/5">
+<h3 class="font-display-lg text-headline-sm mb-4 italic">Tusk (1979)</h3>
+<p class="text-on-secondary-container mb-6">The experimental double album that challenged every expectation of what a pop band could achieve.</p>
+<a class="font-label-caps text-on-secondary-container border-b border-on-secondary-container w-fit text-underline-draw" href="albumes.html">DISCOVER THE EXPERIMENT</a>
+</div>
+<div class="bg-surface-container-high p-8 border border-on-surface/5">
+<h3 class="font-display-lg text-headline-sm mb-4">Fleetwood Mac (1975)</h3>
+<p class="text-on-surface-variant text-sm">The rebirth of the band and the arrival of the Californian duo.</p>
+</div>
+<div class="bg-primary p-8 flex flex-col justify-between border border-on-surface/5">
+<h3 class="font-display-lg text-headline-sm text-surface italic">The White Album</h3>
+<span class="material-symbols-outlined text-surface text-4xl" data-icon="album">album</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Auth Modal -->
+<div id="auth-modal" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center hidden">
+  <div class="bg-surface p-10 max-w-md w-full mx-4 relative">
+    <button id="auth-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer bg-transparent border-0 text-xl">&times;</button>
+    <h3 class="font-display-lg text-headline-sm mb-6" id="auth-title">Log In</h3>
+    <form id="auth-form">
+      <div id="auth-email-group" class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">EMAIL</label>
+        <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PASSWORD</label>
+        <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div id="auth-confirm-group" class="mb-6 hidden">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CONFIRM PASSWORD</label>
+        <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors">
+      </div>
+      <p id="auth-error" class="font-body-md text-error mb-4 hidden" style="color:#ba1a1a"></p>
+      <button type="submit" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-on-surface-variant transition-colors">LOG IN</button>
+    </form>
+    <p class="font-body-md text-center mt-4">
+      <span class="text-on-surface-variant" id="auth-toggle-text">Don't have an account?</span>
+      <button id="auth-toggle-btn" class="bg-transparent border-0 text-secondary underline font-label-caps text-label-caps cursor-pointer">SIGN UP</button>
+    </p>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-gutter border-t border-on-surface/5 bg-surface-container">
+<div class="flex flex-col items-center py-12 px-margin-desktop max-w-[1200px] mx-auto text-center">
+<div class="font-display-lg text-headline-sm text-primary mb-8 tracking-tighter">
+                <a href="index.html" class="text-primary no-underline">FLEETWOOD MAC</a>
+            </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="text-secondary font-label-caps hover:text-primary underline transition-all" href="index.html">History</a>
+<a class="text-secondary font-label-caps hover:text-primary underline transition-all" href="eventos.html">Tour Dates</a>
+<a class="text-secondary font-label-caps hover:text-primary underline transition-all" href="#">Legal</a>
+<a class="text-secondary font-label-caps hover:text-primary underline transition-all" href="#">Contact</a>
+</div>
+<p class="font-label-caps text-on-surface-variant/60 tracking-widest text-[10px]">
+                © 2026-2027 The Moon &amp; The Music is an unofficial, non-profit fan directory. Track rankings are for editorial and entertainment purposes only. Chart data and rankings are sourced from Billboard and Rolling Stone for historical, educational, and editorial commentary purposes only. This website is a fan-run community project and is not affiliated with, endorsed by, or connected to any original musical artists, record labels, Ticketmaster, Songkick, Billboard, Rolling Stone, or any featured tribute bands.
+            </p>
+</div>
+</footer>
+<script>
+        function showMember(memberId) {
+            // Update tabs
+            const tabs = document.querySelectorAll('.member-tab');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-member') === memberId) {
+                    tab.classList.add('member-tab-active');
+                    tab.classList.remove('text-on-surface-variant');
+                } else {
+                    tab.classList.remove('member-tab-active');
+                    tab.classList.add('text-on-surface-variant');
+                }
+            });
+
+            // Update profiles
+            const profiles = document.querySelectorAll('.member-profile');
+            profiles.forEach(profile => {
+                if (profile.id === memberId) {
+                    profile.classList.remove('hidden');
+                    // Trigger reflow for animation
+                    void profile.offsetWidth;
+                    profile.classList.add('opacity-100');
+                    profile.classList.remove('opacity-0');
+                } else {
+                    profile.classList.add('hidden');
+                    profile.classList.remove('opacity-100');
+                    profile.classList.add('opacity-0');
+                }
+            });
+        }
+
+        // Scroll Spy — highlight active sidebar link
+        (function scrollSpy() {
+            const articles = document.querySelectorAll('.history-article');
+            const links = document.querySelectorAll('.sidebar-link');
+
+            function updateActive() {
+                let currentId = articles[0].querySelector('h3').id;
+
+                articles.forEach((article) => {
+                    const rect = article.getBoundingClientRect();
+                    const h3 = article.querySelector('h3');
+                    if (rect.top <= 220) {
+                        currentId = h3.id;
+                    }
+                });
+
+                links.forEach(link => {
+                    const href = link.getAttribute('href').replace('#', '');
+                    const isActive = href === currentId;
+                    link.classList.toggle('border-primary', isActive);
+                    link.classList.toggle('border-outline/30', !isActive);
+                    const yearSpan = link.querySelector('span:first-child');
+                    yearSpan.classList.toggle('text-primary', isActive);
+                    yearSpan.classList.toggle('text-secondary', !isActive);
+                });
+            }
+
+            window.addEventListener('scroll', updateActive, { passive: true });
+            window.addEventListener('resize', updateActive);
+            const hs = document.getElementById('history-scroll');
+            if (hs) hs.addEventListener('scroll', updateActive, { passive: true });
+            updateActive();
+        })();
+
+        // Sync history scroll height to sidebar nav height
+        function syncHistoryHeight() {
+            const scroll = document.getElementById('history-scroll');
+            const sidebar = document.querySelector('#history-flex > div:first-child');
+            if (!scroll || !sidebar) return;
+            scroll.style.maxHeight = Math.max(300, sidebar.getBoundingClientRect().height) + 'px';
+        }
+        syncHistoryHeight();
+        window.addEventListener('resize', syncHistoryHeight);
+        window.addEventListener('scroll', syncHistoryHeight, { passive: true });
+
+        // Independent scroll for history section
+        const historyScroll = document.getElementById('history-scroll');
+        if (historyScroll) {
+            historyScroll.addEventListener('wheel', (e) => {
+                const delta = e.deltaY;
+                const atTop = historyScroll.scrollTop === 0;
+                const atBottom = historyScroll.scrollTop + historyScroll.clientHeight >= historyScroll.scrollHeight - 1;
+
+                if ((delta < 0 && atTop) || (delta > 0 && atBottom)) {
+                    return;
+                }
+
+                e.preventDefault();
+                historyScroll.scrollTop += delta;
+            }, { passive: false });
+        }
+
+        // Subtle parallax for hero images only
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.hero-parallax').forEach(img => {
+                img.style.transform = `translateY(${scrolled * 0.05}px)`;
+            });
+        });
+        // ── Auth System ──
+        const AUTH_KEY = 'mm_users';
+        const SESSION_KEY = 'mm_session';
+        function getUsers() {
+          try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
+        }
+        function saveUsers(users) {
+          localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+        }
+        function isLoggedIn() {
+          return !!localStorage.getItem(SESSION_KEY);
+        }
+        function getLoggedInEmail() {
+          return localStorage.getItem(SESSION_KEY) || '';
+        }
+        function toggleAuthModal(show, mode) {
+          const modal = document.getElementById('auth-modal');
+          if (!modal) return;
+          modal.classList.toggle('hidden', !show);
+          if (!show) return;
+          const title = document.getElementById('auth-title');
+          const submitBtn = document.querySelector('#auth-form button[type="submit"]');
+          const confirmGroup = document.getElementById('auth-confirm-group');
+          const toggleText = document.getElementById('auth-toggle-text');
+          const toggleBtn = document.getElementById('auth-toggle-btn');
+          const error = document.getElementById('auth-error');
+          error.classList.add('hidden');
+          document.getElementById('auth-form').reset();
+          if (mode === 'signup') {
+            title.textContent = 'Sign Up';
+            submitBtn.textContent = 'SIGN UP';
+            confirmGroup.classList.remove('hidden');
+            toggleText.textContent = 'Already have an account?';
+            toggleBtn.textContent = 'LOG IN';
+            toggleBtn.dataset.mode = 'login';
+          } else {
+            title.textContent = 'Log In';
+            submitBtn.textContent = 'LOG IN';
+            confirmGroup.classList.add('hidden');
+            toggleText.textContent = "Don't have an account?";
+            toggleBtn.textContent = 'SIGN UP';
+            toggleBtn.dataset.mode = 'signup';
+          }
+        }
+        document.getElementById('auth-modal')?.addEventListener('click', function(e) {
+          if (e.target === this) toggleAuthModal(false);
+        });
+        document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
+        document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
+          const mode = this.dataset.mode || 'login';
+          toggleAuthModal(true, mode);
+        });
+        document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('auth-email').value.trim().toLowerCase();
+          const password = document.getElementById('auth-password').value;
+          const error = document.getElementById('auth-error');
+          const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            error.textContent = 'Please enter a valid email address.';
+            error.classList.remove('hidden');
+            return;
+          }
+          if (password.length < 4) {
+            error.textContent = 'Password must be at least 4 characters.';
+            error.classList.remove('hidden');
+            return;
+          }
+          const users = getUsers();
+          if (isSignup) {
+            const confirm = document.getElementById('auth-confirm').value;
+            if (password !== confirm) {
+              error.textContent = 'Passwords do not match.';
+              error.classList.remove('hidden');
+              return;
+            }
+            if (users[email]) {
+              error.textContent = 'An account with this email already exists.';
+              error.classList.remove('hidden');
+              return;
+            }
+            users[email] = { email, password };
+            saveUsers(users);
+            localStorage.setItem(SESSION_KEY, email);
+            error.classList.add('hidden');
+            toggleAuthModal(false);
+            updateAuthUI();
+          } else {
+            if (!users[email]) {
+              error.textContent = 'No account found with this email.';
+              error.classList.remove('hidden');
+              return;
+            }
+            if (users[email].password !== password) {
+              error.textContent = 'Incorrect password.';
+              error.classList.remove('hidden');
+              return;
+            }
+            localStorage.setItem(SESSION_KEY, email);
+            error.classList.add('hidden');
+            toggleAuthModal(false);
+            updateAuthUI();
+          }
+        });
+        function updateAuthUI() {
+          const loggedIn = isLoggedIn();
+          const loginBtn = document.getElementById('nav-login-btn');
+          if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
+        }
+        document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+        updateAuthUI();
+    </script>
+
+
+</body></html>

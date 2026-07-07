@@ -1,0 +1,976 @@
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fdf8f8",
+                        "secondary": "#5e604d",
+                        "surface-container-low": "#f7f3f2",
+                        "on-tertiary-fixed-variant": "#484828",
+                        "tertiary-fixed-dim": "#cac99f",
+                        "tertiary": "#60603e",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#e1e1c9",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-high": "#ebe7e6",
+                        "on-tertiary-fixed": "#1d1d03",
+                        "on-secondary-fixed-variant": "#474836",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#858383",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e6e5b9",
+                        "surface-container": "#f1edec",
+                        "on-secondary-container": "#636451",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#ddd9d8",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "primary": "#000000",
+                        "secondary-fixed": "#e4e4cc",
+                        "surface-container-highest": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "primary-fixed": "#e5e2e1",
+                        "outline": "#747878",
+                        "inverse-on-surface": "#f4f0ef",
+                        "tertiary-container": "#aead85",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-container": "#414122",
+                        "on-primary-fixed-variant": "#474746",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "surface-bright": "#fdf8f8",
+                        "background": "#fdf8f8",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface font-body-md text-on-surface paper-grain">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 border-b border-on-surface/10 bg-surface z-50">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-20">
+<a href="index.html" class="flex items-center gap-3 no-underline">
+                <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
+                <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
+            </a>
+<div class="hidden md:flex items-center space-x-8"><a href="banda.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">The Band</a>
+<a href="albumes.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">Discography</a>
+<a href="canciones.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">The Ranking</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="eventos.html">Events</a>
+<a href="logros.html" class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300">Achievements</a></div>
+<div class="flex items-center space-x-4">
+<button class="cursor-pointer transition-opacity active:opacity-70">
+<span class="material-symbols-outlined text-primary">music_note</span>
+</button>
+</div>
+<button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
+</nav>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-desktop py-20">
+<!-- Hero Section -->
+<section class="mb-32 text-center">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">THE CULTURAL ODYSSEY</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8">Achievements &amp; Legacy</h1>
+<div class="w-24 h-px bg-primary mx-auto mb-12"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+                "From the blues-rock origins in London to the sun-drenched mysticism of California, the records left behind remain the definitive soundtrack of an era."
+            </p>
+</section>
+<!-- Bento Grid: Major Stats -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-16">
+<!-- Diamond Record -->
+<div class="md:col-span-8 bg-surface-container p-12 flex flex-col justify-between hover:shadow-xl transition-shadow duration-500">
+<div>
+<h2 class="font-headline-md text-headline-md mb-4">The Rumours Phenomenon</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+                        Released in 1977, 'Rumours' became one of the best-selling albums of all time. It sat at #1 on the Billboard 200 for 31 non-consecutive weeks and has sold over 40 million copies worldwide.
+                    </p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div class="text-7xl font-display-lg text-primary">40M+</div>
+<div class="font-label-caps text-label-caps text-secondary uppercase">Copies Sold Globally</div>
+</div>
+</div>
+<!-- Grammy Card -->
+<div class="md:col-span-4 bg-surface-container-high p-8 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-6xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Grammy Award</h3>
+<p class="font-label-caps text-label-caps text-secondary mb-4">Album of the Year 1978</p>
+<div class="w-full h-px bg-on-surface/10 my-4"></div>
+<p class="font-body-md text-body-md">Recognized for technical brilliance and emotional honesty.</p>
+</div>
+<!-- Rolling Stone Compact Button -->
+<a href="#rolling-stone-rankings" id="rolling-stone-card-btn" class="md:col-span-4 bg-primary text-surface p-8 flex flex-col justify-between no-underline hover:opacity-90 transition-all active:scale-[0.98] cursor-pointer group">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm">Rolling Stone</h3>
+<span class="material-symbols-outlined text-surface/60 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div>
+<div class="text-4xl font-display-lg mb-2">#7</div>
+<p class="font-label-caps text-label-caps text-surface/70">500 Greatest Albums of All Time</p>
+<p class="font-body-md text-surface/50 mt-4 text-sm italic">Click to view full rankings →</p>
+</div>
+</a>
+<!-- Hall of Fame -->
+<div class="md:col-span-8 relative overflow-hidden group min-h-[300px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A vintage desaturated sepia-toned photograph of the classic Fleetwood Mac lineup performing on stage in 1977, with soft focus and theatrical lighting highlighting Stevie Nicks and Lindsey Buckingham. The aesthetic is grainy and organic, like a high-quality vintage vinyl inner sleeve." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwgIJ17Z5UxxK56_FycSe6bljzQnaaHYSHVMhyl76fTuT7iNgOLKVmElLyM1IhYtCjiFwhiUqpFJT-J-UQKFrR--7H_PbVKCmrxIRFXNoqONCLFeOgkjCQdHqqaW3ibzQne1A609viJK26iI3cK8VPZlLVg1HjxUu293NuFTCN3lhvN3fT5pBexTN2yRtrywK5AEPyS_GD3Ua57XFLIQ9pXOmC0QK35xcFp43zTKBVjttThsk1uU2_zGjDRXNd-gA8cEt6BeU8XrY')"></div>
+<div class="absolute inset-0 bg-black/40 flex items-end p-12">
+<div>
+<h3 class="font-headline-md text-headline-md text-surface mb-2">Rock &amp; Roll Hall of Fame</h3>
+<p class="font-label-caps text-label-caps text-surface/90">Inducted Class of 1998</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Source Filter Buttons (pill style) -->
+<div class="flex flex-wrap justify-center gap-4 mb-16" id="source-tabs">
+<button class="source-tab font-label-caps text-label-caps px-5 py-2 border transition-all bg-primary text-on-primary border-primary" data-source="rolling-stone" data-active="true">ROLLING STONE</button>
+<button class="source-tab font-label-caps text-label-caps px-5 py-2 border transition-all bg-transparent text-on-surface-variant border-on-surface/20" data-source="billboard" data-active="false">BILLBOARD</button>
+</div>
+
+<!-- Rolling Stone Full Rankings Section -->
+<section class="mb-32 source-section" id="rolling-stone-rankings" data-source="rolling-stone">
+<div class="flex flex-col md:flex-row items-baseline mb-16 gap-4">
+<h2 class="font-display-lg text-headline-md">Rolling Stone Rankings</h2>
+<div class="flex-grow needle-line"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="bg-surface-container p-10 border border-on-surface/5">
+<h3 class="font-headline-sm text-headline-sm mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">album</span>
+500 Greatest Albums
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Rumours</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">#7</span>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Fleetwood Mac</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1975)</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">#183</span>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Tusk</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1979)</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">#225</span>
+</div>
+<div class="pt-3 flex justify-between items-center text-sm text-on-surface-variant italic">
+<span>2020 edition</span>
+<span>Entered list: 2003</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-10 border border-on-surface/5">
+<h3 class="font-headline-sm text-headline-sm mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">music_note</span>
+500 Greatest Songs
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<span class="font-body-md font-bold">"Dreams"</span>
+<span class="font-headline-sm text-headline-sm text-primary">#9</span>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<span class="font-body-md font-bold">"Go Your Own Way"</span>
+<span class="font-headline-sm text-headline-sm text-primary">#120</span>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<span class="font-body-md font-bold">"Landslide"</span>
+<span class="font-headline-sm text-headline-sm text-primary">#170</span>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<span class="font-body-md font-bold">"The Chain"</span>
+<span class="font-headline-sm text-headline-sm text-primary">#264</span>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<span class="font-body-md font-bold">"Rhiannon"</span>
+<span class="font-headline-sm text-headline-sm text-primary">#488</span>
+</div>
+<div class="pt-3 flex justify-between items-center text-sm text-on-surface-variant italic">
+<span>2021 edition</span>
+<span>Entered list: 2004</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Billboard Full Rankings Section -->
+<section class="mb-32 source-section hidden" id="billboard-rankings" data-source="billboard">
+<div class="flex flex-col md:flex-row items-baseline mb-16 gap-4">
+<h2 class="font-display-lg text-headline-md">Billboard Chart Legacy</h2>
+<div class="flex-grow needle-line"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<!-- Billboard 200 Albums -->
+<div class="bg-surface-container p-10 border border-on-surface/5">
+<h3 class="font-headline-sm text-headline-sm mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">album</span>
+Billboard 200 — Albums
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Rumours</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#1</div>
+<div class="text-xs text-on-surface-variant">31 weeks at #1</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Fleetwood Mac</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1975)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#1</div>
+<div class="text-xs text-on-surface-variant">136 weeks on chart</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Mirage</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1982)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#1</div>
+<div class="text-xs text-on-surface-variant">#1 US & UK</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">The Dance</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1997)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#1</div>
+<div class="text-xs text-on-surface-variant">5M copies sold</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Tusk</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1979)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#4</div>
+<div class="text-xs text-on-surface-variant">4M copies sold</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Tango in the Night</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#7</div>
+<div class="text-xs text-on-surface-variant">15M copies sold</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Say You Will</span>
+<span class="font-body-md text-on-surface-variant ml-2">(2003)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#3</div>
+<div class="text-xs text-on-surface-variant">Debut week</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Behind the Mask</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1990)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#18</div>
+<div class="text-xs text-on-surface-variant">#1 UK</div>
+</div>
+</div>
+<div class="flex justify-between items-center pb-3">
+<div>
+<span class="font-body-md font-bold">Rumours (2020 re-entry)</span>
+<span class="font-body-md text-on-surface-variant ml-2">(2020)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">Top 10</div>
+<div class="text-xs text-on-surface-variant">#1 Vinyl Albums</div>
+</div>
+</div>
+<div class="pt-4 text-sm text-on-surface-variant italic border-t border-on-surface/10">
+<span>Rumours spent 139+ total weeks on the Billboard 200</span>
+</div>
+</div>
+</div>
+
+<!-- Billboard Hot 100 Singles -->
+<div class="bg-surface-container p-10 border border-on-surface/5">
+<h3 class="font-headline-sm text-headline-sm mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">music_note</span>
+Billboard Hot 100 — Singles
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Dreams"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#1</div>
+<div class="text-xs text-on-surface-variant">1 week at #1</div>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Don't Stop"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#3</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Hold Me"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1982)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#4</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Little Lies"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#4</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Big Love"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#5</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Sara"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1980)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#7</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Tusk"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1979)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#8</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Say You Love Me"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1976)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#9</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"You Make Loving Fun"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#9</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Go Your Own Way"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#10</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Rhiannon"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1976)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#11</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Gypsy"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1982)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#12</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Everywhere"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1988)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#14</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Seven Wonders"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#19</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Over My Head"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1975)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#20</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Think About Me"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1980)</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#20</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Dreams" (2020 re-entry)</span>
+<span class="font-body-md text-on-surface-variant ml-2">(2020)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#21</div>
+<div class="text-xs text-on-surface-variant">TikTok viral</div>
+</div>
+</div>
+<div class="flex justify-between items-center pb-3">
+<div>
+<span class="font-body-md font-bold">"Over My Head" / "Rhiannon"</span>
+<span class="font-body-md text-on-surface-variant ml-2">(1976)</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-primary">#1 AC</div>
+<div class="text-xs text-on-surface-variant">Easy Listening chart</div>
+</div>
+</div>
+<div class="pt-4 text-sm text-on-surface-variant italic border-t border-on-surface/10">
+<span>Fleetwood Mac charted 20+ singles on the Billboard Hot 100 between 1975–2020</span>
+</div>
+</div>
+</div>
+
+<!-- Billboard Touring & Boxscore -->
+<div class="md:col-span-2 bg-surface-container p-10 border border-on-surface/5">
+<h3 class="font-headline-sm text-headline-sm mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">stadium</span>
+Billboard Boxscore — Touring
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="border-r border-on-surface/10 pr-8">
+<div class="text-3xl font-display-lg text-primary">$150M</div>
+<p class="font-body-md text-on-surface-variant mt-2">An Evening with Fleetwood Mac (2018–2019)</p>
+<p class="text-xs text-on-surface-variant italic mt-1">Highest-grossing tour of the band's career</p>
+</div>
+<div class="border-r border-on-surface/10 pr-8">
+<div class="text-3xl font-display-lg text-primary">$100M+</div>
+<p class="font-body-md text-on-surface-variant mt-2">On With the Show Tour (2014–2015)</p>
+<p class="text-xs text-on-surface-variant italic mt-1">1.2M tickets sold worldwide</p>
+</div>
+<div>
+<div class="text-3xl font-display-lg text-primary">$80M</div>
+<p class="font-body-md text-on-surface-variant mt-2">The Dance Reunion Tour (1997)</p>
+<p class="text-xs text-on-surface-variant italic mt-1">89 dates across North America</p>
+</div>
+</div>
+</div>
+
+<!-- Billboard Year-End Charts -->
+<div class="md:col-span-2 bg-surface-container p-10 border border-on-surface/5">
+<h3 class="font-headline-sm text-headline-sm mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+Billboard Year-End Charts
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Rumours</span>
+<span class="font-body-md text-on-surface-variant ml-2">— Year-End Top Album</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#1 (1977)</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Fleetwood Mac</span>
+<span class="font-body-md text-on-surface-variant ml-2">— Year-End Top Album</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#5 (1977)</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">Rumours</span>
+<span class="font-body-md text-on-surface-variant ml-2">— Year-End Top Album</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#13 (1978)</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Dreams"</span>
+<span class="font-body-md text-on-surface-variant ml-2">— Year-End Hot 100</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#52 (1977)</div>
+</div>
+<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+<div>
+<span class="font-body-md font-bold">"Don't Stop"</span>
+<span class="font-body-md text-on-surface-variant ml-2">— Year-End Hot 100</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">#72 (1978)</div>
+</div>
+<div class="flex justify-between items-center pb-3">
+<div>
+<span class="font-body-md font-bold">Fleetwood Mac</span>
+<span class="font-body-md text-on-surface-variant ml-2">— Year-End Top Artist</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary">Top 10 (1977, 1978)</div>
+</div>
+<div class="pt-4 text-sm text-on-surface-variant italic border-t border-on-surface/10">
+<span>Rumours was the #1 album of 1977 on the Billboard Year-End chart — the only FM album to top this list</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chronological Legacy Timeline -->
+<section class="mb-32">
+<div class="flex flex-col md:flex-row items-baseline mb-16 gap-4">
+<h2 class="font-display-lg text-headline-md">Milestones</h2>
+<div class="flex-grow needle-line"></div>
+</div>
+<div class="space-y-24 max-w-4xl mx-auto">
+<!-- 1967 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1967</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Formation in London</h4>
+<p class="font-body-md text-on-surface-variant">Peter Green recruits Mick Fleetwood and John McVie from John Mayall's Bluesbreakers to form a new blues band. The name Fleetwood Mac is born, destined to outlast every founding member.</p>
+</div>
+</div>
+<!-- 1968 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1968</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Debut Album &amp; First Hits</h4>
+<p class="font-body-md text-on-surface-variant">The self-titled debut reaches #4 on the UK charts. Jeremy Spencer's slide guitar and Peter Green's songwriting establish the band as leaders of the British blues revival. "Albatross"—a haunting instrumental—becomes their first UK #1 single in January 1969.</p>
+</div>
+</div>
+<!-- 1969 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1969</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Peter Green's Peak</h4>
+<p class="font-body-md text-on-surface-variant">"Black Magic Woman", "Man of the World", and "Oh Well" cement Green's legacy as one of rock's greatest guitarists. <em>Then Play On</em> becomes the band's most adventurous record to date, blending blues with progressive and folk elements. Danny Kirwan joins as third guitarist.</p>
+</div>
+</div>
+<!-- 1970 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1970</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">The End of the Green Era</h4>
+<p class="font-body-md text-on-surface-variant">Peter Green's mental health collapses due to heavy LSD use. He walks offstage during a Munich concert on May 20 and never returns. Christine McVie (née Perfect) formally joins the band, bringing keyboards and a voice that will define the Mac sound for five decades.</p>
+</div>
+</div>
+<!-- 1971 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1971</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">American Expansion Begins</h4>
+<p class="font-body-md text-on-surface-variant">Jeremy Spencer vanishes during a Los Angeles tour, joining the Children of God cult. Bob Welch, an American guitarist, answers an ad in Melody Maker and joins the band. <em>Future Games</em> marks the first step toward the California soft-rock sound.</p>
+</div>
+</div>
+<!-- 1973 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1973</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">The Welch Era Matures</h4>
+<p class="font-body-md text-on-surface-variant">Danny Kirwan is fired after a breakdown on stage. Bob Welch becomes de facto leader. <em>Penguin</em> and <em>Mystery to Me</em> feature "Hypnotized", a FM radio staple that becomes the band's biggest US hit of the pre-Nicks era. Christine McVie emerges as a primary songwriter.</p>
+</div>
+</div>
+<!-- 1975 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1975</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">The California Transition</h4>
+<p class="font-body-md text-on-surface-variant">On New Year's Eve 1974, Mick Fleetwood invites Lindsey Buckingham and Stevie Nicks to join the band. The self-titled "White Album" reaches #1 on the Billboard 200, selling 5M+ copies in the US. "Rhiannon", "Over My Head", and "Say You Love Me" become instant classics. A new era begins.</p>
+</div>
+</div>
+<!-- 1977 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1977</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Rumours Perfection</h4>
+<p class="font-body-md text-on-surface-variant">Recorded amid divorce, betrayal, and heartbreak, <em>Rumours</em> spends 31 weeks at #1, wins the Grammy for Album of the Year, and sells over 40 million copies worldwide. "Dreams" becomes the band's only Billboard #1 single. Rolling Stone ranks it #7 on the 500 Greatest Albums of All Time. The album also receives 5 Grammy nominations across multiple categories, cementing its status as a critical and commercial benchmark.</p>
+</div>
+</div>
+<!-- 1979 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1979</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">The Tusk Experiment</h4>
+<p class="font-body-md text-on-surface-variant">Lindsey Buckingham's avant-garde double album <em>Tusk</em> sells 4 million copies—a commercial "disappointment" that becomes a cult masterpiece. The innovative use of a marching band on the title track and Buckingham's lo-fi production redefine the band's artistic ambition. NME later calls it "the only Fleetwood Mac album that matters."</p>
+</div>
+</div>
+<!-- 1982 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1982</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Mirage: The Return to #1</h4>
+<p class="font-body-md text-on-surface-variant">After solo projects dominate 1980-1981—Nicks' <em>Bella Donna</em> sells 4M copies, Buckingham releases <em>Law and Order</em>—the band reunites at Château d'Hérouville. <em>Mirage</em> hits #1 in the US and UK. "Hold Me", "Gypsy", and "Love in Store" dominate radio.</p>
+</div>
+</div>
+<!-- 1987 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1987</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Tango in the Night</h4>
+<p class="font-body-md text-on-surface-variant">A commercial resurgence in the digital age. <em>Tango in the Night</em> sells 15 million copies, becoming their second-bestselling album. "Big Love", "Everywhere", and "Little Lies" define late-80s pop-rock. Buckingham quits weeks before the tour; Burnette and Vito replace him.</p>
+</div>
+</div>
+<!-- 1990 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1990</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Behind the Mask &amp; Nicks' Exit</h4>
+<p class="font-body-md text-on-surface-variant"><em>Behind the Mask</em> debuts at #1 in the UK. Stevie Nicks leaves the band after the subsequent tour, frustrated with the direction. The classic era effectively ends.</p>
+</div>
+</div>
+<!-- 1997 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1997</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">The Dance: Worldwide Reunion</h4>
+<p class="font-body-md text-on-surface-variant">The five classic members reunite for a live album and TV special. <em>The Dance</em> debuts at #1 on the Billboard 200, selling 5M copies. The 89-date tour grosses $80M. "Silver Springs" is finally performed live, 21 years after its recording.</p>
+</div>
+</div>
+<!-- 1998 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1998</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Rock &amp; Roll Hall of Fame</h4>
+<p class="font-body-md text-on-surface-variant">Fleetwood Mac is inducted into the Rock and Roll Hall of Fame. Stevie Nicks delivers an emotional speech. The band performs "The Chain" and "Silver Springs" with the raw intensity of their prime.</p>
+</div>
+</div>
+<!-- 2003 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2003</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Say You Will</h4>
+<p class="font-body-md text-on-surface-variant">The first studio album in 15 years without Christine McVie. <em>Say You Will</em> debuts at #3 on the Billboard 200. The subsequent world tour—the band's longest ever with 120 shows—grosses $75M and proves Fleetwood Mac still commands stadiums.</p>
+</div>
+</div>
+<!-- 2014 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2014</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">On With the Show</h4>
+<p class="font-body-md text-on-surface-variant">Christine McVie rejoins after a decade away. The classic five-piece lineup tours together for the first time since 1998. The tour grosses over $100M with 1.2M tickets sold worldwide. Reviewers call it "triumphant" and "historic."</p>
+</div>
+</div>
+<!-- 2020 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2020</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Viral Renaissance &amp; Streaming Records</h4>
+<p class="font-body-md text-on-surface-variant">"Dreams" goes viral on TikTok, gaining 75M+ streams in a single week and re-entering the Billboard Hot 100 for the first time since 1977. The band's streaming catalog surges by 420% in Gen-Z demographics, surpassing <strong>1.2 billion Spotify streams</strong> across all releases. <em>Rumours</em> re-enters the Billboard 200 top 10, 43 years after its release, and reaches <strong>#1 on Billboard's Vinyl Albums chart</strong>.</p>
+</div>
+</div>
+<!-- 2022 -->
+<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2022</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-4">The Loss of Christine McVie</h4>
+<p class="font-body-md text-on-surface-variant">On November 30, Christine McVie passes away at 79. Tributes pour in from across the music world. Her compositions—"Songbird", "Don't Stop", "Everywhere", "Little Lies"—remain among the most beloved in the rock canon. The band's cumulative sales stand at over <strong>120 million records worldwide</strong>, solidifying their place among the ten best-selling music acts in history. The remaining members announce they will never perform again.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Longevity & Impact: Editorial Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center mb-32">
+<div class="relative">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up artistic photograph of a vintage turntable needle resting on a classic vinyl record. The lighting is warm and amber, casting long shadows. The style is minimalist and tactile, evoking a sense of nostalgia and the enduring physical quality of music from the 1970s." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRhxrs5A7Ny_R6QAO9ZI6OllIsEByYnwOo_Vwi6k7RcjiMNEFVFa-FZPPfCxabi6WdUM3MZlRaACoSk0F8NLJkjaEIy5Bei3X_0s3Rm0ciOR3I1fnN5gx3MicNzs7bz1wXmqNRHt43AWWex7YslZOCxyP0gPlIGdSTqFl4JGf7PEj1iB48yeN-witxzrfTxLTjI84kD2opmmKh4C63D1WYVvK1_W16QK7l1Ps4n8M0eJBaci6fi_t-1L_7-PkOJkJqd3d1k_YirgU">
+</div>
+<div class="absolute -bottom-8 -right-8 bg-surface p-6 shadow-lg border border-on-surface/5 hidden md:block">
+<p class="font-label-caps text-label-caps text-secondary">ESTABLISHED 1967</p>
+<p class="font-headline-sm">London, UK</p>
+</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">CULTURAL LEGACY</span>
+<h2 class="font-display-lg text-headline-md mb-8">The Alchemy of Five</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                    What sets Fleetwood Mac apart is not just the volume of sales, but the resonance of their narrative. Their achievements are rooted in the rare ability to translate intimate personal chaos into universal anthems.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    Generations later, their influence persists—from the viral resurgence of 'Dreams' on modern platforms to the countless contemporary artists who cite the Buckingham-Nicks era as their primary sonic inspiration. They represent the peak of collaborative rock: fragile, resilient, and eternally relevant.
+                </p>
+<a href="banda.html" class="bg-primary text-surface font-label-caps text-label-caps px-8 py-4 hover:opacity-80 transition-opacity inline-block no-underline">
+                    EXPLORE THE HISTORY
+                </a>
+</div>
+</section>
+<!-- Auth Modal -->
+<div id="auth-modal" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center hidden">
+  <div class="bg-surface p-10 max-w-md w-full mx-4 relative">
+    <button id="auth-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer bg-transparent border-0 text-xl">&times;</button>
+    <h3 class="font-display-lg text-headline-sm mb-6" id="auth-title">Log In</h3>
+    <form id="auth-form">
+      <div id="auth-email-group" class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">EMAIL</label>
+        <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PASSWORD</label>
+        <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div id="auth-confirm-group" class="mb-6 hidden">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CONFIRM PASSWORD</label>
+        <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors">
+      </div>
+      <p id="auth-error" class="font-body-md text-error mb-4 hidden" style="color:#ba1a1a"></p>
+      <button type="submit" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-on-surface-variant transition-colors">LOG IN</button>
+    </form>
+    <p class="font-body-md text-center mt-4">
+      <span class="text-on-surface-variant" id="auth-toggle-text">Don't have an account?</span>
+      <button id="auth-toggle-btn" class="bg-transparent border-0 text-secondary underline font-label-caps text-label-caps cursor-pointer">SIGN UP</button>
+    </p>
+  </div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-gutter border-t border-on-surface/5 bg-surface-container">
+<div class="flex flex-col items-center py-12 px-margin-desktop max-w-[1200px] mx-auto text-center">
+<div class="font-display-lg text-headline-sm text-primary mb-8">THE MOON &amp; THE MUSIC</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="index.html">History</a>
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="eventos.html">Tour Dates</a>
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="#">Legal</a>
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="#">Contact</a>
+</div>
+<p class="font-label-caps text-label-caps text-secondary tracking-widest">
+                © 2026-2027 The Moon &amp; The Music is an unofficial, non-profit fan directory. Track rankings are for editorial and entertainment purposes only. Chart data and rankings are sourced from Billboard and Rolling Stone for historical, educational, and editorial commentary purposes only. This website is a fan-run community project and is not affiliated with, endorsed by, or connected to any original musical artists, record labels, Ticketmaster, Songkick, Billboard, Rolling Stone, or any featured tribute bands.
+            </p>
+</div>
+</footer>
+<script>
+        // Rolling Stone compact card → switch tab + scroll
+        document.getElementById('rolling-stone-card-btn')?.addEventListener('click', function(e) {
+            const rsTab = document.querySelector('.source-tab[data-source="rolling-stone"]');
+            if (rsTab) rsTab.click();
+        });
+
+        // Source tab switching (Rolling Stone / Billboard) — pill style
+        const sourceActiveClass = 'bg-primary text-on-primary border-primary';
+        const sourceInactiveClass = 'bg-transparent text-on-surface-variant border-on-surface/20';
+        document.querySelectorAll('.source-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const source = this.getAttribute('data-source');
+                document.querySelectorAll('.source-tab').forEach(t => {
+                    t.className = `source-tab font-label-caps text-label-caps px-5 py-2 border transition-all ${sourceInactiveClass}`;
+                    t.dataset.active = 'false';
+                });
+                this.className = `source-tab font-label-caps text-label-caps px-5 py-2 border transition-all ${sourceActiveClass}`;
+                this.dataset.active = 'true';
+                document.querySelectorAll('.source-section').forEach(section => {
+                    if (section.getAttribute('data-source') === source) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Subtle micro-interaction for cards
+        document.querySelectorAll('.bg-surface-container').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // "Needle" Scroll Interaction
+        window.addEventListener('scroll', () => {
+            const needleLines = document.querySelectorAll('.needle-line');
+            const scrollPos = window.scrollY;
+            needleLines.forEach(line => {
+                const rect = line.getBoundingClientRect();
+                if(rect.top < window.innerHeight && rect.bottom > 0) {
+                    const width = Math.min(100, ( (window.innerHeight - rect.top) / window.innerHeight) * 100);
+                    // This could be used for a progress effect if needed
+                }
+            });
+        });
+
+        // ── Auth System ──
+        const AUTH_KEY = 'mm_users';
+        const SESSION_KEY = 'mm_session';
+        function getUsers() {
+          try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
+        }
+        function saveUsers(users) {
+          localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+        }
+        function isLoggedIn() {
+          return !!localStorage.getItem(SESSION_KEY);
+        }
+        function getLoggedInEmail() {
+          return localStorage.getItem(SESSION_KEY) || '';
+        }
+        function toggleAuthModal(show, mode) {
+          const modal = document.getElementById('auth-modal');
+          if (!modal) return;
+          modal.classList.toggle('hidden', !show);
+          if (!show) return;
+          const title = document.getElementById('auth-title');
+          const submitBtn = document.querySelector('#auth-form button[type="submit"]');
+          const confirmGroup = document.getElementById('auth-confirm-group');
+          const toggleText = document.getElementById('auth-toggle-text');
+          const toggleBtn = document.getElementById('auth-toggle-btn');
+          const error = document.getElementById('auth-error');
+          error.classList.add('hidden');
+          document.getElementById('auth-form').reset();
+          if (mode === 'signup') {
+            title.textContent = 'Sign Up';
+            submitBtn.textContent = 'SIGN UP';
+            confirmGroup.classList.remove('hidden');
+            toggleText.textContent = 'Already have an account?';
+            toggleBtn.textContent = 'LOG IN';
+            toggleBtn.dataset.mode = 'login';
+          } else {
+            title.textContent = 'Log In';
+            submitBtn.textContent = 'LOG IN';
+            confirmGroup.classList.add('hidden');
+            toggleText.textContent = "Don't have an account?";
+            toggleBtn.textContent = 'SIGN UP';
+            toggleBtn.dataset.mode = 'signup';
+          }
+        }
+        document.getElementById('auth-modal')?.addEventListener('click', function(e) {
+          if (e.target === this) toggleAuthModal(false);
+        });
+        document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
+        document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
+          const mode = this.dataset.mode || 'login';
+          toggleAuthModal(true, mode);
+        });
+        document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('auth-email').value.trim().toLowerCase();
+          const password = document.getElementById('auth-password').value;
+          const error = document.getElementById('auth-error');
+          const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            error.textContent = 'Please enter a valid email address.';
+            error.classList.remove('hidden');
+            return;
+          }
+          if (password.length < 4) {
+            error.textContent = 'Password must be at least 4 characters.';
+            error.classList.remove('hidden');
+            return;
+          }
+          const users = getUsers();
+          if (isSignup) {
+            const confirm = document.getElementById('auth-confirm').value;
+            if (password !== confirm) {
+              error.textContent = 'Passwords do not match.';
+              error.classList.remove('hidden');
+              return;
+            }
+            if (users[email]) {
+              error.textContent = 'An account with this email already exists.';
+              error.classList.remove('hidden');
+              return;
+            }
+            users[email] = { email, password };
+            saveUsers(users);
+            localStorage.setItem(SESSION_KEY, email);
+            error.classList.add('hidden');
+            toggleAuthModal(false);
+            updateAuthUI();
+          } else {
+            if (!users[email]) {
+              error.textContent = 'No account found with this email.';
+              error.classList.remove('hidden');
+              return;
+            }
+            if (users[email].password !== password) {
+              error.textContent = 'Incorrect password.';
+              error.classList.remove('hidden');
+              return;
+            }
+            localStorage.setItem(SESSION_KEY, email);
+            error.classList.add('hidden');
+            toggleAuthModal(false);
+            updateAuthUI();
+          }
+        });
+        function updateAuthUI() {
+          const loggedIn = isLoggedIn();
+          const loginBtn = document.getElementById('nav-login-btn');
+          if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
+        }
+        document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+        updateAuthUI();
+    </script>
+
+</body></html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fdf8f8",
+                        "secondary": "#5e604d",
+                        "surface-container-low": "#f7f3f2",
+                        "on-tertiary-fixed-variant": "#484828",
+                        "tertiary-fixed-dim": "#cac99f",
+                        "tertiary": "#60603e",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#e1e1c9",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-high": "#ebe7e6",
+                        "on-tertiary-fixed": "#1d1d03",
+                        "on-secondary-fixed-variant": "#474836",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#858383",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e6e5b9",
+                        "surface-container": "#f1edec",
+                        "on-secondary-container": "#636451",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#ddd9d8",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "primary": "#000000",
+                        "secondary-fixed": "#e4e4cc",
+                        "surface-container-highest": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "primary-fixed": "#e5e2e1",
+                        "outline": "#747878",
+                        "inverse-on-surface": "#f4f0ef",
+                        "tertiary-container": "#aead85",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-container": "#414122",
+                        "on-primary-fixed-variant": "#474746",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "surface-bright": "#fdf8f8",
+                        "background": "#fdf8f8",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface text-on-surface font-body-md paper-grain">
+<nav class="fixed top-0 left-0 w-full z-40 border-b border-on-surface/10 bg-surface/90 backdrop-blur-sm">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-20">
+<a href="index.html" class="flex items-center gap-3 no-underline">
+                <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
+                <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
+            </a>
+<div class="hidden md:flex gap-8 items-center"><a href="banda.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer">The Band</a>
+<a href="albumes.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer">Discography</a>
+<a href="canciones.html" class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300 cursor-pointer">The Ranking</a>
+<a href="eventos.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer">Events</a>
+<a href="logros.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 cursor-pointer">Achievements</a></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer active:opacity-70 transition-opacity">music_note</span>
+<button class="md:hidden material-symbols-outlined">menu</button>
+</div>
+</div>
+<button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
+</nav>
+<header class="pt-40 pb-20 max-w-[1200px] mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-secondary block mb-4">LEGACY METRICS</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-primary leading-[0.9]">The Definitive Ranking.</h1>
+<p class="font-body-lg text-body-lg mt-8 text-on-surface-variant leading-relaxed">
+                    A data-driven curation of the most influential tracks from the complete Fleetwood Mac catalog. Calculated by global streaming metrics and cultural resonance.
+                </p>
+</div>
+<div class="flex flex-col items-end">
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-secondary">TOTAL STREAMS</span>
+<div class="font-headline-md text-headline-md text-primary mt-1">16.3B+</div>
+</div>
+</div>
+</div>
+<div class="w-full h-[1px] bg-on-surface/10 mt-12">
+  <div class="h-full bg-primary transition-all duration-1000 ease-in-out" id="page-loader" style="width:0%"></div>
+</div>
+</header>
+<main class="pb-32 max-w-[1200px] mx-auto px-margin-desktop">
+<div id="ranking-info" class="flex justify-between items-center mb-8">
+<span id="song-count" class="font-label-caps text-label-caps text-secondary"></span>
+<span id="toggle-label" class="font-label-caps text-label-caps text-secondary"></span>
+</div>
+<div class="relative mb-8">
+<input id="song-search" type="search" placeholder="Search songs, albums, writers..." class="w-full bg-surface-container-low border border-outline/30 px-5 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/50 outline-none focus:border-primary transition-colors">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 pointer-events-none">search</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-on-surface/20">
+<th class="py-6 font-label-caps text-label-caps text-secondary w-16">RANK</th>
+<th class="py-6 font-label-caps text-label-caps text-secondary">SONG TITLE</th>
+<th class="py-6 font-label-caps text-label-caps text-secondary hidden md:table-cell">ALBUM</th>
+<th class="py-6 font-label-caps text-label-caps text-secondary text-right">STREAMS</th>
+</tr>
+</thead>
+<tbody id="ranking-body" class="divide-y divide-on-surface/5"></tbody>
+</table>
+</div>
+<div class="mt-20 flex justify-center">
+<button id="toggle-btn" class="px-12 py-4 bg-primary text-on-primary font-label-caps text-label-caps tracking-[0.2em] hover:opacity-90 transition-all active:scale-95">VIEW ALL HISTORICAL DATA</button>
+</div>
+</main>
+<!-- Auth Modal -->
+<div id="auth-modal" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center hidden">
+  <div class="bg-surface p-10 max-w-md w-full mx-4 relative">
+    <button id="auth-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer bg-transparent border-0 text-xl">&times;</button>
+    <h3 class="font-display-lg text-headline-sm mb-6" id="auth-title">Log In</h3>
+    <form id="auth-form">
+      <div id="auth-email-group" class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">EMAIL</label>
+        <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PASSWORD</label>
+        <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div id="auth-confirm-group" class="mb-6 hidden">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CONFIRM PASSWORD</label>
+        <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors">
+      </div>
+      <p id="auth-error" class="font-body-md text-error mb-4 hidden" style="color:#ba1a1a"></p>
+      <button type="submit" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-on-surface-variant transition-colors">LOG IN</button>
+    </form>
+    <p class="font-body-md text-center mt-4">
+      <span class="text-on-surface-variant" id="auth-toggle-text">Don't have an account?</span>
+      <button id="auth-toggle-btn" class="bg-transparent border-0 text-secondary underline font-label-caps text-label-caps cursor-pointer">SIGN UP</button>
+    </p>
+  </div>
+</div>
+<section class="bg-surface-container-low py-32 border-t border-on-surface/5">
+<div class="max-w-[1200px] mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="border-l border-on-surface/10 pl-8">
+<span class="font-label-caps text-label-caps text-secondary">AIRPLAY STABILITY</span>
+<h4 class="font-headline-sm text-headline-sm mt-4">99th Percentile</h4>
+<p class="font-body-md text-on-surface-variant mt-4">Fleetwood Mac tracks maintain higher recurrent airplay than 99% of contemporary 1970s releases.</p>
+</div>
+<div class="border-l border-on-surface/10 pl-8">
+<span class="font-label-caps text-label-caps text-secondary">GEN-Z RESONANCE</span>
+<h4 class="font-headline-sm text-headline-sm mt-4">+420% Growth</h4>
+<p class="font-body-md text-on-surface-variant mt-4">Streaming metrics among the 18-24 demographic have seen a significant resurgence via viral digital media.</p>
+</div>
+<div class="border-l border-on-surface/10 pl-8">
+<span class="font-label-caps text-label-caps text-secondary">AESTHETIC INFLUENCE</span>
+<h4 class="font-headline-sm text-headline-sm mt-4">Eternal Return</h4>
+<p class="font-body-md text-on-surface-variant mt-4">The visual and sonic 'Rumours' aesthetic remains the gold standard for tactile editorial production.</p>
+</div>
+</div>
+</section>
+<footer class="bg-surface-container border-t border-on-surface/5">
+<div class="flex flex-col items-center py-12 px-margin-desktop max-w-[1200px] mx-auto text-center">
+<span class="font-display-lg text-headline-sm text-primary mb-6">THE MOON &amp; THE MUSIC</span>
+<div class="flex gap-8 mb-8">
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary underline transition-all" href="index.html">History</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary underline transition-all" href="eventos.html">Tour Dates</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary underline transition-all" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary underline transition-all" href="#">Contact</a>
+</div>
+<p class="font-label-caps text-label-caps text-secondary max-w-lg leading-loose">
+                © 2026-2027 The Moon &amp; The Music is an unofficial, non-profit fan directory. Track rankings are for editorial and entertainment purposes only. Chart data and rankings are sourced from Billboard and Rolling Stone for historical, educational, and editorial commentary purposes only. This website is a fan-run community project and is not affiliated with, endorsed by, or connected to any original musical artists, record labels, Ticketmaster, Songkick, Billboard, Rolling Stone, or any featured tribute bands.
+            </p>
+</div>
+</footer>
+<script>
+const allSongs = [
+  {t:"Dreams",a:"Rumours",w:"Stevie Nicks",y:1977,s:2788259918},
+  {t:"The Chain",a:"Rumours",w:"Fleetwood Mac",y:1977,s:1803958022},
+  {t:"Everywhere",a:"Tango in the Night",w:"Christine McVie",y:1987,s:1481107856},
+  {t:"Go Your Own Way",a:"Rumours",w:"Lindsey Buckingham",y:1977,s:1413310464},
+  {t:"Landslide",a:"Fleetwood Mac (1975)",w:"Stevie Nicks",y:1975,s:1135320386},
+  {t:"Little Lies",a:"Tango in the Night",w:"Christine McVie",y:1987,s:720255634},
+  {t:"Rhiannon",a:"Fleetwood Mac (1975)",w:"Stevie Nicks",y:1975,s:652753145},
+  {t:"Don't Stop",a:"Rumours",w:"Christine McVie",y:1977,s:563176509},
+  {t:"Silver Springs",a:"Rumours",w:"Stevie Nicks",y:1977,s:521401387},
+  {t:"Gypsy",a:"Mirage",w:"Stevie Nicks",y:1982,s:415685316},
+  {t:"Say You Love Me",a:"Fleetwood Mac (1975)",w:"Christine McVie",y:1975,s:331308356},
+  {t:"Second Hand News",a:"Rumours",w:"Lindsey Buckingham",y:1977,s:209588159},
+  {t:"You Make Loving Fun",a:"Rumours",w:"Christine McVie",y:1977,s:209080391},
+  {t:"Songbird",a:"Rumours",w:"Christine McVie",y:1977,s:180841128},
+  {t:"Sara",a:"Tusk",w:"Stevie Nicks",y:1979,s:172634573},
+  {t:"Big Love",a:"Tango in the Night",w:"Lindsey Buckingham",y:1987,s:159462504},
+  {t:"Gold Dust Woman",a:"Rumours",w:"Stevie Nicks",y:1977,s:142172218},
+  {t:"Never Going Back Again",a:"Rumours",w:"Lindsey Buckingham",y:1977,s:134010460},
+  {t:"Hold Me",a:"Mirage",w:"Christine McVie",y:1982,s:127647829},
+  {t:"Seven Wonders",a:"Tango in the Night",w:"Stevie Nicks",y:1987,s:127531117},
+  {t:"Tusk",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:116471711},
+  {t:"Oh Well",a:"Then Play On",w:"Peter Green",y:1969,s:105840565},
+  {t:"Albatross",a:"Non-album single",w:"Peter Green",y:1968,s:105270310},
+  {t:"Black Magic Woman",a:"Fleetwood Mac (1968)",w:"Peter Green",y:1968,s:61790502},
+  {t:"Man of the World",a:"Non-album single",w:"Peter Green",y:1969,s:56121800},
+  {t:"Dreams (Live)",a:"The Dance",w:"Stevie Nicks",y:1997,s:54789348},
+  {t:"Sisters of the Moon",a:"Tusk",w:"Stevie Nicks",y:1979,s:53711255},
+  {t:"Over My Head",a:"Fleetwood Mac (1975)",w:"Christine McVie",y:1975,s:51301754},
+  {t:"I'm So Afraid",a:"Fleetwood Mac (1975)",w:"Lindsey Buckingham",y:1975,s:45978691},
+  {t:"Blue Letter",a:"Fleetwood Mac (1975)",w:"Curtis/Fleisher",y:1975,s:43978691},
+  {t:"Crystal",a:"Fleetwood Mac (1975)",w:"Stevie Nicks",y:1975,s:42537702},
+  {t:"Monday Morning",a:"Fleetwood Mac (1975)",w:"Lindsey Buckingham",y:1975,s:41351356},
+  {t:"Warm Ways",a:"Fleetwood Mac (1975)",w:"Christine McVie",y:1975,s:32693279},
+  {t:"World Turning",a:"Fleetwood Mac (1975)",w:"Christine McVie",y:1975,s:32583113},
+  {t:"Think About Me",a:"Tusk",w:"Christine McVie",y:1979,s:30277089},
+  {t:"The Green Manalishi",a:"Non-album single",w:"Peter Green",y:1970,s:28531625},
+  {t:"Storms",a:"Tusk",w:"Stevie Nicks",y:1979,s:27266439},
+  {t:"Caroline",a:"Tango in the Night",w:"Lindsey Buckingham",y:1987,s:27228492},
+  {t:"Family Man",a:"Tango in the Night",w:"Lindsey Buckingham",y:1987,s:27132722},
+  {t:"Mystified",a:"Tango in the Night",w:"Christine McVie",y:1987,s:25487621},
+  {t:"Isn't It Midnight",a:"Tango in the Night",w:"Christine McVie",y:1987,s:24265501},
+  {t:"Tango in the Night",a:"Tango in the Night",w:"Lindsey Buckingham",y:1987,s:24365501},
+  {t:"Save Me",a:"Behind the Mask",w:"Christine McVie",y:1990,s:22735296},
+  {t:"When I See You Again",a:"Tango in the Night",w:"Stevie Nicks",y:1987,s:21270152},
+  {t:"You and I, Part II",a:"Tango in the Night",w:"Lindsey Buckingham",y:1987,s:20912372},
+  {t:"Love in Store",a:"Mirage",w:"Christine McVie",y:1982,s:19805808},
+  {t:"Oh Diane",a:"Mirage",w:"Lindsey Buckingham",y:1982,s:19226851},
+  {t:"Sugar Daddy",a:"Fleetwood Mac (1975)",w:"Christine McVie",y:1975,s:19437873},
+  {t:"I Don't Want to Know",a:"Rumours",w:"Stevie Nicks",y:1977,s:18837437},
+  {t:"That's Alright",a:"Mirage",w:"Stevie Nicks",y:1982,s:18401871},
+  {t:"Straight Back",a:"Mirage",w:"Stevie Nicks",y:1982,s:16755952},
+  {t:"Can't Go Back",a:"Mirage",w:"Lindsey Buckingham",y:1982,s:15748953},
+  {t:"Only Over You",a:"Mirage",w:"Christine McVie",y:1982,s:15249172},
+  {t:"Eyes of the World",a:"Mirage",w:"Lindsey Buckingham",y:1982,s:14239387},
+  {t:"Oh Daddy",a:"Rumours",w:"Christine McVie",y:1977,s:13643026},
+  {t:"Wish You Were Here",a:"Mirage",w:"Christine McVie",y:1982,s:13480383},
+  {t:"Book of Love",a:"Mirage",w:"Christine McVie",y:1982,s:13135062},
+  {t:"Over & Over",a:"Tusk",w:"Christine McVie",y:1979,s:12602715},
+  {t:"The Ledge",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:12456688},
+  {t:"Save Me a Place",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:12043368},
+  {t:"What Makes You Think You're the One",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:11960741},
+  {t:"That's All for Everyone",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:11607671},
+  {t:"Not That Funny",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:11145972},
+  {t:"Angel",a:"Tusk",w:"Stevie Nicks",y:1979,s:11084552},
+  {t:"That's Enough for Me",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:11080597},
+  {t:"Welcome to the Room... Sara",a:"Tango in the Night",w:"Stevie Nicks",y:1987,s:10981523},
+  {t:"Brown Eyes",a:"Tusk",w:"Christine McVie",y:1979,s:10312544},
+  {t:"Never Make Me Cry",a:"Tusk",w:"Christine McVie",y:1979,s:10105544},
+  {t:"I Know I'm Not Wrong",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:10042815},
+  {t:"Honey Hi",a:"Tusk",w:"Christine McVie",y:1979,s:9849275},
+  {t:"Beautiful Child",a:"Tusk",w:"Stevie Nicks",y:1979,s:9246752},
+  {t:"Walk a Thin Line",a:"Tusk",w:"Lindsey Buckingham",y:1979,s:8974561},
+  {t:"Never Forget",a:"Tusk",w:"Christine McVie",y:1979,s:8231564},
+  {t:"Hypnotized",a:"Mystery to Me",w:"Bob Welch",y:1973,s:7852341},
+  {t:"Sentimental Lady",a:"Bare Trees",w:"Bob Welch",y:1972,s:7654321},
+  {t:"Rattlesnake Shake",a:"Then Play On",w:"Peter Green",y:1969,s:7234567},
+  {t:"Station Man",a:"Kiln House",w:"Welch/Spencer",y:1970,s:6890123},
+  {t:"Future Games",a:"Future Games",w:"Bob Welch",y:1971,s:6543789},
+  {t:"Emerald Eyes",a:"Mystery to Me",w:"Bob Welch",y:1973,s:6234567},
+  {t:"Jewel Eyed Judy",a:"Kiln House",w:"Welch/Spencer",y:1970,s:5987654},
+  {t:"Bare Trees",a:"Bare Trees",w:"Danny Kirwan",y:1972,s:5678234},
+  {t:"Peacekeeper",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:5345678},
+  {t:"Say You Will",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:5123456},
+  {t:"Woman of 1000 Years",a:"Future Games",w:"Danny Kirwan",y:1971,s:4934567},
+  {t:"For Your Love",a:"Mystery to Me",w:"Bob Welch",y:1973,s:4765432},
+  {t:"Remember Me",a:"Penguin",w:"Christine McVie",y:1973,s:4543210},
+  {t:"Child of Mine",a:"Bare Trees",w:"Christine McVie",y:1972,s:4345678},
+  {t:"Morning Rain",a:"Future Games",w:"Christine McVie",y:1971,s:4123456},
+  {t:"Heroes Are Hard to Find",a:"Heroes Are Hard to Find",w:"Christine McVie",y:1974,s:3987654},
+  {t:"Miles Away",a:"Mystery to Me",w:"Bob Welch",y:1973,s:3765432},
+  {t:"Did You Ever Love Me",a:"Penguin",w:"Bob Welch",y:1973,s:3543210},
+  {t:"Coming Your Way",a:"Then Play On",w:"Danny Kirwan",y:1969,s:3345678},
+  {t:"Show Biz Blues",a:"Then Play On",w:"Peter Green",y:1969,s:3123456},
+  {t:"This Is the Rock",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:2987654},
+  {t:"My Heart Beat Like a Hammer",a:"Fleetwood Mac (1968)",w:"Jeremy Spencer",y:1968,s:2876543},
+  {t:"Shake Your Moneymaker",a:"Fleetwood Mac (1968)",w:"Elmore James",y:1968,s:2765432},
+  {t:"Need Your Love So Bad",a:"Non-album single",w:"Little Willie John",y:1968,s:2678912},
+  {t:"I Loved Another Woman",a:"Fleetwood Mac (1968)",w:"Peter Green",y:1968,s:2543210},
+  {t:"Long Grey Mare",a:"Fleetwood Mac (1968)",w:"Peter Green",y:1968,s:2345678},
+  {t:"Stop Messin' Round",a:"Mr. Wonderful",w:"Peter Green",y:1968,s:2234567},
+  {t:"Dust My Broom",a:"Mr. Wonderful",w:"Elmore James",y:1968,s:2123456},
+  {t:"Love That Burns",a:"Mr. Wonderful",w:"Peter Green",y:1968,s:2012345},
+  {t:"Rollin' Man",a:"Mr. Wonderful",w:"Peter Green",y:1968,s:1987654},
+  {t:"Coming Home",a:"Mr. Wonderful",w:"Elmore James",y:1968,s:1876543},
+  {t:"Evenin' Boogie",a:"Mr. Wonderful",w:"Jeremy Spencer",y:1968,s:1765432},
+  {t:"Lazy Poker Blues",a:"Mr. Wonderful",w:"Peter Green",y:1968,s:1654321},
+  {t:"I've Lost My Baby",a:"Mr. Wonderful",w:"Jeremy Spencer",y:1968,s:1543210},
+  {t:"Trying So Hard to Forget",a:"Mr. Wonderful",w:"Peter Green",y:1968,s:1432109},
+  {t:"Doctor Brown",a:"Mr. Wonderful",w:"J.T. Brown",y:1968,s:1321098},
+  {t:"If You Be My Baby",a:"Mr. Wonderful",w:"Peter Green",y:1968,s:1210987},
+  {t:"Need Your Love Tonight",a:"Mr. Wonderful",w:"Elmore James",y:1968,s:1109876},
+  {t:"Merry Go Round",a:"Fleetwood Mac (1968)",w:"Peter Green",y:1968,s:1098765},
+  {t:"Hellhound on My Trail",a:"Fleetwood Mac (1968)",w:"Robert Johnson",y:1968,s:987654},
+  {t:"Looking for Somebody",a:"Fleetwood Mac (1968)",w:"Peter Green",y:1968,s:876543},
+  {t:"No Place to Go",a:"Fleetwood Mac (1968)",w:"Elmore James",y:1968,s:765432},
+  {t:"My Baby's Good to Me",a:"Fleetwood Mac (1968)",w:"Jeremy Spencer",y:1968,s:654321},
+  {t:"Cold Black Night",a:"Fleetwood Mac (1968)",w:"Jeremy Spencer",y:1968,s:543210},
+  {t:"The World Keeps on Turning",a:"Fleetwood Mac (1968)",w:"Peter Green",y:1968,s:432109},
+  {t:"Got to Move",a:"Fleetwood Mac (1968)",w:"Elmore James",y:1968,s:321098},
+  {t:"Closing My Eyes",a:"Then Play On",w:"Peter Green",y:1969,s:2987654},
+  {t:"Fighting for Madge",a:"Then Play On",w:"Jeremy Spencer",y:1969,s:2890123},
+  {t:"Underway",a:"Then Play On",w:"Peter Green",y:1969,s:2765432},
+  {t:"One Sunny Day",a:"Then Play On",w:"Danny Kirwan",y:1969,s:2654321},
+  {t:"Although the Sun Is Shining",a:"Then Play On",w:"Danny Kirwan",y:1969,s:2543210},
+  {t:"Without You",a:"Then Play On",w:"Danny Kirwan",y:1969,s:2432109},
+  {t:"Searching for Madge",a:"Then Play On",w:"Peter Green",y:1969,s:2321098},
+  {t:"My Dream",a:"Then Play On",w:"Peter Green",y:1969,s:2210987},
+  {t:"Like Crying",a:"Then Play On",w:"Danny Kirwan",y:1969,s:2109876},
+  {t:"Before the Beginning",a:"Then Play On",w:"Peter Green",y:1969,s:1987654},
+  {t:"When You Say",a:"Then Play On",w:"Danny Kirwan",y:1969,s:1876543},
+  {t:"Tell Me All the Things You Do",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1876543},
+  {t:"Buddy's Song",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1765432},
+  {t:"One Together",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1654321},
+  {t:"Earl of the Mountain",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1543210},
+  {t:"Hi Ho Silver",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1432109},
+  {t:"Blood on the Floor",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1321098},
+  {t:"Mission Bell",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1210987},
+  {t:"Purple Dancer",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:1109876},
+  {t:"Don't Be Cruel",a:"Kiln House",w:"Jeremy Spencer",y:1970,s:998765},
+  {t:"Sands of Time",a:"Future Games",w:"Bob Welch",y:1971,s:1654321},
+  {t:"What a Shame",a:"Future Games",w:"Bob Welch",y:1971,s:1543210},
+  {t:"Sometimes It's a Bitch",a:"Future Games",w:"Bob Welch",y:1971,s:1432109},
+  {t:"Lay It All Down",a:"Future Games",w:"Bob Welch",y:1971,s:1321098},
+  {t:"Show Me a Smile",a:"Future Games",w:"Bob Welch",y:1971,s:1210987},
+  {t:"The Ghost",a:"Bare Trees",w:"Bob Welch",y:1972,s:1543210},
+  {t:"Homeward Bound",a:"Bare Trees",w:"Christine McVie",y:1972,s:1432109},
+  {t:"Sunny Side of Heaven",a:"Bare Trees",w:"Danny Kirwan",y:1972,s:1321098},
+  {t:"Danny's Chanting",a:"Bare Trees",w:"Danny Kirwan",y:1972,s:1210987},
+  {t:"Spare Me a Little of Your Love",a:"Bare Trees",w:"Christine McVie",y:1972,s:1109876},
+  {t:"Dust",a:"Bare Trees",w:"Bob Welch",y:1972,s:998765},
+  {t:"Thoughts on a Grey Day",a:"Bare Trees",w:"Christine McVie",y:1972,s:887654},
+  {t:"Bright Fire",a:"Penguin",w:"Bob Welch",y:1973,s:1321098},
+  {t:"Dissatisfied",a:"Penguin",w:"Christine McVie",y:1973,s:1210987},
+  {t:"(I'm a) Road Runner",a:"Penguin",w:"Jeremy Spencer",y:1973,s:1109876},
+  {t:"The Derelict",a:"Penguin",w:"Bob Welch",y:1973,s:998765},
+  {t:"Revelation",a:"Penguin",w:"Bob Welch",y:1973,s:887654},
+  {t:"Night Watch",a:"Penguin",w:"Bob Welch",y:1973,s:776543},
+  {t:"Caught in the Rain",a:"Penguin",w:"Bob Welch",y:1973,s:665432},
+  {t:"Beloved Wife",a:"Mystery to Me",w:"Bob Welch",y:1973,s:765432},
+  {t:"The City",a:"Mystery to Me",w:"Bob Welch",y:1973,s:654321},
+  {t:"Somebody",a:"Mystery to Me",w:"Bob Welch",y:1973,s:543210},
+  {t:"The Way I Feel",a:"Mystery to Me",w:"Bob Welch",y:1973,s:432109},
+  {t:"Why",a:"Mystery to Me",w:"Christine McVie",y:1973,s:321098},
+  {t:"Keep On Going",a:"Mystery to Me",w:"Bob Welch",y:1973,s:298765},
+  {t:"Forever",a:"Mystery to Me",w:"Bob Welch",y:1973,s:187654},
+  {t:"Just Crazy Love",a:"Mystery to Me",w:"Christine McVie",y:1973,s:176543},
+  {t:"Good Things (Come to Those Who Wait)",a:"Mystery to Me",w:"Bob Welch",y:1973,s:165432},
+  {t:"Coming Home",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:987654},
+  {t:"Angel",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:876543},
+  {t:"Bermuda Triangle",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:765432},
+  {t:"Come, Little Donkey",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:654321},
+  {t:"Bad Loser",a:"Heroes Are Hard to Find",w:"Christine McVie",y:1974,s:543210},
+  {t:"She's Changing Me",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:432109},
+  {t:"Silver Heels",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:321098},
+  {t:"River of Tears",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:298765},
+  {t:"Prove Your Love",a:"Heroes Are Hard to Find",w:"Christine McVie",y:1974,s:187654},
+  {t:"Born Enchanter",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:176543},
+  {t:"Safe Harbour",a:"Heroes Are Hard to Find",w:"Bob Welch",y:1974,s:165432},
+  {t:"Skies the Limit",a:"Behind the Mask",w:"Christine McVie",y:1990,s:987654},
+  {t:"Love Is Dangerous",a:"Behind the Mask",w:"Stevie Nicks",y:1990,s:876543},
+  {t:"In the Back of My Mind",a:"Behind the Mask",w:"Stevie Nicks",y:1990,s:765432},
+  {t:"Do You Know",a:"Behind the Mask",w:"Christine McVie",y:1990,s:654321},
+  {t:"Affairs of the Heart",a:"Behind the Mask",w:"Stevie Nicks",y:1990,s:543210},
+  {t:"When the Sun Goes Down",a:"Behind the Mask",w:"Lindsey Buckingham",y:1990,s:432109},
+  {t:"Behind the Mask",a:"Behind the Mask",w:"Christine McVie",y:1990,s:321098},
+  {t:"Stand on the Rock",a:"Behind the Mask",w:"Lindsey Buckingham",y:1990,s:298765},
+  {t:"Hard Feelings",a:"Behind the Mask",w:"Stevie Nicks",y:1990,s:187654},
+  {t:"Freedom",a:"Behind the Mask",w:"Stevie Nicks",y:1990,s:176543},
+  {t:"When It Comes to Love",a:"Behind the Mask",w:"Christine McVie",y:1990,s:165432},
+  {t:"The Second Time",a:"Behind the Mask",w:"Lindsey Buckingham",y:1990,s:154321},
+  {t:"Talkin' Heart to Heart",a:"Time",w:"Christine McVie",y:1995,s:654321},
+  {t:"Hollywood (Some Other Kind of Town)",a:"Time",w:"Bekka Bramlett",y:1995,s:543210},
+  {t:"I Do",a:"Time",w:"Christine McVie",y:1995,s:432109},
+  {t:"Nothing Without You",a:"Time",w:"Bekka Bramlett",y:1995,s:321098},
+  {t:"Dreamin' the Dream",a:"Time",w:"Bekka Bramlett",y:1995,s:298765},
+  {t:"So Hard to Leave",a:"Time",w:"Billy Burnette",y:1995,s:187654},
+  {t:"Winds of Change",a:"Time",w:"Billy Burnette",y:1995,s:176543},
+  {t:"I'll Be Over You",a:"Time",w:"Billy Burnette",y:1995,s:165432},
+  {t:"These Strange Times",a:"Time",w:"Mick Fleetwood",y:1995,s:154321},
+  {t:"Temporary One",a:"Time",w:"Christine McVie",y:1995,s:143210},
+  {t:"Down on the Street",a:"Time",w:"Bekka Bramlett",y:1995,s:132109},
+  {t:"What's the World Coming To?",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:2345678},
+  {t:"Murrow Turning Over in His Grave",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:2123456},
+  {t:"Illume (9/11)",a:"Say You Will",w:"Stevie Nicks",y:2003,s:1987654},
+  {t:"Thrown Down",a:"Say You Will",w:"Stevie Nicks",y:2003,s:1876543},
+  {t:"Miranda",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:1765432},
+  {t:"Red Rover",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:1654321},
+  {t:"Silver Girl",a:"Say You Will",w:"Stevie Nicks",y:2003,s:1543210},
+  {t:"Steal Your Heart Away",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:1432109},
+  {t:"Come",a:"Say You Will",w:"Stevie Nicks",y:2003,s:1321098},
+  {t:"Smile at You",a:"Say You Will",w:"Stevie Nicks",y:2003,s:1210987},
+  {t:"Running Through the Garden",a:"Say You Will",w:"Stevie Nicks",y:2003,s:1109876},
+  {t:"Everybody Finds Out",a:"Say You Will",w:"Stevie Nicks",y:2003,s:998765},
+  {t:"Destiny Rules",a:"Say You Will",w:"Stevie Nicks",y:2003,s:887654},
+  {t:"Say Goodbye",a:"Say You Will",w:"Lindsey Buckingham",y:2003,s:776543},
+  {t:"Goodbye Baby",a:"Say You Will",w:"Stevie Nicks",y:2003,s:665432}
+];
+
+// precompute global rank (array is already sorted by streams desc)
+allSongs.forEach((s, i) => s.rank = i + 1);
+
+let showAll = false;
+let searchTerm = '';
+const maxStreams = allSongs[0].s;
+
+function formatNum(n) {
+  if (n >= 1000000000) return (n / 1000000000).toFixed(2) + 'B';
+  if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+  return String(n);
+}
+
+function youtubeUrl(title) {
+  return 'https://www.youtube.com/results?search_query=' + encodeURIComponent('Fleetwood Mac ' + title);
+}
+
+function renderTable() {
+  const filtered = searchTerm
+    ? allSongs.filter(s =>
+        s.t.toLowerCase().includes(searchTerm) ||
+        s.a.toLowerCase().includes(searchTerm) ||
+        s.w.toLowerCase().includes(searchTerm) ||
+        String(s.y).includes(searchTerm)
+      )
+    : allSongs;
+  const sorted = showAll ? [...filtered].sort((a, b) => b.s - a.s) : filtered;
+  const songs = showAll ? sorted : filtered.slice(0, 5);
+  const tbody = document.getElementById('ranking-body');
+  const btn = document.getElementById('toggle-btn');
+  const count = document.getElementById('song-count');
+  const label = document.getElementById('toggle-label');
+
+  count.textContent = `Showing ${songs.length} of ${filtered.length} tracks`;
+  label.textContent = showAll ? 'Full Catalog · Sorted by Popularity' : 'Top 5 Most Streamed';
+
+  tbody.innerHTML = songs.map((song, i) => {
+    const pct = (song.s / maxStreams) * 100;
+    return `
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="py-6 font-display-lg text-headline-md text-secondary/30">${String(song.rank).padStart(2, '0')}</td>
+<td class="py-6">
+<div>
+<span class="song-title font-headline-sm text-headline-sm text-primary cursor-pointer hover:text-secondary transition-colors" data-yt="${youtubeUrl(song.t)}">${song.t}</span>
+<span class="text-sm text-secondary font-medium uppercase tracking-widest mt-1 block">${song.w}</span>
+<div class="listen-container hidden mt-2">
+<a href="${youtubeUrl(song.t)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-label-caps text-label-caps text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-base">play_circle</span> LISTEN ON YOUTUBE
+</a>
+</div>
+</div>
+</td>
+<td class="py-6 font-body-md text-on-surface-variant hidden md:table-cell italic">${song.a} (${song.y})</td>
+<td class="py-6 text-right">
+<div class="font-body-md text-primary font-bold">${formatNum(song.s)}</div>
+<div class="w-32 h-1 bg-surface-container-high ml-auto mt-2 overflow-hidden">
+<div class="h-full bg-primary transition-all duration-1000" style="width:${pct}%"></div>
+</div>
+</td>
+</tr>`;
+  }).join('');
+
+  btn.textContent = showAll ? 'SHOW TOP 5' : 'VIEW ALL HISTORICAL DATA';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderTable();
+  document.getElementById('toggle-btn').addEventListener('click', () => {
+    showAll = !showAll;
+    renderTable();
+  });
+  const songSearch = document.getElementById('song-search');
+  function onSongSearch() {
+    searchTerm = songSearch.value.toLowerCase();
+    showAll = true;
+    renderTable();
+  }
+  songSearch.addEventListener('input', onSongSearch);
+  songSearch.addEventListener('search', onSongSearch);
+  document.getElementById('ranking-body').addEventListener('click', (e) => {
+    const title = e.target.closest('.song-title');
+    if (title) {
+      const container = title.parentElement.querySelector('.listen-container');
+      if (container) container.classList.toggle('hidden');
+    }
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-4');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('#ranking-body tr').forEach(row => {
+    row.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700', 'ease-out');
+    observer.observe(row);
+  });
+  const loader = document.getElementById('page-loader');
+  if (loader) setTimeout(() => { loader.style.width = '100%'; }, 500);
+});
+// ── Auth System ──
+const AUTH_KEY = 'mm_users';
+const SESSION_KEY = 'mm_session';
+function getUsers() {
+  try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
+}
+function saveUsers(users) {
+  localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+}
+function isLoggedIn() {
+  return !!localStorage.getItem(SESSION_KEY);
+}
+function getLoggedInEmail() {
+  return localStorage.getItem(SESSION_KEY) || '';
+}
+function toggleAuthModal(show, mode) {
+  const modal = document.getElementById('auth-modal');
+  if (!modal) return;
+  modal.classList.toggle('hidden', !show);
+  if (!show) return;
+  const title = document.getElementById('auth-title');
+  const submitBtn = document.querySelector('#auth-form button[type="submit"]');
+  const confirmGroup = document.getElementById('auth-confirm-group');
+  const toggleText = document.getElementById('auth-toggle-text');
+  const toggleBtn = document.getElementById('auth-toggle-btn');
+  const error = document.getElementById('auth-error');
+  error.classList.add('hidden');
+  document.getElementById('auth-form').reset();
+  if (mode === 'signup') {
+    title.textContent = 'Sign Up';
+    submitBtn.textContent = 'SIGN UP';
+    confirmGroup.classList.remove('hidden');
+    toggleText.textContent = 'Already have an account?';
+    toggleBtn.textContent = 'LOG IN';
+    toggleBtn.dataset.mode = 'login';
+  } else {
+    title.textContent = 'Log In';
+    submitBtn.textContent = 'LOG IN';
+    confirmGroup.classList.add('hidden');
+    toggleText.textContent = "Don't have an account?";
+    toggleBtn.textContent = 'SIGN UP';
+    toggleBtn.dataset.mode = 'signup';
+  }
+}
+document.getElementById('auth-modal')?.addEventListener('click', function(e) {
+  if (e.target === this) toggleAuthModal(false);
+});
+document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
+document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
+  const mode = this.dataset.mode || 'login';
+  toggleAuthModal(true, mode);
+});
+document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('auth-email').value.trim().toLowerCase();
+  const password = document.getElementById('auth-password').value;
+  const error = document.getElementById('auth-error');
+  const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    error.textContent = 'Please enter a valid email address.';
+    error.classList.remove('hidden');
+    return;
+  }
+  if (password.length < 4) {
+    error.textContent = 'Password must be at least 4 characters.';
+    error.classList.remove('hidden');
+    return;
+  }
+  const users = getUsers();
+  if (isSignup) {
+    const confirm = document.getElementById('auth-confirm').value;
+    if (password !== confirm) {
+      error.textContent = 'Passwords do not match.';
+      error.classList.remove('hidden');
+      return;
+    }
+    if (users[email]) {
+      error.textContent = 'An account with this email already exists.';
+      error.classList.remove('hidden');
+      return;
+    }
+    users[email] = { email, password };
+    saveUsers(users);
+    localStorage.setItem(SESSION_KEY, email);
+    error.classList.add('hidden');
+    toggleAuthModal(false);
+    updateAuthUI();
+  } else {
+    if (!users[email]) {
+      error.textContent = 'No account found with this email.';
+      error.classList.remove('hidden');
+      return;
+    }
+    if (users[email].password !== password) {
+      error.textContent = 'Incorrect password.';
+      error.classList.remove('hidden');
+      return;
+    }
+    localStorage.setItem(SESSION_KEY, email);
+    error.classList.add('hidden');
+    toggleAuthModal(false);
+    updateAuthUI();
+  }
+});
+function updateAuthUI() {
+  const loggedIn = isLoggedIn();
+  const loginBtn = document.getElementById('nav-login-btn');
+  if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
+}
+document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+updateAuthUI();
+</script>
+</body></html>

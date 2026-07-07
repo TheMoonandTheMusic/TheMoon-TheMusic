@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "surface": "#fdf8f8",
+                            "secondary": "#5e604d",
+                            "surface-container-low": "#fdf8f8",
+                            "on-tertiary-fixed-variant": "#484828",
+                            "tertiary-fixed-dim": "#cac99f",
+                            "tertiary": "#60603e",
+                            "on-primary-fixed": "#1a1a1a",
+                            "secondary-container": "#e1e1c9",
+                            "primary-container": "#1a1a1a",
+                            "surface-container-high": "#f7f3f2",
+                            "on-tertiary-fixed": "#1d1d03",
+                            "on-secondary-fixed-variant": "#474836",
+                            "inverse-surface": "#1a1a1a",
+                            "on-primary-container": "#858383",
+                            "on-surface-variant": "#1a1a1a",
+                            "on-background": "#1a1a1a",
+                            "inverse-primary": "#c8c6c5",
+                            "on-secondary": "#ffffff",
+                            "tertiary-fixed": "#e6e5b9",
+                            "surface-container": "#f1edec",
+                            "on-secondary-container": "#636451",
+                            "on-tertiary": "#ffffff",
+                            "surface-dim": "#fdf8f8",
+                            "on-error-container": "#93000a",
+                            "on-error": "#ffffff",
+                            "secondary-fixed-dim": "#c8c8b0",
+                            "outline-variant": "#1a1a1a",
+                            "surface-container-lowest": "#ffffff",
+                            "primary-fixed-dim": "#c8c6c5",
+                            "on-secondary-fixed": "#1b1d0e",
+                            "primary": "#1a1a1a",
+                            "secondary-fixed": "#e4e4cc",
+                            "surface-container-highest": "#e5e2e1",
+                            "error-container": "#ffdad6",
+                            "on-surface": "#1a1a1a",
+                            "primary-fixed": "#e5e2e1",
+                            "outline": "#1a1a1a",
+                            "inverse-on-surface": "#fdf8f8",
+                            "tertiary-container": "#aead85",
+                            "surface-tint": "#5f5e5e",
+                            "on-tertiary-container": "#414122",
+                            "on-primary-fixed-variant": "#474746",
+                            "error": "#ba1a1a",
+                            "surface-variant": "#f1edec",
+                            "surface-bright": "#fdf8f8",
+                            "background": "#fdf8f8",
+                            "on-primary": "#fdf8f8"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "unit": "8px",
+                            "gutter": "24px",
+                            "container-max": "1200px",
+                            "margin-mobile": "16px",
+                            "margin-desktop": "48px"
+                        },
+                        "fontFamily": {
+                            "display-lg": ["Libre Caslon Text"],
+                            "body-md": ["Hanken Grotesk"],
+                            "body-lg": ["Hanken Grotesk"],
+                            "label-caps": ["Hanken Grotesk"],
+                            "headline-sm": ["Libre Caslon Text"],
+                            "display-lg-mobile": ["Libre Caslon Text"],
+                            "headline-md": ["Libre Caslon Text"]
+                        },
+                        "fontSize": {
+                            "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                            "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                            "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                            "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    }catch(_e){}</script></head><body class="bg-surface text-primary">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 border-b border-primary/10 bg-surface/90 backdrop-blur-sm">
+        <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-20">
+            <a href="index.html" class="flex items-center gap-3 no-underline">
+                <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
+                <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
+            </a>
+            <div class="hidden md:flex gap-gutter items-center">
+                <a href="banda.html" class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300">The Band</a>
+                <a href="albumes.html" class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300">Discography</a>
+                <a href="canciones.html" class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300">The Ranking</a>
+                <a class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300" href="eventos.html">Events</a><a href="logros.html" class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300">Achievements</a>
+                <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 ml-4" data-icon="music_note">music_note</span>
+            </div>
+            <button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
+            <!-- Mobile Menu Trigger -->
+            <div class="md:hidden">
+                <span class="material-symbols-outlined text-primary text-3xl" data-icon="menu">menu</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="max-w-[1200px] mx-auto px-margin-desktop py-20 md:py-32 flex flex-col items-center text-center">
+            <div class="w-full mb-8 overflow-hidden">
+                <div id="loader" class="needle-loader"></div>
+            </div>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-12 fade-in">
+                FLEETWOOD MAC
+            </h1>
+            <div class="w-full h-[400px] md:h-[600px] relative mb-16 fade-in" style="animation-delay: 0.2s;">
+                <div class="absolute inset-0 sepia-hover cursor-pointer overflow-hidden rounded-sm bg-primary/5">
+                    <img class="w-full h-full object-cover" alt="Fleetwood Mac Billboard 1977 official promotional photo" src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Fleetwood_Mac_Billboard_1977.jpg">
+                </div>
+                <div class="absolute -bottom-6 -right-6 hidden lg:block bg-surface p-6 shadow-sm border border-primary/10">
+                    <p class="font-label-caps text-label-caps text-primary/60">EST. 1967 | LONDON</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="max-w-[1200px] mx-auto px-margin-desktop py-20 bg-surface">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+                <div class="md:col-span-5 mb-12 md:mb-0">
+                    <h2 class="font-display-lg text-headline-md mb-6">The Architecture of a Legend</h2>
+                    <p class="font-label-caps text-label-caps text-primary/60 mb-4">A DECADE OF DECADENCE</p>
+                </div>
+                <div class="md:col-span-7">
+                    <p class="font-body-lg text-body-lg text-primary/80 leading-relaxed mb-8">
+                        The transformation of Fleetwood Mac from a blues-rock outfit to a global pop-rock juggernaut stands as one of the most compelling narratives in music history. The 1970s and 80s were marked by a rare alchemy—the intersection of pristine production, raw emotional vulnerability, and complex personal dynamics that birthed timeless masterpieces like <em class="italic">Rumours</em> and <em class="italic">Tusk</em>.
+                    </p>
+                    <p class="font-body-md text-body-md text-primary/70 leading-relaxed">
+                        They didn't just write songs; they crafted an atmosphere. Their sound was the sound of California soft-rock distilled to its purest essence, characterized by Stevie Nicks’ mystical songwriting, Lindsey Buckingham’s obsessive guitar precision, and the unbreakable rhythmic foundation of Fleetwood and McVie.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Bento -->
+        <section class="max-w-[1200px] mx-auto px-margin-desktop py-32">
+            <h3 class="font-label-caps text-label-caps text-center tracking-[0.3em] mb-20 text-primary/60 uppercase">Milestones &amp; Moments</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 1975 -->
+                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
+                    <div>
+                        <span class="font-display-lg text-headline-sm block mb-4">1975</span>
+                        <h4 class="font-label-caps text-label-caps text-primary mb-4">THE REINVENTION</h4>
+                        <p class="font-body-md text-body-md text-primary/70">Buckingham and Nicks join the band, permanently altering the sonic landscape of rock.</p>
+                    </div>
+                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
+                        <div class="h-full bg-primary w-1/3 group-hover:translate-x-full transition-transform duration-700"></div>
+                    </div>
+                </div>
+                <!-- 1977 - Focal point using the deep black accent -->
+                <div class="bg-primary text-on-primary p-8 md:row-span-2 flex flex-col justify-center text-center">
+                    <span class="font-display-lg text-display-lg-mobile mb-4">RUMOURS</span>
+                    <p class="font-label-caps text-label-caps opacity-70 tracking-widest mb-8">31 WEEKS AT NUMBER ONE</p>
+                    <p class="font-body-lg text-body-lg leading-relaxed italic opacity-90">"Dreams are lonely like a heartbeat, drives you mad in the stillness of remembering..."</p>
+                </div>
+                <!-- 1979 -->
+                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
+                    <div>
+                        <span class="font-display-lg text-headline-sm block mb-4">1979</span>
+                        <h4 class="font-label-caps text-label-caps text-primary mb-4">THE AVANT-GARDE</h4>
+                        <p class="font-body-md text-body-md text-primary/70">The experimental double-album 'Tusk' challenges expectations and redefines the studio as an instrument.</p>
+                    </div>
+                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
+                        <div class="h-full bg-primary w-2/3 group-hover:translate-x-full transition-transform duration-700"></div>
+                    </div>
+                </div>
+                <!-- 1982 -->
+                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
+                    <div>
+                        <span class="font-display-lg text-headline-sm block mb-4">1982</span>
+                        <h4 class="font-label-caps text-label-caps text-primary mb-4">MIRAGE</h4>
+                        <p class="font-body-md text-body-md text-primary/70">A return to the lush, melodic perfection of the late 70s, hitting the top of the charts once again.</p>
+                    </div>
+                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
+                        <div class="h-full bg-primary w-1/2 group-hover:translate-x-full transition-transform duration-700"></div>
+                    </div>
+                </div>
+                <!-- 1987 -->
+                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
+                    <div>
+                        <span class="font-display-lg text-headline-sm block mb-4">1987</span>
+                        <h4 class="font-label-caps text-label-caps text-primary mb-4">TANGO IN THE NIGHT</h4>
+                        <p class="font-body-md text-body-md text-primary/70">A slick, modern pop masterpiece that secured their dominance in the digital era of MTV.</p>
+                    </div>
+                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
+                        <div class="h-full bg-primary w-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Discography Peek -->
+        <section class="max-w-[1200px] mx-auto px-margin-desktop py-20 border-t border-primary/10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="font-display-lg text-headline-md mb-4">Song Ranking</h2>
+                    <p class="font-body-md text-primary/70">The definitive curated list of the Mac's finest hours.</p>
+                </div>
+                <a href="canciones.html" class="mt-8 md:mt-0 font-label-caps text-label-caps bg-primary text-on-primary px-10 py-4 hover:bg-primary/90 transition-colors uppercase inline-block text-center no-underline">
+                    View Full List
+                </a>
+            </div>
+            <div class="w-full">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-primary/20">
+                            <th class="py-4 font-label-caps text-label-caps text-primary/40 w-16">#</th>
+                            <th class="py-4 font-label-caps text-label-caps text-primary/40">SONG TITLE</th>
+                            <th class="py-4 font-label-caps text-label-caps text-primary/40 hidden md:table-cell">ALBUM</th>
+                            <th class="py-4 font-label-caps text-label-caps text-primary/40 text-right">YEAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
+                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">01</td>
+                            <td class="py-6 font-display-lg text-headline-sm">Go Your Own Way</td>
+                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Rumours</td>
+                            <td class="py-6 font-body-md text-primary/60 text-right">1977</td>
+                        </tr>
+                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
+                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">02</td>
+                            <td class="py-6 font-display-lg text-headline-sm">Dreams</td>
+                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Rumours</td>
+                            <td class="py-6 font-body-md text-primary/60 text-right">1977</td>
+                        </tr>
+                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
+                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">03</td>
+                            <td class="py-6 font-display-lg text-headline-sm">Rhiannon</td>
+                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Fleetwood Mac</td>
+                            <td class="py-6 font-body-md text-primary/60 text-right">1975</td>
+                        </tr>
+                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
+                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">04</td>
+                            <td class="py-6 font-display-lg text-headline-sm">The Chain</td>
+                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Rumours</td>
+                            <td class="py-6 font-body-md text-primary/60 text-right">1977</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center hidden">
+      <div class="bg-surface p-10 max-w-md w-full mx-4 relative">
+        <button id="auth-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer bg-transparent border-0 text-xl">&times;</button>
+        <h3 class="font-display-lg text-headline-sm mb-6" id="auth-title">Log In</h3>
+        <form id="auth-form">
+          <div id="auth-email-group" class="mb-4">
+            <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">EMAIL</label>
+            <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+          </div>
+          <div class="mb-4">
+            <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PASSWORD</label>
+            <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+          </div>
+          <div id="auth-confirm-group" class="mb-6 hidden">
+            <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CONFIRM PASSWORD</label>
+            <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors">
+          </div>
+          <p id="auth-error" class="font-body-md text-error mb-4 hidden" style="color:#ba1a1a"></p>
+          <button type="submit" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-on-surface-variant transition-colors">LOG IN</button>
+        </form>
+        <p class="font-body-md text-center mt-4">
+          <span class="text-on-surface-variant" id="auth-toggle-text">Don't have an account?</span>
+          <button id="auth-toggle-btn" class="bg-transparent border-0 text-secondary underline font-label-caps text-label-caps cursor-pointer">SIGN UP</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-primary/10 mt-gutter bg-surface">
+        <div class="flex flex-col items-center py-20 px-margin-desktop max-w-[1200px] mx-auto text-center">
+            <a href="index.html" class="font-display-lg text-headline-sm text-primary mb-12 no-underline">THE MOON &amp; THE MUSIC</a>
+            <div class="flex flex-wrap justify-center gap-12 mb-16">
+                <a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-all border-b border-transparent hover:border-primary" href="banda.html">History</a>
+                <a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-all border-b border-transparent hover:border-primary" href="eventos.html">Tour Dates</a>
+                <a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-all border-b border-transparent hover:border-primary" href="#">Legal</a>
+                <a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-all border-b border-transparent hover:border-primary" href="#">Contact</a></div>
+            <p class="font-label-caps text-label-caps text-primary/40 tracking-wider">
+                © 2026-2027 The Moon &amp; The Music is an unofficial, non-profit fan directory. Track rankings are for editorial and entertainment purposes only. Chart data and rankings are sourced from Billboard and Rolling Stone for historical, educational, and editorial commentary purposes only. This website is a fan-run community project and is not affiliated with, endorsed by, or connected to any original musical artists, record labels, Ticketmaster, Songkick, Billboard, Rolling Stone, or any featured tribute bands.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.width = '100%';
+                }, 100);
+            }
+
+            const images = document.querySelectorAll('.sepia-hover img');
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                images.forEach(img => {
+                    const speed = 0.05;
+                    img.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        });
+
+        // ── Auth System ──
+        const AUTH_KEY = 'mm_users';
+        const SESSION_KEY = 'mm_session';
+        function getUsers() {
+          try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
+        }
+        function saveUsers(users) {
+          localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+        }
+        function isLoggedIn() {
+          return !!localStorage.getItem(SESSION_KEY);
+        }
+        function getLoggedInEmail() {
+          return localStorage.getItem(SESSION_KEY) || '';
+        }
+        function toggleAuthModal(show, mode) {
+          const modal = document.getElementById('auth-modal');
+          if (!modal) return;
+          modal.classList.toggle('hidden', !show);
+          if (!show) return;
+          const title = document.getElementById('auth-title');
+          const submitBtn = document.querySelector('#auth-form button[type="submit"]');
+          const confirmGroup = document.getElementById('auth-confirm-group');
+          const toggleText = document.getElementById('auth-toggle-text');
+          const toggleBtn = document.getElementById('auth-toggle-btn');
+          const error = document.getElementById('auth-error');
+          error.classList.add('hidden');
+          document.getElementById('auth-form').reset();
+          if (mode === 'signup') {
+            title.textContent = 'Sign Up';
+            submitBtn.textContent = 'SIGN UP';
+            confirmGroup.classList.remove('hidden');
+            toggleText.textContent = 'Already have an account?';
+            toggleBtn.textContent = 'LOG IN';
+            toggleBtn.dataset.mode = 'login';
+          } else {
+            title.textContent = 'Log In';
+            submitBtn.textContent = 'LOG IN';
+            confirmGroup.classList.add('hidden');
+            toggleText.textContent = "Don't have an account?";
+            toggleBtn.textContent = 'SIGN UP';
+            toggleBtn.dataset.mode = 'signup';
+          }
+        }
+        document.getElementById('auth-modal')?.addEventListener('click', function(e) {
+          if (e.target === this) toggleAuthModal(false);
+        });
+        document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
+        document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
+          const mode = this.dataset.mode || 'login';
+          toggleAuthModal(true, mode);
+        });
+        document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('auth-email').value.trim().toLowerCase();
+          const password = document.getElementById('auth-password').value;
+          const error = document.getElementById('auth-error');
+          const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            error.textContent = 'Please enter a valid email address.';
+            error.classList.remove('hidden');
+            return;
+          }
+          if (password.length < 4) {
+            error.textContent = 'Password must be at least 4 characters.';
+            error.classList.remove('hidden');
+            return;
+          }
+          const users = getUsers();
+          if (isSignup) {
+            const confirm = document.getElementById('auth-confirm').value;
+            if (password !== confirm) {
+              error.textContent = 'Passwords do not match.';
+              error.classList.remove('hidden');
+              return;
+            }
+            if (users[email]) {
+              error.textContent = 'An account with this email already exists.';
+              error.classList.remove('hidden');
+              return;
+            }
+            users[email] = { email, password };
+            saveUsers(users);
+            localStorage.setItem(SESSION_KEY, email);
+            error.classList.add('hidden');
+            toggleAuthModal(false);
+            updateAuthUI();
+          } else {
+            if (!users[email]) {
+              error.textContent = 'No account found with this email.';
+              error.classList.remove('hidden');
+              return;
+            }
+            if (users[email].password !== password) {
+              error.textContent = 'Incorrect password.';
+              error.classList.remove('hidden');
+              return;
+            }
+            localStorage.setItem(SESSION_KEY, email);
+            error.classList.add('hidden');
+            toggleAuthModal(false);
+            updateAuthUI();
+          }
+        });
+        function updateAuthUI() {
+          const loggedIn = isLoggedIn();
+          const loginBtn = document.getElementById('nav-login-btn');
+          if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
+        }
+        document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+        updateAuthUI();
+    </script>
+
+</body></html>

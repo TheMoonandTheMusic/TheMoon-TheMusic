@@ -1,0 +1,732 @@
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#fdf8f8",
+                "secondary": "#5e604d",
+                "surface-container-low": "#f7f3f2",
+                "on-tertiary-fixed-variant": "#484828",
+                "tertiary-fixed-dim": "#cac99f",
+                "tertiary": "#60603e",
+                "on-primary-fixed": "#1c1b1b",
+                "secondary-container": "#e1e1c9",
+                "primary-container": "#1c1b1b",
+                "surface-container-high": "#ebe7e6",
+                "on-tertiary-fixed": "#1d1d03",
+                "on-secondary-fixed-variant": "#474836",
+                "inverse-surface": "#313030",
+                "on-primary-container": "#858383",
+                "on-surface-variant": "#444748",
+                "on-background": "#1c1b1b",
+                "inverse-primary": "#c8c6c5",
+                "on-secondary": "#ffffff",
+                "tertiary-fixed": "#e6e5b9",
+                "surface-container": "#f1edec",
+                "on-secondary-container": "#636451",
+                "on-tertiary": "#ffffff",
+                "surface-dim": "#ddd9d8",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "secondary-fixed-dim": "#c8c8b0",
+                "outline-variant": "#c4c7c7",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed-dim": "#c8c6c5",
+                "on-secondary-fixed": "#1b1d0e",
+                "primary": "#000000",
+                "secondary-fixed": "#e4e4cc",
+                "surface-container-highest": "#e5e2e1",
+                "error-container": "#ffdad6",
+                "on-surface": "#1c1b1b",
+                "primary-fixed": "#e5e2e1",
+                "outline": "#747878",
+                "inverse-on-surface": "#f4f0ef",
+                "tertiary-container": "#aead85",
+                "surface-tint": "#5f5e5e",
+                "on-tertiary-container": "#414122",
+                "on-primary-fixed-variant": "#474746",
+                "error": "#ba1a1a",
+                "surface-variant": "#e5e2e1",
+                "surface-bright": "#fdf8f8",
+                "background": "#fdf8f8",
+                "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "unit": "8px",
+                "gutter": "24px",
+                "container-max": "1200px",
+                "margin-mobile": "16px",
+                "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                "display-lg": ["Libre Caslon Text"],
+                "body-md": ["Hanken Grotesk"],
+                "body-lg": ["Hanken Grotesk"],
+                "label-caps": ["Hanken Grotesk"],
+                "headline-sm": ["Libre Caslon Text"],
+                "display-lg-mobile": ["Libre Caslon Text"],
+                "headline-md": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="font-body-md overflow-x-hidden">
+<div class="grain-overlay"></div>
+<nav class="fixed top-0 left-0 w-full z-40 bg-surface/90 backdrop-blur-md border-b border-on-surface/10 h-20">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-full">
+<a href="index.html" class="flex items-center gap-3 no-underline">
+                <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
+                <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
+            </a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="banda.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">The Band</a>
+<a href="albumes.html" class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300">Discography</a>
+<a href="canciones.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">The Ranking</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="eventos.html">Events</a><a href="logros.html" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">Achievements</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined cursor-pointer text-primary" data-icon="music_note">music_note</span>
+<button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
+</div>
+</nav>
+<main class="pt-32 pb-20 max-w-[1200px] mx-auto px-margin-desktop">
+<header class="mb-20">
+<p class="font-label-caps text-label-caps text-secondary mb-4 uppercase">The Definitive Collection</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">Discography</h1>
+<div class="w-24 h-px bg-primary opacity-20 mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Explore the complete studio album catalog of Fleetwood Mac. From the blues-rock origins to the sophisticated pop zenith of the Rumours era and beyond.
+            </p>
+</header>
+<section class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="flex gap-4 p-1 bg-surface-container rounded-lg w-fit">
+<button id="sort-year" class="px-6 py-2 rounded-md font-label-caps text-label-caps transition-all bg-primary text-on-primary">
+                    YEAR OF RELEASE
+                </button>
+<button id="sort-popularity" class="px-6 py-2 rounded-md font-label-caps text-label-caps transition-all text-secondary hover:bg-surface-variant">
+                    POPULARITY
+                </button>
+</div>
+<div class="flex items-center gap-2 border-b border-primary/20 pb-2 min-w-[240px]">
+<span class="material-symbols-outlined text-secondary text-sm">search</span>
+<input id="search-input" type="text" placeholder="Search archive..." class="bg-transparent border-none focus:ring-0 font-body-md text-on-surface w-full outline-none">
+</div>
+</section>
+<div id="album-count" class="font-label-caps text-label-caps text-secondary mb-6"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="album-grid"></div>
+<section class="mt-40 border-t border-primary/10 pt-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-display-lg text-headline-md mb-6 italic">Behind the Vinyl</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12">
+                        Every record tells a story of creative friction and divine inspiration. Use our interactive archival explorer to deep-dive into the master tapes and unseen session photography.
+                    </p>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps uppercase">Archival Digitization Progress</span>
+<span class="font-label-caps text-label-caps" id="progress-val">77%</span>
+</div>
+<div class="h-1 bg-surface-container relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary w-[77%] transition-all duration-1000 ease-in-out" id="needle-loader"></div>
+<div class="absolute h-4 w-px bg-primary -top-1 left-[77%] opacity-50"></div>
+</div>
+</div>
+<a href="logros.html" class="inline-block w-full md:w-auto bg-primary text-on-primary px-12 py-4 font-label-caps text-label-caps hover:bg-secondary transition-all no-underline text-center">
+                        ACCESS THE VAULT
+                    </a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container relative overflow-hidden">
+<img class="object-cover w-full h-full opacity-90" alt="Studio portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkJ4YnkzVeQKHv9qomCFCgAtWeN8qczpMFT7W0BpGS-0YtMnFYUO0nGZywgZOZdv5mEgLRkiZZFfinsPkNV6avRQfsbLjcAZ72qSm8JPpq7wkc-AZSxLknZGed72f7r99a1gmK5Hnx5tTO9y6NYSSicjPEtlez_H0EjerMPEfZtISSAfT-NG84pMDX7K2juFUV6Utrz84R1XDC31E8maePCRTGvsqsV5Mo7cRnvWusfsTPBbMr_OYcKBXbqr1nnYphoF5SCprtBv0">
+<div class="absolute inset-0 border-[24px] border-surface"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Auth Modal -->
+<div id="auth-modal" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center hidden">
+  <div class="bg-surface p-10 max-w-md w-full mx-4 relative">
+    <button id="auth-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer bg-transparent border-0 text-xl">&times;</button>
+    <h3 class="font-display-lg text-headline-sm mb-6" id="auth-title">Log In</h3>
+    <form id="auth-form">
+      <div id="auth-email-group" class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">EMAIL</label>
+        <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div class="mb-4">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PASSWORD</label>
+        <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+      </div>
+      <div id="auth-confirm-group" class="mb-6 hidden">
+        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CONFIRM PASSWORD</label>
+        <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors">
+      </div>
+      <p id="auth-error" class="font-body-md text-error mb-4 hidden" style="color:#ba1a1a"></p>
+      <button type="submit" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-on-surface-variant transition-colors">LOG IN</button>
+    </form>
+    <p class="font-body-md text-center mt-4">
+      <span class="text-on-surface-variant" id="auth-toggle-text">Don't have an account?</span>
+      <button id="auth-toggle-btn" class="bg-transparent border-0 text-secondary underline font-label-caps text-label-caps cursor-pointer">SIGN UP</button>
+    </p>
+  </div>
+</div>
+</main>
+<footer class="bg-surface-container border-t border-on-surface/5 py-12 px-margin-desktop mt-gutter">
+<div class="max-w-[1200px] mx-auto flex flex-col items-center text-center">
+<div class="font-display-lg text-headline-sm text-primary mb-8 tracking-tighter">THE MOON &amp; THE MUSIC</div>
+<div class="flex flex-wrap justify-center gap-8 mb-10">
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="index.html">HISTORY</a>
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="eventos.html">TOUR DATES</a>
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="#">LEGAL</a>
+<a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="#">CONTACT</a>
+</div>
+<p class="font-label-caps text-label-caps text-secondary opacity-60">
+                © 2026-2027 The Moon &amp; The Music is an unofficial, non-profit fan directory. Track rankings are for editorial and entertainment purposes only. Chart data and rankings are sourced from Billboard and Rolling Stone for historical, educational, and editorial commentary purposes only. This website is a fan-run community project and is not affiliated with, endorsed by, or connected to any original musical artists, record labels, Ticketmaster, Songkick, Billboard, Rolling Stone, or any featured tribute bands.
+            </p>
+</div>
+</footer>
+<div id="track-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+<div class="bg-surface max-w-xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-primary/10">
+<div class="sticky top-0 bg-surface border-b border-primary/10 flex items-center justify-between px-8 py-5 z-10">
+<div>
+<h3 id="modal-album-title" class="font-headline-md text-headline-sm text-primary"></h3>
+<p id="modal-album-meta" class="font-label-caps text-label-caps text-secondary mt-1"></p>
+</div>
+<button id="modal-close" class="material-symbols-outlined text-primary cursor-pointer hover:opacity-60 transition-opacity text-2xl">close</button>
+</div>
+<div id="modal-track-list" class="p-8 space-y-1"></div>
+</div>
+</div>
+<script>
+const albumsData = [
+  {
+    id: 'say-you-will', title: 'Say You Will', year: 2003, sales: 1000000,
+    streams: 1900000000, desc: 'A Triumphant Return',
+    era: 'buckingham-nicks', cert: 'Gold (500K US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/b/b0/Fleetwood_Mac_-_Say_You_Will.png', bgColor: null,
+    tracks: [
+      'What\'s the World Coming To?', 'Murrow Turning Over in His Grave', 'Illume (9/11)',
+      'Thrown Down', 'Miranda', 'Red Rover', 'Silver Girl', 'Steal Your Heart Away',
+      'Say You Will', 'Peacekeeper', 'Come', 'Smile at You', 'Running Through the Garden',
+      'Everybody Finds Out', 'Destiny Rules', 'Say Goodbye', 'Goodbye Baby'
+    ]
+  },
+  {
+    id: 'time', title: 'Time', year: 1995, sales: 150000,
+    streams: 37000000, desc: 'A Transitional Chapter',
+    era: 'post-buckingham', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/0/07/Timecdmac.jpg', bgColor: null,
+    tracks: [
+      'Talkin\' Heart to Heart', 'Hollywood (Some Other Kind of Town)',
+      'I Do', 'Nothing Without You', 'Dreamin\' the Dream', 'So Hard to Leave',
+      'Winds of Change', 'I\'ll Be Over You', 'These Strange Times',
+      'In the Back of My Mind', 'Temporary One', 'Down on the Street'
+    ]
+  },
+  {
+    id: 'behind-the-mask', title: 'Behind the Mask', year: 1990, sales: 2750000,
+    streams: 120000000, desc: 'A New Era Dawns',
+    era: 'post-buckingham', cert: 'Gold (500K US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/8/82/Fleetwood_Mac_-_Behind_the_Mask.jpg', bgColor: null,
+    tracks: [
+      'Skies the Limit', 'Love Is Dangerous', 'In the Back of My Mind',
+      'Do You Know', 'Save Me', 'Affairs of the Heart',
+      'When the Sun Goes Down', 'Behind the Mask', 'Stand on the Rock',
+      'Hard Feelings', 'Freedom', 'When It Comes to Love', 'The Second Time'
+    ]
+  },
+  {
+    id: 'tango-in-the-night', title: 'Tango in the Night', year: 1987, sales: 15000000,
+    streams: 4600000000, desc: 'A Return to Glamour',
+    era: 'buckingham-nicks', cert: '3× Platinum (3M US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/9/97/Fleetwood_Mac_-_Tango_in_the_Night.png',
+    bgColor: null,
+    tracks: [
+      'Big Love', 'Seven Wonders', 'Everywhere', 'Caroline',
+      'Tango in the Night', 'Mystified', 'Little Lies', 'Family Man',
+      'Welcome to the Room... Sara', 'Isn\'t It Midnight', 'When I See You Again',
+      'You and I, Part II'
+    ]
+  },
+  {
+    id: 'mirage', title: 'Mirage', year: 1982, sales: 2000000,
+    streams: 1800000000, desc: 'Soft-Rock Sophistication',
+    era: 'buckingham-nicks', cert: '2× Platinum (2M US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/7/76/Fleetwood_Mac_-_Mirage.png',
+    bgColor: null,
+    tracks: [
+      'Love in Store', 'Can\'t Go Back', 'That\'s Alright', 'Gypsy',
+      'Only Over You', 'Empire State', 'Straight Back', 'Hold Me',
+      'Oh Diane', 'Eyes of the World', 'Wish You Were Here', 'Book of Love'
+    ]
+  },
+  {
+    id: 'tusk', title: 'Tusk', year: 1979, sales: 4000000,
+    streams: 2100000000, desc: 'The Experimental Zenith',
+    era: 'buckingham-nicks', cert: '4× Platinum (4M US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/c/c5/Fleetwood_Mac_-_Tusk.png',
+    bgColor: null,
+    tracks: [
+      'Over & Over', 'The Ledge', 'Think About Me', 'Save Me a Place', 'Sara',
+      'What Makes You Think You\'re the One', 'Storms', 'That\'s All for Everyone',
+      'Not That Funny', 'Sisters of the Moon', 'Angel', 'That\'s Enough for Me',
+      'Brown Eyes', 'Never Make Me Cry', 'I Know I\'m Not Wrong', 'Honey Hi',
+      'Beautiful Child', 'Walk a Thin Line', 'Tusk', 'Never Forget'
+    ]
+  },
+  {
+    id: 'rumours', title: 'Rumours', year: 1977, sales: 40000000,
+    streams: 13500000000, desc: 'Multi-Platinum Legacy',
+    era: 'buckingham-nicks', cert: '21× Platinum (21M US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG',
+    bgColor: null,
+    tracks: [
+      'Second Hand News', 'Dreams', 'Never Going Back Again', 'Don\'t Stop',
+      'Go Your Own Way', 'Songbird', 'The Chain', 'You Make Loving Fun',
+      'I Don\'t Want to Know', 'Oh Daddy', 'Gold Dust Woman'
+    ]
+  },
+  {
+    id: 'fleetwood-mac-1975', title: 'Fleetwood Mac (White Album)', year: 1975, sales: 8000000,
+    streams: 3200000000, desc: 'The Rebirth',
+    era: 'buckingham-nicks', cert: '9× Platinum (9M US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/b/b1/Fleetwood_Mac_-_Fleetwood_Mac_%281975%29.png', bgColor: null,
+    tracks: [
+      'Monday Morning', 'Warm Ways', 'Blue Letter', 'Rhiannon',
+      'Over My Head', 'Crystal', 'Say You Love Me', 'Landslide',
+      'World Turning', 'Sugar Daddy', 'I\'m So Afraid'
+    ]
+  },
+  {
+    id: 'heroes', title: 'Heroes Are Hard to Find', year: 1974, sales: 500000,
+    streams: 80000000, desc: 'The Final Pre-Buckingham Album',
+    era: 'welsh', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/d/d5/Fleetwood_Mac_-_Heroes_Are_Hard_to_Find.jpg', bgColor: null,
+    tracks: [
+      'Heroes Are Hard to Find', 'Coming Home', 'Angel',
+      'Bermuda Triangle', 'Come, Little Donkey', 'Bad Loser',
+      'She\'s Changing Me', 'Silver Heels', 'River of Tears',
+      'Prove Your Love', 'Born Enchanter', 'Safe Harbour'
+    ]
+  },
+  {
+    id: 'mystery-to-me', title: 'Mystery to Me', year: 1973, sales: 500000,
+    streams: 120000000, desc: 'A Deep Cut Gem',
+    era: 'welsh', cert: 'Gold (500K US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/0/09/Mystery_to_Me_cover.jpg', bgColor: null,
+    tracks: [
+      'Emerald Eyes', 'Beloved Wife', 'The City', 'Miles Away',
+      'Somebody', 'The Way I Feel', 'For Your Love', 'Why',
+      'Keep On Going', 'Hypnotized', 'Forever', 'Just Crazy Love',
+      'Good Things (Come to Those Who Wait)'
+    ]
+  },
+  {
+    id: 'penguin', title: 'Penguin', year: 1973, sales: 300000,
+    streams: 45000000, desc: 'A Transitional Work',
+    era: 'welsh', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Penguin_%28Fleetwood_Mac_album_-_cover_art%29.jpg', bgColor: null,
+    tracks: [
+      'Remember Me', 'Bright Fire', 'Dissatisfied', '(I\'m a) Road Runner',
+      'The Derelict', 'Revelation', 'Did You Ever Love Me',
+      'Night Watch', 'Caught in the Rain'
+    ]
+  },
+  {
+    id: 'bare-trees', title: 'Bare Trees', year: 1972, sales: 1000000,
+    streams: 150000000, desc: 'A Cult Classic',
+    era: 'welsh', cert: 'Platinum (1M US)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/0/08/Baretreescd.jpg', bgColor: null,
+    tracks: [
+      'Child of Mine', 'The Ghost', 'Homeward Bound', 'Sunny Side of Heaven',
+      'Bare Trees', 'Sentimental Lady', 'Danny\'s Chanting',
+      'Spare Me a Little of Your Love', 'Dust', 'Thoughts on a Grey Day'
+    ]
+  },
+  {
+    id: 'future-games', title: 'Future Games', year: 1971, sales: 500000,
+    streams: 60000000, desc: 'The Dawn of a New Sound',
+    era: 'welsh', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/b/b5/Fleetwood_Mac_-_Future_Games.jpg', bgColor: null,
+    tracks: [
+      'Woman of 1000 Years', 'Morning Rain', 'What a Shame',
+      'Future Games', 'Sands of Time', 'Sometimes It\'s a Bitch',
+      'Lay It All Down', 'Show Me a Smile'
+    ]
+  },
+  {
+    id: 'kiln-house', title: 'Kiln House', year: 1970, sales: 500000,
+    streams: 70000000, desc: 'Post-Green Transition',
+    era: 'welsh', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/9/95/Kilnhouse.jpg', bgColor: null,
+    tracks: [
+      'This Is the Rock', 'Station Man', 'Blood on the Floor',
+      'Hi Ho Silver', 'Jewel Eyed Judy', 'Buddy\'s Song',
+      'Earl of the Mountain', 'One Together', 'Tell Me All the Things You Do',
+      'Mission Bell', 'Purple Dancer', 'Don\'t Be Cruel'
+    ]
+  },
+  {
+    id: 'chicago', title: 'Fleetwood Mac in Chicago', year: 1969, sales: 150000,
+    streams: 15000000, desc: 'Blues Jam with Chicago Legends',
+    era: 'peter-green', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/4/4a/Fleetwood-Mac-in-Chicago-LP.jpg', bgColor: null,
+    tracks: [
+      'Intro (Black Magic Woman)', 'Black Magic Woman', 'I\'m Worried Woman',
+      'I\'m Worried', 'All Your Love', 'Doctor Brown', 'Need Your Love Tonight',
+      'That\'s All Right', 'J.T.', 'World\'s in a Tangle', 'Talk with You',
+      'Like a Fool', 'Someday Soon Baby', 'Watch Out', 'Last Night',
+      'Red Hot Jam', 'I Held My Baby Last Night', 'Steelin\'', 'Knockin\' on Heaven\'s Door'
+    ]
+  },
+  {
+    id: 'then-play-on', title: 'Then Play On', year: 1969, sales: 1000000,
+    streams: 100000000, desc: 'The Blues-Rock Evolution',
+    era: 'peter-green', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/e/e3/Then_Play_On.jpg', bgColor: null,
+    tracks: [
+      'Coming Your Way', 'Closing My Eyes', 'Fighting for Madge',
+      'When You Say', 'Show Biz Blues', 'Underway', 'One Sunny Day',
+      'Although the Sun Is Shining', 'Rattlesnake Shake',
+      'Without You', 'Searching for Madge', 'My Dream',
+      'Like Crying', 'Before the Beginning'
+    ]
+  },
+  {
+    id: 'mr-wonderful', title: 'Mr. Wonderful', year: 1968, sales: 300000,
+    streams: 25000000, desc: 'Pure British Blues',
+    era: 'peter-green', cert: null,
+    image: 'https://upload.wikimedia.org/wikipedia/en/d/d3/Fleetwood_Mac_-_Mr._Wonderful.jpg', bgColor: null,
+    tracks: [
+      'Stop Messin\' Round', 'I\'ve Lost My Baby', 'Rollin\' Man',
+      'Dust My Broom', 'Love That Burns', 'Doctor Brown',
+      'Need Your Love Tonight', 'If You Be My Baby', 'Evenin\' Boogie',
+      'Lazy Poker Blues', 'Coming Home', 'Trying So Hard to Forget'
+    ]
+  },
+  {
+    id: 'fleetwood-mac-1968', title: 'Fleetwood Mac (Peter Green\'s)', year: 1968, sales: 500000,
+    streams: 180000000, desc: 'The Blues Foundation',
+    era: 'peter-green', cert: 'Silver (100K UK)',
+    image: 'https://upload.wikimedia.org/wikipedia/en/5/51/Fleetwood_Mac_-_Fleetwood_Mac_%281968%29.jpg', bgColor: null,
+    tracks: [
+      'My Heart Beat Like a Hammer', 'Merry Go Round', 'I Loved Another Woman',
+      'I Need Your Love So Bad', 'Doctor Brown', 'Now I\'m a Man',
+      'Shake Your Moneymaker', 'No Place to Go', 'My Baby\'s Good to Me',
+      'I Can\'t Hold Out', 'Long Grey Mare', 'Rambling Pony'
+    ]
+  }
+];
+
+let currentSort = 'year';
+let searchTerm = '';
+const albumGrid = document.getElementById('album-grid');
+const sortYearBtn = document.getElementById('sort-year');
+const sortPopBtn = document.getElementById('sort-popularity');
+const searchInput = document.getElementById('search-input');
+const albumCount = document.getElementById('album-count');
+const modal = document.getElementById('track-modal');
+const modalTitle = document.getElementById('modal-album-title');
+const modalMeta = document.getElementById('modal-album-meta');
+const modalTrackList = document.getElementById('modal-track-list');
+const modalClose = document.getElementById('modal-close');
+
+function formatSales(n) {
+  if (n >= 1000000000) return (n / 1000000000).toFixed(1) + 'B+';
+  if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M+';
+  if (n >= 1000) return (n / 1000).toFixed(0) + 'K+';
+  return n + '+';
+}
+
+function youtubeUrl(title) {
+  return 'https://www.youtube.com/results?search_query=' + encodeURIComponent('Fleetwood Mac ' + title);
+}
+
+function formatStreams(n) {
+  if (n >= 1000000000) return (n / 1000000000).toFixed(1) + 'B';
+  if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M';
+  return (n / 1000).toFixed(0) + 'K';
+}
+
+function popularityScore(album) {
+  const salesMax = 40000000;
+  const streamsMax = 13500000000;
+  const salesWeight = (album.sales / salesMax) * 60;
+  const streamsWeight = (album.streams / streamsMax) * 40;
+  return salesWeight + streamsWeight;
+}
+
+function renderAlbums(sorted) {
+  let filtered = sorted;
+  if (searchTerm) {
+    const st = searchTerm.toLowerCase();
+    filtered = sorted.filter(a =>
+      a.title.toLowerCase().includes(st) ||
+      a.desc.toLowerCase().includes(st) ||
+      a.era.toLowerCase().includes(st) ||
+      a.tracks.some(t => t.toLowerCase().includes(st))
+    );
+  }
+  albumCount.textContent = `Showing ${filtered.length} of ${sorted.length} studio albums`;
+  albumGrid.innerHTML = filtered.map(album => {
+    const imgHtml = album.image
+      ? `<img class="object-cover w-full h-full grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt="${album.title}" src="${album.image}">`
+      : `<div class="w-full h-full bg-gradient-to-br ${album.bgColor} flex items-center justify-center"><span class="font-display-lg text-display-lg-mobile text-white/80 text-center px-4 leading-tight">${album.title}</span></div>`;
+    const salesLabel = formatSales(album.sales);
+    const streamsLabel = formatStreams(album.streams);
+    return `
+<article class="album-grid-item group cursor-pointer" data-id="${album.id}">
+<div class="relative overflow-hidden mb-6 aspect-square bg-surface-container-high shadow-sm group-hover:shadow-xl transition-all duration-500">
+${imgHtml}
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-all"></div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-sm text-headline-sm group-hover:italic transition-all">${album.title}</h3>
+<span class="font-label-caps text-label-caps text-secondary">${album.year}</span>
+</div>
+<p class="font-body-md text-on-surface-variant opacity-80 italic">${album.desc}</p>
+<div class="flex flex-wrap gap-x-3 gap-y-1 pt-1">
+<span class="font-label-caps text-[10px] text-secondary">${album.era.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+${album.cert ? `<span class="font-label-caps text-[10px] text-secondary">${album.cert}</span>` : ''}
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-primary/5">
+<button class="view-tracks font-label-caps text-[10px] border border-primary/20 px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors" data-id="${album.id}">VIEW TRACKS</button>
+<div class="flex gap-3">
+<span class="font-label-caps text-[10px] text-secondary" title="Estimated global sales">${salesLabel} SALES</span>
+<span class="font-label-caps text-[10px] text-secondary" title="Estimated Spotify streams">${streamsLabel} STREAMS</span>
+</div>
+</div>
+</div>
+</article>`;
+  }).join('');
+
+  document.querySelectorAll('.view-tracks').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.id;
+      const album = sorted.find(a => a.id === id);
+      if (album) openModal(album);
+    });
+  });
+}
+
+function sortAndRender() {
+  const sorted = [...albumsData].sort((a, b) => {
+    if (currentSort === 'year') return b.year - a.year;
+    return popularityScore(b) - popularityScore(a);
+  });
+  renderAlbums(sorted);
+}
+
+function openModal(album) {
+  modalTitle.textContent = album.title;
+  modalMeta.textContent = `${album.year} · ${formatSales(album.sales)} sales · ${formatStreams(album.streams)} streams`;
+  modalTrackList.innerHTML = album.tracks.map((track, i) =>
+    `<div class="flex items-center gap-4 py-2 border-b border-primary/5 last:border-0 group hover:bg-primary/5 px-2 -mx-2 rounded-sm transition-colors">
+      <span class="font-label-caps text-label-caps text-secondary/50 w-6 text-right">${String(i + 1).padStart(2, '0')}</span>
+      <div class="flex-1">
+        <span class="track-title cursor-pointer font-body-md text-body-md text-primary group-hover:italic transition-all" data-yt="${youtubeUrl(track)}">${track}</span>
+        <div class="listen-container hidden">
+          <a href="${youtubeUrl(track)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-label-caps text-label-caps text-secondary hover:text-primary transition-colors mt-1">
+            <span class="material-symbols-outlined text-sm">play_circle</span> LISTEN ON YOUTUBE
+          </a>
+        </div>
+      </div>
+    </div>`
+  ).join('');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+document.getElementById('modal-track-list').addEventListener('click', (e) => {
+  const title = e.target.closest('.track-title');
+  if (title) {
+    const container = title.parentElement.querySelector('.listen-container');
+    if (container) container.classList.toggle('hidden');
+  }
+});
+
+sortYearBtn.addEventListener('click', () => {
+  currentSort = 'year';
+  sortYearBtn.classList.add('bg-primary', 'text-on-primary');
+  sortYearBtn.classList.remove('text-secondary');
+  sortPopBtn.classList.remove('bg-primary', 'text-on-primary');
+  sortPopBtn.classList.add('text-secondary');
+  sortAndRender();
+});
+
+sortPopBtn.addEventListener('click', () => {
+  currentSort = 'popularity';
+  sortPopBtn.classList.add('bg-primary', 'text-on-primary');
+  sortPopBtn.classList.remove('text-secondary');
+  sortYearBtn.classList.remove('bg-primary', 'text-on-primary');
+  sortYearBtn.classList.add('text-secondary');
+  sortAndRender();
+});
+
+searchInput.addEventListener('input', () => {
+  searchTerm = searchInput.value;
+  sortAndRender();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  sortAndRender();
+  const needle = document.getElementById('needle-loader');
+  let progress = 77;
+  const progressVal = document.getElementById('progress-val');
+  setInterval(() => {
+    const wiggle = (Math.random() - 0.5) * 2;
+    progress = Math.min(100, Math.max(0, progress + wiggle));
+    needle.style.width = `${progress}%`;
+    if (progressVal) progressVal.textContent = `${Math.round(progress)}%`;
+  }, 3000);
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    document.querySelectorAll('.album-grid-item').forEach((card, idx) => {
+      const speed = 0.05 + (idx * 0.02);
+      card.style.transform = `translateY(${scroll * speed * -0.1}px)`;
+    });
+  });
+});
+// ── Auth System ──
+const AUTH_KEY = 'mm_users';
+const SESSION_KEY = 'mm_session';
+function getUsers() {
+  try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
+}
+function saveUsers(users) {
+  localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+}
+function isLoggedIn() {
+  return !!localStorage.getItem(SESSION_KEY);
+}
+function getLoggedInEmail() {
+  return localStorage.getItem(SESSION_KEY) || '';
+}
+function toggleAuthModal(show, mode) {
+  const modal = document.getElementById('auth-modal');
+  if (!modal) return;
+  modal.classList.toggle('hidden', !show);
+  if (!show) return;
+  const title = document.getElementById('auth-title');
+  const submitBtn = document.querySelector('#auth-form button[type="submit"]');
+  const confirmGroup = document.getElementById('auth-confirm-group');
+  const toggleText = document.getElementById('auth-toggle-text');
+  const toggleBtn = document.getElementById('auth-toggle-btn');
+  const error = document.getElementById('auth-error');
+  error.classList.add('hidden');
+  document.getElementById('auth-form').reset();
+  if (mode === 'signup') {
+    title.textContent = 'Sign Up';
+    submitBtn.textContent = 'SIGN UP';
+    confirmGroup.classList.remove('hidden');
+    toggleText.textContent = 'Already have an account?';
+    toggleBtn.textContent = 'LOG IN';
+    toggleBtn.dataset.mode = 'login';
+  } else {
+    title.textContent = 'Log In';
+    submitBtn.textContent = 'LOG IN';
+    confirmGroup.classList.add('hidden');
+    toggleText.textContent = "Don't have an account?";
+    toggleBtn.textContent = 'SIGN UP';
+    toggleBtn.dataset.mode = 'signup';
+  }
+}
+document.getElementById('auth-modal')?.addEventListener('click', function(e) {
+  if (e.target === this) toggleAuthModal(false);
+});
+document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
+document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
+  const mode = this.dataset.mode || 'login';
+  toggleAuthModal(true, mode);
+});
+document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('auth-email').value.trim().toLowerCase();
+  const password = document.getElementById('auth-password').value;
+  const error = document.getElementById('auth-error');
+  const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    error.textContent = 'Please enter a valid email address.';
+    error.classList.remove('hidden');
+    return;
+  }
+  if (password.length < 4) {
+    error.textContent = 'Password must be at least 4 characters.';
+    error.classList.remove('hidden');
+    return;
+  }
+  const users = getUsers();
+  if (isSignup) {
+    const confirm = document.getElementById('auth-confirm').value;
+    if (password !== confirm) {
+      error.textContent = 'Passwords do not match.';
+      error.classList.remove('hidden');
+      return;
+    }
+    if (users[email]) {
+      error.textContent = 'An account with this email already exists.';
+      error.classList.remove('hidden');
+      return;
+    }
+    users[email] = { email, password };
+    saveUsers(users);
+    localStorage.setItem(SESSION_KEY, email);
+    error.classList.add('hidden');
+    toggleAuthModal(false);
+    updateAuthUI();
+  } else {
+    if (!users[email]) {
+      error.textContent = 'No account found with this email.';
+      error.classList.remove('hidden');
+      return;
+    }
+    if (users[email].password !== password) {
+      error.textContent = 'Incorrect password.';
+      error.classList.remove('hidden');
+      return;
+    }
+    localStorage.setItem(SESSION_KEY, email);
+    error.classList.add('hidden');
+    toggleAuthModal(false);
+    updateAuthUI();
+  }
+});
+function updateAuthUI() {
+  const loggedIn = isLoggedIn();
+  const loginBtn = document.getElementById('nav-login-btn');
+  if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
+}
+document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+updateAuthUI();
+</script>
+</body></html>
