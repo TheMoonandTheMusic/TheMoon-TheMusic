@@ -1,0 +1,421 @@
+// Use DBML to define your database structure
+// Fleetwood Mac Website - Complete Schema
+// Docs: https://dbml.dbdl.io/docs
+
+Table albums {
+  id varchar [primary key]
+  title varchar
+  year integer
+  sales integer
+  streams integer
+  desc text
+  era varchar
+  cert varchar
+  image varchar
+}
+
+Table songs {
+  id integer [primary key]
+  title varchar
+  album_id varchar
+  writer_id integer
+  year integer
+  streams integer
+  rank integer
+}
+
+Table writers {
+  id integer [primary key]
+  name varchar
+}
+
+Table band_members {
+  id integer [primary key]
+  writer_id integer
+  name varchar
+  role varchar
+  instrument varchar
+  before_fm text
+}
+
+Table concerts {
+  id integer [primary key]
+  date varchar
+  venue varchar
+  location varchar
+  tour varchar
+  band varchar
+  attendance varchar
+  era varchar
+  type varchar
+}
+
+Table users {
+  email varchar [primary key]
+  password varchar
+}
+
+Table subscribers {
+  email varchar [primary key]
+}
+
+Ref: albums.id > songs.album_id
+Ref: writers.id > songs.writer_id
+Ref: band_members.writer_id - writers.id
+
+Records writers(id, name) {
+  1, 'Stevie Nicks'
+  2, 'Christine McVie'
+  3, 'Lindsey Buckingham'
+  4, 'Fleetwood Mac'
+  5, 'Peter Green'
+  6, 'Bob Welch'
+  7, 'Danny Kirwan'
+  8, 'Jeremy Spencer'
+  9, 'Mick Fleetwood'
+  10, 'Bekka Bramlett'
+  11, 'Billy Burnette'
+  12, 'Elmore James'
+  13, 'Little Willie John'
+  14, 'Robert Johnson'
+  15, 'J.T. Brown'
+  16, 'Curtis/Fleisher'
+  17, 'Welch/Spencer'
+}
+
+Records band_members(id, writer_id, name, role, instrument, before_fm) {
+  1, 9, 'Mick Fleetwood', 'Founder / Drums', 'Drums', 'Cheyne Walk, The Bo Street Runners, Shotgun Express'
+  2, null, 'John McVie', 'Bass Guitar', 'Bass', 'John Mayall & the Bluesbreakers'
+  3, 1, 'Stevie Nicks', 'Vocals / Songwriter', 'Vocals', 'Fritz, Buckingham Nicks'
+  4, 3, 'Lindsey Buckingham', 'Lead Guitar / Vocals', 'Guitar', 'Fritz, Buckingham Nicks'
+  5, 2, 'Christine McVie', 'Keyboards / Vocals', 'Keyboards', 'Chicken Shack'
+}
+
+Records albums(id, title, year, sales, streams, desc, era, cert) {
+  'say-you-will', 'Say You Will', 2003, 1000000, 1900000000, 'A Triumphant Return', 'buckingham-nicks', 'Gold (500K US)'
+  'time', 'Time', 1995, 150000, 37000000, 'A Transitional Chapter', 'post-buckingham', null
+  'behind-the-mask', 'Behind the Mask', 1990, 2750000, 120000000, 'A New Era Dawns', 'post-buckingham', 'Gold (500K US)'
+  'tango-in-the-night', 'Tango in the Night', 1987, 15000000, 4600000000, 'A Return to Glamour', 'buckingham-nicks', '3x Platinum (3M US)'
+  'mirage', 'Mirage', 1982, 2000000, 1800000000, 'Soft-Rock Sophistication', 'buckingham-nicks', '2x Platinum (2M US)'
+  'tusk', 'Tusk', 1979, 4000000, 2100000000, 'The Experimental Zenith', 'buckingham-nicks', '4x Platinum (4M US)'
+  'rumours', 'Rumours', 1977, 40000000, 13500000000, 'Multi-Platinum Legacy', 'buckingham-nicks', '21x Platinum (21M US)'
+  'fm-1975', 'Fleetwood Mac (White Album)', 1975, 8000000, 3200000000, 'The Rebirth', 'buckingham-nicks', '9x Platinum (9M US)'
+  'heroes', 'Heroes Are Hard to Find', 1974, 500000, 80000000, 'The Final Pre-Buckingham Album', 'welsh', null
+  'mystery-to-me', 'Mystery to Me', 1973, 500000, 120000000, 'A Deep Cut Gem', 'welsh', 'Gold (500K US)'
+  'penguin', 'Penguin', 1973, 300000, 45000000, 'A Transitional Work', 'welsh', null
+  'bare-trees', 'Bare Trees', 1972, 1000000, 150000000, 'A Cult Classic', 'welsh', 'Platinum (1M US)'
+  'future-games', 'Future Games', 1971, 500000, 60000000, 'The Dawn of a New Sound', 'welsh', null
+  'kiln-house', 'Kiln House', 1970, 500000, 70000000, 'Post-Green Transition', 'welsh', null
+  'chicago', 'Fleetwood Mac in Chicago', 1969, 150000, 15000000, 'Blues Jam with Chicago Legends', 'peter-green', null
+  'then-play-on', 'Then Play On', 1969, 1000000, 100000000, 'The Blues-Rock Evolution', 'peter-green', null
+  'mr-wonderful', 'Mr. Wonderful', 1968, 300000, 25000000, 'Pure British Blues', 'peter-green', null
+  'fm-1968', 'Fleetwood Mac (Peter Green\'s)', 1968, 500000, 180000000, 'The Blues Foundation', 'peter-green', 'Silver (100K UK)'
+}
+
+Records songs(id, title, album_id, writer_id, year, streams) {
+  1, 'Dreams', 'rumours', 1, 1977, 2788259918
+  2, 'The Chain', 'rumours', 4, 1977, 1803958022
+  3, 'Everywhere', 'tango-in-the-night', 2, 1987, 1481107856
+  4, 'Go Your Own Way', 'rumours', 3, 1977, 1413310464
+  5, 'Landslide', 'fm-1975', 1, 1975, 1135320386
+  6, 'Little Lies', 'tango-in-the-night', 2, 1987, 720255634
+  7, 'Rhiannon', 'fm-1975', 1, 1975, 652753145
+  8, 'Don\'t Stop', 'rumours', 2, 1977, 563176509
+  9, 'Silver Springs', 'rumours', 1, 1977, 521401387
+  10, 'Gypsy', 'mirage', 1, 1982, 415685316
+  11, 'Say You Love Me', 'fm-1975', 2, 1975, 331308356
+  12, 'Second Hand News', 'rumours', 3, 1977, 209588159
+  13, 'You Make Loving Fun', 'rumours', 2, 1977, 209080391
+  14, 'Songbird', 'rumours', 2, 1977, 180841128
+  15, 'Sara', 'tusk', 1, 1979, 172634573
+  16, 'Big Love', 'tango-in-the-night', 3, 1987, 159462504
+  17, 'Gold Dust Woman', 'rumours', 1, 1977, 142172218
+  18, 'Never Going Back Again', 'rumours', 3, 1977, 134010460
+  19, 'Hold Me', 'mirage', 2, 1982, 127647829
+  20, 'Seven Wonders', 'tango-in-the-night', 1, 1987, 127531117
+  21, 'Tusk', 'tusk', 3, 1979, 116471711
+  22, 'Oh Well', 'then-play-on', 5, 1969, 105840565
+  23, 'Albatross', null, 5, 1968, 105270310
+  24, 'Black Magic Woman', 'fm-1968', 5, 1968, 61790502
+  25, 'Man of the World', null, 5, 1969, 56121800
+  26, 'Dreams (Live)', null, 1, 1997, 54789348
+  27, 'Sisters of the Moon', 'tusk', 1, 1979, 53711255
+  28, 'Over My Head', 'fm-1975', 2, 1975, 51301754
+  29, 'I\'m So Afraid', 'fm-1975', 3, 1975, 45978691
+  30, 'Blue Letter', 'fm-1975', 16, 1975, 43978691
+  31, 'Crystal', 'fm-1975', 1, 1975, 42537702
+  32, 'Monday Morning', 'fm-1975', 3, 1975, 41351356
+  33, 'Warm Ways', 'fm-1975', 2, 1975, 32693279
+  34, 'World Turning', 'fm-1975', 2, 1975, 32583113
+  35, 'Think About Me', 'tusk', 2, 1979, 30277089
+  36, 'The Green Manalishi', null, 5, 1970, 28531625
+  37, 'Storms', 'tusk', 1, 1979, 27266439
+  38, 'Caroline', 'tango-in-the-night', 3, 1987, 27228492
+  39, 'Family Man', 'tango-in-the-night', 3, 1987, 27132722
+  40, 'Mystified', 'tango-in-the-night', 2, 1987, 25487621
+  41, 'Isn\'t It Midnight', 'tango-in-the-night', 2, 1987, 24265501
+  42, 'Tango in the Night', 'tango-in-the-night', 3, 1987, 24365501
+  43, 'Save Me', 'behind-the-mask', 2, 1990, 22735296
+  44, 'When I See You Again', 'tango-in-the-night', 1, 1987, 21270152
+  45, 'You and I, Part II', 'tango-in-the-night', 3, 1987, 20912372
+  46, 'Love in Store', 'mirage', 2, 1982, 19805808
+  47, 'Oh Diane', 'mirage', 3, 1982, 19226851
+  48, 'Sugar Daddy', 'fm-1975', 2, 1975, 19437873
+  49, 'I Don\'t Want to Know', 'rumours', 1, 1977, 18837437
+  50, 'That\'s Alright', 'mirage', 1, 1982, 18401871
+  51, 'Straight Back', 'mirage', 1, 1982, 16755952
+  52, 'Can\'t Go Back', 'mirage', 3, 1982, 15748953
+  53, 'Only Over You', 'mirage', 2, 1982, 15249172
+  54, 'Eyes of the World', 'mirage', 3, 1982, 14239387
+  55, 'Oh Daddy', 'rumours', 2, 1977, 13643026
+  56, 'Wish You Were Here', 'mirage', 2, 1982, 13480383
+  57, 'Book of Love', 'mirage', 2, 1982, 13135062
+  58, 'Over & Over', 'tusk', 2, 1979, 12602715
+  59, 'The Ledge', 'tusk', 3, 1979, 12456688
+  60, 'Save Me a Place', 'tusk', 3, 1979, 12043368
+  61, 'What Makes You Think You\'re the One', 'tusk', 3, 1979, 11960741
+  62, 'That\'s All for Everyone', 'tusk', 3, 1979, 11607671
+  63, 'Not That Funny', 'tusk', 3, 1979, 11145972
+  64, 'Angel', 'tusk', 1, 1979, 11084552
+  65, 'That\'s Enough for Me', 'tusk', 3, 1979, 11080597
+  66, 'Welcome to the Room... Sara', 'tango-in-the-night', 1, 1987, 10981523
+  67, 'Brown Eyes', 'tusk', 2, 1979, 10312544
+  68, 'Never Make Me Cry', 'tusk', 2, 1979, 10105544
+  69, 'I Know I\'m Not Wrong', 'tusk', 3, 1979, 10042815
+  70, 'Honey Hi', 'tusk', 2, 1979, 9849275
+  71, 'Beautiful Child', 'tusk', 1, 1979, 9246752
+  72, 'Walk a Thin Line', 'tusk', 3, 1979, 8974561
+  73, 'Never Forget', 'tusk', 2, 1979, 8231564
+  74, 'Hypnotized', 'mystery-to-me', 6, 1973, 7852341
+  75, 'Sentimental Lady', 'bare-trees', 6, 1972, 7654321
+  76, 'Rattlesnake Shake', 'then-play-on', 5, 1969, 7234567
+  77, 'Station Man', 'kiln-house', 17, 1970, 6890123
+  78, 'Future Games', 'future-games', 6, 1971, 6543789
+  79, 'Emerald Eyes', 'mystery-to-me', 6, 1973, 6234567
+  80, 'Jewel Eyed Judy', 'kiln-house', 17, 1970, 5987654
+  81, 'Bare Trees', 'bare-trees', 7, 1972, 5678234
+  82, 'Peacekeeper', 'say-you-will', 3, 2003, 5345678
+  83, 'Say You Will', 'say-you-will', 3, 2003, 5123456
+  84, 'Woman of 1000 Years', 'future-games', 7, 1971, 4934567
+  85, 'For Your Love', 'mystery-to-me', 6, 1973, 4765432
+  86, 'Remember Me', 'penguin', 2, 1973, 4543210
+  87, 'Child of Mine', 'bare-trees', 2, 1972, 4345678
+  88, 'Morning Rain', 'future-games', 2, 1971, 4123456
+  89, 'Heroes Are Hard to Find', 'heroes', 2, 1974, 3987654
+  90, 'Miles Away', 'mystery-to-me', 6, 1973, 3765432
+  91, 'Did You Ever Love Me', 'penguin', 6, 1973, 3543210
+  92, 'Coming Your Way', 'then-play-on', 7, 1969, 3345678
+  93, 'Show Biz Blues', 'then-play-on', 5, 1969, 3123456
+  94, 'This Is the Rock', 'kiln-house', 8, 1970, 2987654
+  95, 'My Heart Beat Like a Hammer', 'fm-1968', 8, 1968, 2876543
+  96, 'Shake Your Moneymaker', 'fm-1968', 12, 1968, 2765432
+  97, 'Need Your Love So Bad', null, 13, 1968, 2678912
+  98, 'I Loved Another Woman', 'fm-1968', 5, 1968, 2543210
+  99, 'Long Grey Mare', 'fm-1968', 5, 1968, 2345678
+  100, 'Stop Messin\' Round', 'mr-wonderful', 5, 1968, 2234567
+  101, 'Dust My Broom', 'mr-wonderful', 12, 1968, 2123456
+  102, 'Love That Burns', 'mr-wonderful', 5, 1968, 2012345
+  103, 'Rollin\' Man', 'mr-wonderful', 5, 1968, 1987654
+  104, 'Coming Home', 'mr-wonderful', 12, 1968, 1876543
+  105, 'Evenin\' Boogie', 'mr-wonderful', 8, 1968, 1765432
+  106, 'Lazy Poker Blues', 'mr-wonderful', 5, 1968, 1654321
+  107, 'I\'ve Lost My Baby', 'mr-wonderful', 8, 1968, 1543210
+  108, 'Trying So Hard to Forget', 'mr-wonderful', 5, 1968, 1432109
+  109, 'Doctor Brown', 'mr-wonderful', 15, 1968, 1321098
+  110, 'If You Be My Baby', 'mr-wonderful', 5, 1968, 1210987
+  111, 'Need Your Love Tonight', 'mr-wonderful', 12, 1968, 1109876
+  112, 'Merry Go Round', 'fm-1968', 5, 1968, 1098765
+  113, 'Hellhound on My Trail', 'fm-1968', 14, 1968, 987654
+  114, 'Looking for Somebody', 'fm-1968', 5, 1968, 876543
+  115, 'No Place to Go', 'fm-1968', 12, 1968, 765432
+  116, 'My Baby\'s Good to Me', 'fm-1968', 8, 1968, 654321
+  117, 'Cold Black Night', 'fm-1968', 8, 1968, 543210
+  118, 'The World Keeps on Turning', 'fm-1968', 5, 1968, 432109
+  119, 'Got to Move', 'fm-1968', 12, 1968, 321098
+  120, 'Closing My Eyes', 'then-play-on', 5, 1969, 2987654
+  121, 'Fighting for Madge', 'then-play-on', 8, 1969, 2890123
+  122, 'Underway', 'then-play-on', 5, 1969, 2765432
+  123, 'One Sunny Day', 'then-play-on', 7, 1969, 2654321
+  124, 'Although the Sun Is Shining', 'then-play-on', 7, 1969, 2543210
+  125, 'Without You', 'then-play-on', 7, 1969, 2432109
+  126, 'Searching for Madge', 'then-play-on', 5, 1969, 2321098
+  127, 'My Dream', 'then-play-on', 5, 1969, 2210987
+  128, 'Like Crying', 'then-play-on', 7, 1969, 2109876
+  129, 'Before the Beginning', 'then-play-on', 5, 1969, 1987654
+  130, 'When You Say', 'then-play-on', 7, 1969, 1876543
+  131, 'Tell Me All the Things You Do', 'kiln-house', 8, 1970, 1876543
+  132, 'Buddy\'s Song', 'kiln-house', 8, 1970, 1765432
+  133, 'One Together', 'kiln-house', 8, 1970, 1654321
+  134, 'Earl of the Mountain', 'kiln-house', 8, 1970, 1543210
+  135, 'Hi Ho Silver', 'kiln-house', 8, 1970, 1432109
+  136, 'Blood on the Floor', 'kiln-house', 8, 1970, 1321098
+  137, 'Mission Bell', 'kiln-house', 8, 1970, 1210987
+  138, 'Purple Dancer', 'kiln-house', 8, 1970, 1109876
+  139, 'Don\'t Be Cruel', 'kiln-house', 8, 1970, 998765
+  140, 'Sands of Time', 'future-games', 6, 1971, 1654321
+  141, 'What a Shame', 'future-games', 6, 1971, 1543210
+  142, 'Sometimes It\'s a Bitch', 'future-games', 6, 1971, 1432109
+  143, 'Lay It All Down', 'future-games', 6, 1971, 1321098
+  144, 'Show Me a Smile', 'future-games', 6, 1971, 1210987
+  145, 'The Ghost', 'bare-trees', 6, 1972, 1543210
+  146, 'Homeward Bound', 'bare-trees', 2, 1972, 1432109
+  147, 'Sunny Side of Heaven', 'bare-trees', 7, 1972, 1321098
+  148, 'Danny\'s Chanting', 'bare-trees', 7, 1972, 1210987
+  149, 'Spare Me a Little of Your Love', 'bare-trees', 2, 1972, 1109876
+  150, 'Dust', 'bare-trees', 6, 1972, 998765
+  151, 'Thoughts on a Grey Day', 'bare-trees', 2, 1972, 887654
+  152, 'Bright Fire', 'penguin', 6, 1973, 1321098
+  153, 'Dissatisfied', 'penguin', 2, 1973, 1210987
+  154, '(I\'m a) Road Runner', 'penguin', 8, 1973, 1109876
+  155, 'The Derelict', 'penguin', 6, 1973, 998765
+  156, 'Revelation', 'penguin', 6, 1973, 887654
+  157, 'Night Watch', 'penguin', 6, 1973, 776543
+  158, 'Caught in the Rain', 'penguin', 6, 1973, 665432
+  159, 'Beloved Wife', 'mystery-to-me', 6, 1973, 765432
+  160, 'The City', 'mystery-to-me', 6, 1973, 654321
+  161, 'Somebody', 'mystery-to-me', 6, 1973, 543210
+  162, 'The Way I Feel', 'mystery-to-me', 6, 1973, 432109
+  163, 'Why', 'mystery-to-me', 2, 1973, 321098
+  164, 'Keep On Going', 'mystery-to-me', 6, 1973, 298765
+  165, 'Forever', 'mystery-to-me', 6, 1973, 187654
+  166, 'Just Crazy Love', 'mystery-to-me', 2, 1973, 176543
+  167, 'Good Things (Come to Those Who Wait)', 'mystery-to-me', 6, 1973, 165432
+  168, 'Coming Home', 'heroes', 6, 1974, 987654
+  169, 'Angel', 'heroes', 6, 1974, 876543
+  170, 'Bermuda Triangle', 'heroes', 6, 1974, 765432
+  171, 'Come, Little Donkey', 'heroes', 6, 1974, 654321
+  172, 'Bad Loser', 'heroes', 2, 1974, 543210
+  173, 'She\'s Changing Me', 'heroes', 6, 1974, 432109
+  174, 'Silver Heels', 'heroes', 6, 1974, 321098
+  175, 'River of Tears', 'heroes', 6, 1974, 298765
+  176, 'Prove Your Love', 'heroes', 2, 1974, 187654
+  177, 'Born Enchanter', 'heroes', 6, 1974, 176543
+  178, 'Safe Harbour', 'heroes', 6, 1974, 165432
+  179, 'Skies the Limit', 'behind-the-mask', 2, 1990, 987654
+  180, 'Love Is Dangerous', 'behind-the-mask', 1, 1990, 876543
+  181, 'In the Back of My Mind', 'behind-the-mask', 1, 1990, 765432
+  182, 'Do You Know', 'behind-the-mask', 2, 1990, 654321
+  183, 'Affairs of the Heart', 'behind-the-mask', 1, 1990, 543210
+  184, 'When the Sun Goes Down', 'behind-the-mask', 3, 1990, 432109
+  185, 'Behind the Mask', 'behind-the-mask', 2, 1990, 321098
+  186, 'Stand on the Rock', 'behind-the-mask', 3, 1990, 298765
+  187, 'Hard Feelings', 'behind-the-mask', 1, 1990, 187654
+  188, 'Freedom', 'behind-the-mask', 1, 1990, 176543
+  189, 'When It Comes to Love', 'behind-the-mask', 2, 1990, 165432
+  190, 'The Second Time', 'behind-the-mask', 3, 1990, 154321
+  191, 'Talkin\' Heart to Heart', 'time', 2, 1995, 654321
+  192, 'Hollywood (Some Other Kind of Town)', 'time', 10, 1995, 543210
+  193, 'I Do', 'time', 2, 1995, 432109
+  194, 'Nothing Without You', 'time', 10, 1995, 321098
+  195, 'Dreamin\' the Dream', 'time', 10, 1995, 298765
+  196, 'So Hard to Leave', 'time', 11, 1995, 187654
+  197, 'Winds of Change', 'time', 11, 1995, 176543
+  198, 'I\'ll Be Over You', 'time', 11, 1995, 165432
+  199, 'These Strange Times', 'time', 9, 1995, 154321
+  200, 'Temporary One', 'time', 2, 1995, 143210
+  201, 'Down on the Street', 'time', 10, 1995, 132109
+  202, 'What\'s the World Coming To?', 'say-you-will', 3, 2003, 2345678
+  203, 'Murrow Turning Over in His Grave', 'say-you-will', 3, 2003, 2123456
+  204, 'Illume (9/11)', 'say-you-will', 1, 2003, 1987654
+  205, 'Thrown Down', 'say-you-will', 1, 2003, 1876543
+  206, 'Miranda', 'say-you-will', 3, 2003, 1765432
+  207, 'Red Rover', 'say-you-will', 3, 2003, 1654321
+  208, 'Silver Girl', 'say-you-will', 1, 2003, 1543210
+  209, 'Steal Your Heart Away', 'say-you-will', 3, 2003, 1432109
+  210, 'Come', 'say-you-will', 1, 2003, 1321098
+  211, 'Smile at You', 'say-you-will', 1, 2003, 1210987
+  212, 'Running Through the Garden', 'say-you-will', 1, 2003, 1109876
+  213, 'Everybody Finds Out', 'say-you-will', 1, 2003, 998765
+  214, 'Destiny Rules', 'say-you-will', 1, 2003, 887654
+  215, 'Say Goodbye', 'say-you-will', 3, 2003, 776543
+  216, 'Goodbye Baby', 'say-you-will', 1, 2003, 665432
+}
+
+Records concerts(id, date, venue, location, tour, band, attendance, era, type) {
+  1, 'SEP 23, 1967', 'Windsor Jazz & Blues Festival', 'Windsor, UK', 'Peter Green Era', 'Fleetwood Mac', '2,500', '1967-1979', 'original'
+  2, 'MAY 10, 1969', 'Fillmore West', 'San Francisco, CA', 'Then Play On Tour', 'Fleetwood Mac', '6,000', '1967-1979', 'original'
+  3, 'AUG 15, 1975', 'Universal Amphitheatre', 'Universal City, CA', 'First Nicks/Buckingham Tour', 'Fleetwood Mac', '5,000', '1967-1979', 'original'
+  4, 'FEB 28, 1977', 'Civic Auditorium', 'New Orleans, LA', 'Rumours Tour', 'Fleetwood Mac', '10,000', '1967-1979', 'original'
+  5, 'MAR 10, 1977', 'University of Dayton Arena', 'Dayton, OH', 'Rumours Tour', 'Fleetwood Mac', '13,500', '1967-1979', 'original'
+  6, 'MAR 24, 1977', 'Nassau Coliseum', 'Uniondale, NY', 'Rumours Tour', 'Fleetwood Mac', '16,000', '1967-1979', 'original'
+  7, 'APR 02, 1977', 'Omni Coliseum', 'Atlanta, GA', 'Rumours Tour', 'Fleetwood Mac', '17,000', '1967-1979', 'original'
+  8, 'MAY 10, 1977', 'Hammersmith Odeon', 'London, UK', 'Rumours Tour', 'Fleetwood Mac', '3,500', '1967-1979', 'original'
+  9, 'MAY 14, 1977', 'Jaap Eden Hal', 'Amsterdam, Netherlands', 'Rumours Tour', 'Fleetwood Mac', '5,000', '1967-1979', 'original'
+  10, 'JUN 29, 1977', 'Madison Square Garden', 'New York, NY', 'Rumours Tour', 'Fleetwood Mac', '19,500', '1967-1979', 'original'
+  11, 'JUL 23, 1977', 'Oakland-Alameda County Coliseum', 'Oakland, CA', 'Rumours Tour', 'Fleetwood Mac', '50,000', '1967-1979', 'original'
+  12, 'AUG 25, 1977', 'McNichols Sports Arena', 'Denver, CO', 'Rumours Tour', 'Fleetwood Mac', '17,500', '1967-1979', 'original'
+  13, 'AUG 30, 1977', 'The Forum', 'Inglewood, CA', 'Rumours Tour', 'Fleetwood Mac', '18,000', '1967-1979', 'original'
+  14, 'JUL 18, 1978', 'Alpine Valley Music Theatre', 'East Troy, WI', 'Summer Country Safari', 'Fleetwood Mac', '18,213', '1967-1979', 'original'
+  15, 'OCT 26, 1979', 'Albuquerque Civic Auditorium', 'Albuquerque, NM', 'Tusk Tour', 'Fleetwood Mac', '8,000', '1967-1979', 'original'
+  16, 'NOV 05, 1979', 'St. Paul Civic Center', 'St. Paul, MN', 'Tusk Tour', 'Fleetwood Mac', '18,500', '1967-1979', 'original'
+  17, 'NOV 15, 1979', 'Chicago Stadium', 'Chicago, IL', 'Tusk Tour', 'Fleetwood Mac', '19,000', '1967-1979', 'original'
+  18, 'DEC 06, 1979', 'The Spectrum', 'Philadelphia, PA', 'Tusk Tour', 'Fleetwood Mac', '17,000', '1967-1979', 'original'
+  19, 'FEB 03, 1980', 'Budokan', 'Tokyo, Japan', 'Tusk Tour', 'Fleetwood Mac', '14,000', '1980-1992', 'original'
+  20, 'FEB 20, 1980', 'Sydney Entertainment Centre', 'Sydney, Australia', 'Tusk Tour', 'Fleetwood Mac', '12,000', '1980-1992', 'original'
+  21, 'JUN 14, 1980', 'Wembley Arena', 'London, UK', 'Tusk Tour', 'Fleetwood Mac', '12,000', '1980-1992', 'original'
+  22, 'JUN 21, 1980', 'Grughalle', 'Essen, Germany', 'Tusk Tour', 'Fleetwood Mac', '10,000', '1980-1992', 'original'
+  23, 'AUG 26, 1980', 'Hollywood Bowl', 'Los Angeles, CA', 'Tusk Tour', 'Fleetwood Mac', '17,500', '1980-1992', 'original'
+  24, 'SEP 01, 1982', 'Greensboro Coliseum', 'Greensboro, NC', 'Mirage Tour', 'Fleetwood Mac', '15,000', '1980-1992', 'original'
+  25, 'SEP 05, 1982', 'Glen Helen Pavilion', 'San Bernardino, CA', 'US Festival 1982', 'Fleetwood Mac', '250,000', '1980-1992', 'original'
+  26, 'SEP 15, 1982', 'The Spectrum', 'Philadelphia, PA', 'Mirage Tour', 'Fleetwood Mac', '17,200', '1980-1992', 'original'
+  27, 'SEP 22, 1982', 'Madison Square Garden', 'New York, NY', 'Mirage Tour', 'Fleetwood Mac', '19,500', '1980-1992', 'original'
+  28, 'OCT 21, 1982', 'Oakland Coliseum Arena', 'Oakland, CA', 'Mirage Tour', 'Fleetwood Mac', '14,000', '1980-1992', 'original'
+  29, 'DEC 12, 1987', 'Cow Palace', 'Daly City, CA', 'Shake the Cage Tour', 'Fleetwood Mac', '14,500', '1980-1992', 'original'
+  30, 'JUN 04, 1988', 'Rock am Ring Festival', 'Nürburg, Germany', 'Shake the Cage Tour', 'Fleetwood Mac', '80,000', '1980-1992', 'original'
+  31, 'APR 28, 1990', 'Wembley Arena', 'London, UK', 'Behind the Mask Tour', 'Fleetwood Mac', '12,000', '1980-1992', 'original'
+  32, 'MAY 22, 1997', 'Warner Bros. Studios Soundstage', 'Burbank, CA', 'The Dance Rehearsals', 'Fleetwood Mac', '500', '1993-2005', 'original'
+  33, 'SEP 17, 1997', 'Meadowlands Arena', 'East Rutherford, NJ', 'The Dance Tour', 'Fleetwood Mac', '20,000', '1993-2005', 'original'
+  34, 'SEP 23, 1997', 'CoreStates Center', 'Philadelphia, PA', 'The Dance Tour', 'Fleetwood Mac', '19,500', '1993-2005', 'original'
+  35, 'SEP 30, 1997', 'Hollywood Bowl', 'Los Angeles, CA', 'The Dance Tour', 'Fleetwood Mac', '17,500', '1993-2005', 'original'
+  36, 'OCT 15, 1997', 'United Center', 'Chicago, IL', 'The Dance Tour', 'Fleetwood Mac', '20,500', '1993-2005', 'original'
+  37, 'NOV 26, 1997', 'Aladdin Theatre', 'Las Vegas, NV', 'The Dance Tour', 'Fleetwood Mac', '7,000', '1993-2005', 'original'
+  38, 'MAY 07, 2003', 'Schottenstein Center', 'Columbus, OH', 'Say You Will Tour', 'Fleetwood Mac', '11,637', '1993-2005', 'original'
+  39, 'MAY 19, 2003', 'First Union Center', 'Philadelphia, PA', 'Say You Will Tour', 'Fleetwood Mac', '16,795', '1993-2005', 'original'
+  40, 'SEP 23, 2003', 'Fleet Center', 'Boston, MA', 'Say You Will Tour', 'Fleetwood Mac', '13,100', '1993-2005', 'original'
+  41, 'MAR 01, 2009', 'Mellon Arena', 'Pittsburgh, PA', 'Unleashed Tour', 'Fleetwood Mac', '13,934', '2006-2018', 'original'
+  42, 'OCT 30, 2009', 'Wembley Arena', 'London, UK', 'Unleashed Tour', 'Fleetwood Mac', '11,105', '2006-2018', 'original'
+  43, 'APR 04, 2013', 'Nationwide Arena', 'Columbus, OH', 'Fleetwood Mac Live 2013', 'Fleetwood Mac', '12,323', '2006-2018', 'original'
+  44, 'APR 08, 2013', 'Madison Square Garden', 'New York, NY', 'Fleetwood Mac Live 2013', 'Fleetwood Mac', '14,358', '2006-2018', 'original'
+  45, 'APR 16, 2013', 'Air Canada Centre', 'Toronto, ON', 'Fleetwood Mac Live 2013', 'Fleetwood Mac', '16,324', '2006-2018', 'original'
+  46, 'SEP 30, 2014', 'Target Center', 'Minneapolis, MN', 'On With the Show Tour', 'Fleetwood Mac', '15,400', '2006-2018', 'original'
+  47, 'OCT 06, 2014', 'Madison Square Garden', 'New York, NY', 'On With the Show Tour', 'Fleetwood Mac', '18,200', '2006-2018', 'original'
+  48, 'MAY 27, 2015', 'The O2 Arena', 'London, UK', 'On With the Show Tour', 'Fleetwood Mac', '16,500', '2006-2018', 'original'
+  49, 'JUN 09, 2015', 'Ziggo Dome', 'Amsterdam, Netherlands', 'On With the Show Tour', 'Fleetwood Mac', '17,000', '2006-2018', 'original'
+  50, 'SEP 04, 2015', 'Allphones Arena', 'Sydney, Australia', 'On With the Show Tour', 'Fleetwood Mac', '14,200', '2006-2018', 'original'
+  51, 'NOV 21, 2015', 'Mt Smart Stadium', 'Auckland, New Zealand', 'On With the Show Tour', 'Fleetwood Mac', '32,000', '2006-2018', 'original'
+  52, 'OCT 03, 2018', 'BOK Center', 'Tulsa, OK', 'An Evening with Fleetwood Mac', 'Fleetwood Mac', '11,694', '2006-2018', 'original'
+  53, 'DEC 11, 2018', 'The Forum', 'Inglewood, CA', 'An Evening with Fleetwood Mac', 'Fleetwood Mac', '14,209', '2006-2018', 'original'
+  54, 'JUN 16, 2019', 'Wembley Stadium', 'London, UK', 'An Evening with Fleetwood Mac', 'Fleetwood Mac', '70,000', '2019-2031', 'original'
+  55, 'SEP 07, 2019', 'Smoothie King Center', 'New Orleans, LA', 'Final Fleetwood Mac Show', 'Fleetwood Mac', '15,000', '2019-2031', 'original'
+  56, 'JUL 8, 2026', 'Royal and Derngate', 'Northampton, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,200', '2019-2031', 'tribute'
+  57, 'JUL 9, 2026', 'Bristol Beacon', 'Bristol, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '2,000', '2019-2031', 'tribute'
+  58, 'JUL 10, 2026', 'Hall for Cornwall', 'Truro, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,500', '2019-2031', 'tribute'
+  59, 'JUL 12, 2026', 'Watford Colosseum', 'Watford, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,500', '2019-2031', 'tribute'
+  60, 'JUL 13, 2026', 'Venue Cymru Theatre', 'Llandudno, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,500', '2019-2031', 'tribute'
+  61, 'JUL 14, 2026', 'Portsmouth Guildhall', 'Portsmouth, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '2,000', '2019-2031', 'tribute'
+  62, 'JUL 15, 2026', 'Assembly Hall Theatre', 'Tunbridge Wells, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,200', '2019-2031', 'tribute'
+  63, 'JUL 17, 2026', 'Leas Cliff Hall', 'Folkestone, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,500', '2019-2031', 'tribute'
+  64, 'JUL 18, 2026', 'The Lowry', 'Salford, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,700', '2019-2031', 'tribute'
+  65, 'JUL 20, 2026', 'New Theatre Peterborough', 'Peterborough, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,200', '2019-2031', 'tribute'
+  66, 'SEP 12, 2026', 'Liverpool Philharmonic Hall', 'Liverpool, UK', '2026 UK Tour', 'Rumours of Fleetwood Mac', '1,700', '2019-2031', 'tribute'
+  67, 'AUG 29, 2026', 'Greenfield Lake Amphitheater', 'Wilmington, NC', '2026 Tour', 'Tell Me Lies', '2,000', '2019-2031', 'tribute'
+  68, 'SEP 4, 2026', 'Knitting Factory', 'Boise, ID', '2026 Tour', 'Tell Me Lies', '1,000', '2019-2031', 'tribute'
+  69, 'SEP 18, 2026', 'Dunn Center', 'Rocky Mount, NC', '2026 Tour', 'Tell Me Lies', '1,500', '2019-2031', 'tribute'
+  70, 'SEP 25, 2026', 'Robins Theatre', 'Warren, OH', '2026 Tour', 'Tell Me Lies', '1,000', '2019-2031', 'tribute'
+  71, 'SEP 26, 2026', 'The Murphy Theatre', 'Wilmington, OH', '2026 Tour', 'Tell Me Lies', '800', '2019-2031', 'tribute'
+  72, 'OCT 8, 2026', 'The Greenwich Odeum', 'East Greenwich, RI', '2026 Tour', 'Tell Me Lies', '600', '2019-2031', 'tribute'
+  73, 'OCT 10, 2026', 'Claremont Opera House', 'Claremont, NH', '2026 Tour', 'Tell Me Lies', '800', '2019-2031', 'tribute'
+  74, 'OCT 16, 2026', 'Mauch Chunk Opera House', 'Jim Thorpe, PA', '2026 Tour', 'Tell Me Lies', '400', '2019-2031', 'tribute'
+  75, 'NOV 14, 2026', 'Atwood Music Hall', 'Atwood, OH', '2026 Tour', 'Tell Me Lies', '500', '2019-2031', 'tribute'
+  76, 'JAN 29, 2027', 'Ludlow Garage Cincinnati', 'Cincinnati, OH', '2027 Tour', 'Tell Me Lies', '500', '2019-2031', 'tribute'
+  77, 'AUG 22, 2026', 'Chrome Showroom at Santa Fe Station', 'Las Vegas, NV', '2026 Tour', 'Fleetwood Mask', '600', '2019-2031', 'tribute'
+  78, 'SEP 12, 2026', 'Batavia Fine Arts Centre', 'Batavia, IL', '2026 Tour', 'Fleetwood Mask', '800', '2019-2031', 'tribute'
+  79, 'OCT 17, 2026', 'Bing Crosby Theater', 'Spokane, WA', '2026 Tour', 'Fleetwood Mask', '1,000', '2019-2031', 'tribute'
+  80, 'NOV 21, 2026', 'Higley Center for the Performing Arts', 'Gilbert, AZ', '2026 Tour', 'Fleetwood Mask', '800', '2019-2031', 'tribute'
+  81, 'NOV 1, 2026', 'Balboa Theatre', 'San Diego, CA', '2026 Tour', 'TUSK', '1,300', '2019-2031', 'tribute'
+  82, 'NOV 5, 2026', 'Uptown Theatre Napa', 'Napa, CA', '2026 Tour', 'TUSK', '800', '2019-2031', 'tribute'
+  83, 'NOV 22, 2026', 'Adler Theatre', 'Davenport, IA', '2026 Tour', 'TUSK', '2,000', '2019-2031', 'tribute'
+  84, 'MAR 21, 2027', 'Wells Hall at The Parker', 'Fort Lauderdale, FL', '2027 Tour', 'TUSK', '1,000', '2019-2031', 'tribute'
+  85, 'FEB 11, 2027', 'Plaza Theatre', 'Palm Springs, CA', '2027 Tour', 'Rumours', '800', '2019-2031', 'tribute'
+  86, 'APR 30, 2027', 'The Molson Canadian Centre at Casino New Brunswick', 'Moncton, NB, Canada', '2027 Tour', 'Rumours', '1,200', '2019-2031', 'tribute'
+}

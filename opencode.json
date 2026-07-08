@@ -5,6 +5,11 @@
       "type": "remote",
       "url": "https://stitch.googleapis.com/mcp",
       "enabled": true
+    },
+    "supabase": {
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp?project_ref=wqpnsuzulmrbsfuradjt&read_only=true&features=database,docs,development",
+      "enabled": true
     }
   }
 }
