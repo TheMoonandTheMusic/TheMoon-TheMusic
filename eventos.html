@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -274,111 +275,30 @@ SHOWING: ALL EVENTS
 </div>
 </footer>
 <script>
-const concertData = [
-  // ── Pre-Rumours ── original Fleetwood Mac ──────────
-  { date: "SEP 23, 1967", venue: "Windsor Jazz & Blues Festival", location: "Windsor, UK", tour: "Peter Green Era", band: "Fleetwood Mac", attendance: "2,500", era: "1967-1979", type: "original" },
-  { date: "MAY 10, 1969", venue: "Fillmore West", location: "San Francisco, CA", tour: "Then Play On Tour", band: "Fleetwood Mac", attendance: "6,000", era: "1967-1979", type: "original" },
-  { date: "AUG 15, 1975", venue: "Universal Amphitheatre", location: "Universal City, CA", tour: "First Nicks/Buckingham Tour", band: "Fleetwood Mac", attendance: "5,000", era: "1967-1979", type: "original" },
-  // ── Rumours Tour (1977–1978) ───────────────────────
-  { date: "FEB 28, 1977", venue: "Civic Auditorium", location: "New Orleans, LA", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "10,000", era: "1967-1979", type: "original" },
-  { date: "MAR 10, 1977", venue: "University of Dayton Arena", location: "Dayton, OH", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "13,500", era: "1967-1979", type: "original" },
-  { date: "MAR 24, 1977", venue: "Nassau Coliseum", location: "Uniondale, NY", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "16,000", era: "1967-1979", type: "original" },
-  { date: "APR 02, 1977", venue: "Omni Coliseum", location: "Atlanta, GA", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "17,000", era: "1967-1979", type: "original" },
-  { date: "MAY 10, 1977", venue: "Hammersmith Odeon", location: "London, UK", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "3,500", era: "1967-1979", type: "original" },
-  { date: "MAY 14, 1977", venue: "Jaap Eden Hal", location: "Amsterdam, Netherlands", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "5,000", era: "1967-1979", type: "original" },
-  { date: "JUN 29, 1977", venue: "Madison Square Garden", location: "New York, NY", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "19,500", era: "1967-1979", type: "original" },
-  { date: "JUL 23, 1977", venue: "Oakland-Alameda County Coliseum", location: "Oakland, CA", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "50,000", era: "1967-1979", type: "original" },
-  { date: "AUG 25, 1977", venue: "McNichols Sports Arena", location: "Denver, CO", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "17,500", era: "1967-1979", type: "original" },
-  { date: "AUG 30, 1977", venue: "The Forum", location: "Inglewood, CA", tour: "Rumours Tour", band: "Fleetwood Mac", attendance: "18,000", era: "1967-1979", type: "original" },
-  { date: "JUL 18, 1978", venue: "Alpine Valley Music Theatre", location: "East Troy, WI", tour: "Summer Country Safari", band: "Fleetwood Mac", attendance: "18,213", era: "1967-1979", type: "original" },
-  // ── Tusk Tour (1979–1980) ──────────────────────────
-  { date: "OCT 26, 1979", venue: "Albuquerque Civic Auditorium", location: "Albuquerque, NM", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "8,000", era: "1967-1979", type: "original" },
-  { date: "NOV 05, 1979", venue: "St. Paul Civic Center", location: "St. Paul, MN", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "18,500", era: "1967-1979", type: "original" },
-  { date: "NOV 15, 1979", venue: "Chicago Stadium", location: "Chicago, IL", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "19,000", era: "1967-1979", type: "original" },
-  { date: "DEC 06, 1979", venue: "The Spectrum", location: "Philadelphia, PA", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "17,000", era: "1967-1979", type: "original" },
-  { date: "FEB 03, 1980", venue: "Budokan", location: "Tokyo, Japan", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "14,000", era: "1980-1992", type: "original" },
-  { date: "FEB 20, 1980", venue: "Sydney Entertainment Centre", location: "Sydney, Australia", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "12,000", era: "1980-1992", type: "original" },
-  { date: "JUN 14, 1980", venue: "Wembley Arena", location: "London, UK", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "12,000", era: "1980-1992", type: "original" },
-  { date: "JUN 21, 1980", venue: "Grughalle", location: "Essen, Germany", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "10,000", era: "1980-1992", type: "original" },
-  { date: "AUG 26, 1980", venue: "Hollywood Bowl", location: "Los Angeles, CA", tour: "Tusk Tour", band: "Fleetwood Mac", attendance: "17,500", era: "1980-1992", type: "original" },
-  // ── Mirage Tour (1982) ─────────────────────────────
-  { date: "SEP 01, 1982", venue: "Greensboro Coliseum", location: "Greensboro, NC", tour: "Mirage Tour", band: "Fleetwood Mac", attendance: "15,000", era: "1980-1992", type: "original" },
-  { date: "SEP 05, 1982", venue: "Glen Helen Pavilion", location: "San Bernardino, CA", tour: "US Festival 1982", band: "Fleetwood Mac", attendance: "250,000", era: "1980-1992", type: "original" },
-  { date: "SEP 15, 1982", venue: "The Spectrum", location: "Philadelphia, PA", tour: "Mirage Tour", band: "Fleetwood Mac", attendance: "17,200", era: "1980-1992", type: "original" },
-  { date: "SEP 22, 1982", venue: "Madison Square Garden", location: "New York, NY", tour: "Mirage Tour", band: "Fleetwood Mac", attendance: "19,500", era: "1980-1992", type: "original" },
-  { date: "OCT 21, 1982", venue: "Oakland Coliseum Arena", location: "Oakland, CA", tour: "Mirage Tour", band: "Fleetwood Mac", attendance: "14,000", era: "1980-1992", type: "original" },
-  // ── 1987–1990 ── original Fleetwood Mac ────────────
-  { date: "DEC 12, 1987", venue: "Cow Palace", location: "Daly City, CA", tour: "Shake the Cage Tour", band: "Fleetwood Mac", attendance: "14,500", era: "1980-1992", type: "original" },
-  { date: "JUN 04, 1988", venue: "Rock am Ring Festival", location: "Nürburg, Germany", tour: "Shake the Cage Tour", band: "Fleetwood Mac", attendance: "80,000", era: "1980-1992", type: "original" },
-  { date: "APR 28, 1990", venue: "Wembley Arena", location: "London, UK", tour: "Behind the Mask Tour", band: "Fleetwood Mac", attendance: "12,000", era: "1980-1992", type: "original" },
-  // ── The Dance Tour (1997) ──────────────────────────
-  { date: "MAY 22, 1997", venue: "Warner Bros. Studios Soundstage", location: "Burbank, CA", tour: "The Dance Rehearsals", band: "Fleetwood Mac", attendance: "500", era: "1993-2005", type: "original" },
-  { date: "SEP 17, 1997", venue: "Meadowlands Arena", location: "East Rutherford, NJ", tour: "The Dance Tour", band: "Fleetwood Mac", attendance: "20,000", era: "1993-2005", type: "original" },
-  { date: "SEP 23, 1997", venue: "CoreStates Center", location: "Philadelphia, PA", tour: "The Dance Tour", band: "Fleetwood Mac", attendance: "19,500", era: "1993-2005", type: "original" },
-  { date: "SEP 30, 1997", venue: "Hollywood Bowl", location: "Los Angeles, CA", tour: "The Dance Tour", band: "Fleetwood Mac", attendance: "17,500", era: "1993-2005", type: "original" },
-  { date: "OCT 15, 1997", venue: "United Center", location: "Chicago, IL", tour: "The Dance Tour", band: "Fleetwood Mac", attendance: "20,500", era: "1993-2005", type: "original" },
-  { date: "NOV 26, 1997", venue: "Aladdin Theatre", location: "Las Vegas, NV", tour: "The Dance Tour", band: "Fleetwood Mac", attendance: "7,000", era: "1993-2005", type: "original" },
-  // ── Say You Will Tour (2003) ───────────────────────
-  { date: "MAY 07, 2003", venue: "Schottenstein Center", location: "Columbus, OH", tour: "Say You Will Tour", band: "Fleetwood Mac", attendance: "11,637", era: "1993-2005", type: "original" },
-  { date: "MAY 19, 2003", venue: "First Union Center", location: "Philadelphia, PA", tour: "Say You Will Tour", band: "Fleetwood Mac", attendance: "16,795", era: "1993-2005", type: "original" },
-  { date: "SEP 23, 2003", venue: "Fleet Center", location: "Boston, MA", tour: "Say You Will Tour", band: "Fleetwood Mac", attendance: "13,100", era: "1993-2005", type: "original" },
-  // ── Unleashed Tour (2009) ──────────────────────────
-  { date: "MAR 01, 2009", venue: "Mellon Arena", location: "Pittsburgh, PA", tour: "Unleashed Tour", band: "Fleetwood Mac", attendance: "13,934", era: "2006-2018", type: "original" },
-  { date: "OCT 30, 2009", venue: "Wembley Arena", location: "London, UK", tour: "Unleashed Tour", band: "Fleetwood Mac", attendance: "11,105", era: "2006-2018", type: "original" },
-  // ── Fleetwood Mac Live 2013 ────────────────────────
-  { date: "APR 04, 2013", venue: "Nationwide Arena", location: "Columbus, OH", tour: "Fleetwood Mac Live 2013", band: "Fleetwood Mac", attendance: "12,323", era: "2006-2018", type: "original" },
-  { date: "APR 08, 2013", venue: "Madison Square Garden", location: "New York, NY", tour: "Fleetwood Mac Live 2013", band: "Fleetwood Mac", attendance: "14,358", era: "2006-2018", type: "original" },
-  { date: "APR 16, 2013", venue: "Air Canada Centre", location: "Toronto, ON", tour: "Fleetwood Mac Live 2013", band: "Fleetwood Mac", attendance: "16,324", era: "2006-2018", type: "original" },
-  // ── On With the Show Tour (2014–2015) ──────────────
-  { date: "SEP 30, 2014", venue: "Target Center", location: "Minneapolis, MN", tour: "On With the Show Tour", band: "Fleetwood Mac", attendance: "15,400", era: "2006-2018", type: "original" },
-  { date: "OCT 06, 2014", venue: "Madison Square Garden", location: "New York, NY", tour: "On With the Show Tour", band: "Fleetwood Mac", attendance: "18,200", era: "2006-2018", type: "original" },
-  { date: "MAY 27, 2015", venue: "The O2 Arena", location: "London, UK", tour: "On With the Show Tour", band: "Fleetwood Mac", attendance: "16,500", era: "2006-2018", type: "original" },
-  { date: "JUN 09, 2015", venue: "Ziggo Dome", location: "Amsterdam, Netherlands", tour: "On With the Show Tour", band: "Fleetwood Mac", attendance: "17,000", era: "2006-2018", type: "original" },
-  { date: "SEP 04, 2015", venue: "Allphones Arena", location: "Sydney, Australia", tour: "On With the Show Tour", band: "Fleetwood Mac", attendance: "14,200", era: "2006-2018", type: "original" },
-  { date: "NOV 21, 2015", venue: "Mt Smart Stadium", location: "Auckland, New Zealand", tour: "On With the Show Tour", band: "Fleetwood Mac", attendance: "32,000", era: "2006-2018", type: "original" },
-  // ── An Evening with Fleetwood Mac (2018) ────────────
-  { date: "OCT 03, 2018", venue: "BOK Center", location: "Tulsa, OK", tour: "An Evening with Fleetwood Mac", band: "Fleetwood Mac", attendance: "11,694", era: "2006-2018", type: "original" },
-  { date: "DEC 11, 2018", venue: "The Forum", location: "Inglewood, CA", tour: "An Evening with Fleetwood Mac", band: "Fleetwood Mac", attendance: "14,209", era: "2006-2018", type: "original" },
-  // ── Final Shows ── original ────────────────────────
-  { date: "JUN 16, 2019", venue: "Wembley Stadium", location: "London, UK", tour: "An Evening with Fleetwood Mac", band: "Fleetwood Mac", attendance: "70,000", era: "2019-2031", type: "original" },
-  { date: "SEP 07, 2019", venue: "Smoothie King Center", location: "New Orleans, LA", tour: "Final Fleetwood Mac Show", band: "Fleetwood Mac", attendance: "15,000", era: "2019-2031", type: "original" },
-  // ── Rumours of Fleetwood Mac — 2026 UK Tour (Ticketmaster) ──
-  { date: "JUL 8, 2026", venue: "Royal and Derngate", location: "Northampton, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,200", era: "2019-2031", type: "tribute" },
-  { date: "JUL 9, 2026", venue: "Bristol Beacon", location: "Bristol, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "2,000", era: "2019-2031", type: "tribute" },
-  { date: "JUL 10, 2026", venue: "Hall for Cornwall", location: "Truro, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,500", era: "2019-2031", type: "tribute" },
-  { date: "JUL 12, 2026", venue: "Watford Colosseum", location: "Watford, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,500", era: "2019-2031", type: "tribute" },
-  { date: "JUL 13, 2026", venue: "Venue Cymru Theatre", location: "Llandudno, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,500", era: "2019-2031", type: "tribute" },
-  { date: "JUL 14, 2026", venue: "Portsmouth Guildhall", location: "Portsmouth, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "2,000", era: "2019-2031", type: "tribute" },
-  { date: "JUL 15, 2026", venue: "Assembly Hall Theatre", location: "Tunbridge Wells, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,200", era: "2019-2031", type: "tribute" },
-  { date: "JUL 17, 2026", venue: "Leas Cliff Hall", location: "Folkestone, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,500", era: "2019-2031", type: "tribute" },
-  { date: "JUL 18, 2026", venue: "The Lowry", location: "Salford, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,700", era: "2019-2031", type: "tribute" },
-  { date: "JUL 20, 2026", venue: "New Theatre Peterborough", location: "Peterborough, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,200", era: "2019-2031", type: "tribute" },
-  { date: "SEP 12, 2026", venue: "Liverpool Philharmonic Hall", location: "Liverpool, UK", tour: "2026 UK Tour", band: "Rumours of Fleetwood Mac", attendance: "1,700", era: "2019-2031", type: "tribute" },
-  // ── Tell Me Lies — The Fleetwood Mac Experience (Ticketmaster) ──
-  { date: "AUG 29, 2026", venue: "Greenfield Lake Amphitheater", location: "Wilmington, NC", tour: "2026 Tour", band: "Tell Me Lies", attendance: "2,000", era: "2019-2031", type: "tribute" },
-  { date: "SEP 4, 2026", venue: "Knitting Factory", location: "Boise, ID", tour: "2026 Tour", band: "Tell Me Lies", attendance: "1,000", era: "2019-2031", type: "tribute" },
-  { date: "SEP 18, 2026", venue: "Dunn Center", location: "Rocky Mount, NC", tour: "2026 Tour", band: "Tell Me Lies", attendance: "1,500", era: "2019-2031", type: "tribute" },
-  { date: "SEP 25, 2026", venue: "Robins Theatre", location: "Warren, OH", tour: "2026 Tour", band: "Tell Me Lies", attendance: "1,000", era: "2019-2031", type: "tribute" },
-  { date: "SEP 26, 2026", venue: "The Murphy Theatre", location: "Wilmington, OH", tour: "2026 Tour", band: "Tell Me Lies", attendance: "800", era: "2019-2031", type: "tribute" },
-  { date: "OCT 8, 2026", venue: "The Greenwich Odeum", location: "East Greenwich, RI", tour: "2026 Tour", band: "Tell Me Lies", attendance: "600", era: "2019-2031", type: "tribute" },
-  { date: "OCT 10, 2026", venue: "Claremont Opera House", location: "Claremont, NH", tour: "2026 Tour", band: "Tell Me Lies", attendance: "800", era: "2019-2031", type: "tribute" },
-  { date: "OCT 16, 2026", venue: "Mauch Chunk Opera House", location: "Jim Thorpe, PA", tour: "2026 Tour", band: "Tell Me Lies", attendance: "400", era: "2019-2031", type: "tribute" },
-  { date: "NOV 14, 2026", venue: "Atwood Music Hall", location: "Atwood, OH", tour: "2026 Tour", band: "Tell Me Lies", attendance: "500", era: "2019-2031", type: "tribute" },
-  { date: "JAN 29, 2027", venue: "Ludlow Garage Cincinnati", location: "Cincinnati, OH", tour: "2027 Tour", band: "Tell Me Lies", attendance: "500", era: "2019-2031", type: "tribute" },
-  // ── Fleetwood Mask — The Fleetwood Mac Tribute (Ticketmaster) ──
-  { date: "AUG 22, 2026", venue: "Chrome Showroom at Santa Fe Station", location: "Las Vegas, NV", tour: "2026 Tour", band: "Fleetwood Mask", attendance: "600", era: "2019-2031", type: "tribute" },
-  { date: "SEP 12, 2026", venue: "Batavia Fine Arts Centre", location: "Batavia, IL", tour: "2026 Tour", band: "Fleetwood Mask", attendance: "800", era: "2019-2031", type: "tribute" },
-  { date: "OCT 17, 2026", venue: "Bing Crosby Theater", location: "Spokane, WA", tour: "2026 Tour", band: "Fleetwood Mask", attendance: "1,000", era: "2019-2031", type: "tribute" },
-  { date: "NOV 21, 2026", venue: "Higley Center for the Performing Arts", location: "Gilbert, AZ", tour: "2026 Tour", band: "Fleetwood Mask", attendance: "800", era: "2019-2031", type: "tribute" },
-  // ── TUSK: The Classic Tribute to Fleetwood Mac (Ticketmaster) ──
-  { date: "NOV 1, 2026", venue: "Balboa Theatre", location: "San Diego, CA", tour: "2026 Tour", band: "TUSK", attendance: "1,300", era: "2019-2031", type: "tribute" },
-  { date: "NOV 5, 2026", venue: "Uptown Theatre Napa", location: "Napa, CA", tour: "2026 Tour", band: "TUSK", attendance: "800", era: "2019-2031", type: "tribute" },
-  { date: "NOV 22, 2026", venue: "Adler Theatre", location: "Davenport, IA", tour: "2026 Tour", band: "TUSK", attendance: "2,000", era: "2019-2031", type: "tribute" },
-  { date: "MAR 21, 2027", venue: "Wells Hall at The Parker", location: "Fort Lauderdale, FL", tour: "2027 Tour", band: "TUSK", attendance: "1,000", era: "2019-2031", type: "tribute" },
-  // ── Rumours — Ultimate Fleetwood Mac Tribute Show (Ticketmaster) ──
-  { date: "FEB 11, 2027", venue: "Plaza Theatre", location: "Palm Springs, CA", tour: "2027 Tour", band: "Rumours", attendance: "800", era: "2019-2031", type: "tribute" },
-  { date: "APR 30, 2027", venue: "The Molson Canadian Centre at Casino New Brunswick", location: "Moncton, NB, Canada", tour: "2027 Tour", band: "Rumours", attendance: "1,200", era: "2019-2031", type: "tribute" }
-];
+const supabaseClient = supabase.createClient(
+  'https://wqpnsuzulmrbsfuradjt.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcG5zdXp1bG1yYnNmdXJhZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA1NjEsImV4cCI6MjA5OTA4NjU2MX0.BFoI9LWKe9L5bvOOw45GeqYKw2GVmGC0ErdsMOsiwss'
+);
+
+let concertData = [];
+
+async function loadConcertsData() {
+  const { data, error } = await supabaseClient
+    .from('concerts')
+    .select('*')
+    .order('date', { ascending: true });
+  if (error) throw error;
+  concertData = data.map(c => ({
+    date: c.date,
+    venue: c.venue,
+    location: c.location,
+    tour: c.tour,
+    band: c.band,
+    attendance: c.attendance,
+    era: c.era,
+    type: c.type
+  }));
+}
 
 const activeClass = 'bg-primary text-on-primary border-primary';
 const inactiveClass = 'bg-transparent text-on-surface-variant border-on-surface/20';
@@ -593,240 +513,241 @@ function renderTributeGrid() {
 `).join('');
 }
 
-const eventSearch = document.getElementById('event-search');
-function onEventSearch() {
-  searchTerm = eventSearch.value.toLowerCase();
-  renderConcerts();
-}
-eventSearch.addEventListener('input', onEventSearch);
-eventSearch.addEventListener('search', onEventSearch);
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadConcertsData();
 
-document.getElementById('toggle-concerts-btn').addEventListener('click', () => {
-  showAllConcerts = !showAllConcerts;
-  renderConcerts();
-});
-
-// ── Subscription system ──
-const SUB_KEY = 'mm_subscriber';
-const HASH_KEY = 'mm_concert_hash';
-const LS_EMAIL = 'mm_sub_email';
-
-function concertHash() {
-  let s = '';
-  for (const c of concertData) s += c.date + c.venue + c.band;
-  let h = 0;
-  for (let i = 0; i < s.length; i++) {
-    h = ((h << 5) - h) + s.charCodeAt(i);
-    h |= 0;
+  const eventSearch = document.getElementById('event-search');
+  function onEventSearch() {
+    searchTerm = eventSearch.value.toLowerCase();
+    renderConcerts();
   }
-  return 'v' + h;
-}
+  eventSearch.addEventListener('input', onEventSearch);
+  eventSearch.addEventListener('search', onEventSearch);
 
-function checkForUpdates() {
-  const subscribed = localStorage.getItem(SUB_KEY) === 'true';
-  if (!subscribed) return;
-  const storedHash = localStorage.getItem(HASH_KEY);
-  const currentHash = concertHash();
-  if (storedHash && storedHash !== currentHash) {
-    const msg = document.getElementById('subscribe-msg');
-    if (msg) {
-      msg.classList.remove('hidden');
-      msg.innerHTML = '&#9733; New concerts have been added since your last visit! Scroll up to explore.';
-    }
-  }
-  localStorage.setItem(HASH_KEY, currentHash);
-}
-
-document.getElementById('subscribe-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('subscribe-email').value.trim();
-  const msg = document.getElementById('subscribe-msg');
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    msg.classList.remove('hidden');
-    msg.style.color = '#ba1a1a';
-    msg.textContent = 'Please enter a valid email address.';
-    return;
-  }
-  msg.style.color = '';
-  localStorage.setItem(SUB_KEY, 'true');
-  localStorage.setItem(LS_EMAIL, email);
-  localStorage.setItem(HASH_KEY, concertHash());
-  msg.classList.remove('hidden');
-  msg.innerHTML = '&#10003; You\'re subscribed! You\'ll be notified when new concerts are added.';
-  this.querySelector('button').textContent = 'SUBSCRIBED';
-  this.querySelector('button').style.opacity = '0.6';
-  document.getElementById('subscribe-email').disabled = true;
-});
-
-// restore subscribed state on page load
-(function() {
-  if (localStorage.getItem(SUB_KEY) === 'true') {
-    const email = document.getElementById('subscribe-email');
-    const btn = document.querySelector('#subscribe-form button');
-    if (email) { email.value = localStorage.getItem(LS_EMAIL) || ''; email.disabled = true; }
-    if (btn) { btn.textContent = 'SUBSCRIBED'; btn.style.opacity = '0.6'; }
-  }
-  checkForUpdates();
-})();
-
-// ── Auth System ──
-const AUTH_KEY = 'mm_users';
-const SESSION_KEY = 'mm_session';
-
-function getUsers() {
-  try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
-}
-
-function saveUsers(users) {
-  localStorage.setItem(AUTH_KEY, JSON.stringify(users));
-}
-
-function isLoggedIn() {
-  return !!localStorage.getItem(SESSION_KEY);
-}
-
-function getLoggedInEmail() {
-  return localStorage.getItem(SESSION_KEY) || '';
-}
-
-function toggleAuthModal(show, mode) {
-  const modal = document.getElementById('auth-modal');
-  if (!modal) return;
-  modal.classList.toggle('hidden', !show);
-  if (!show) return;
-  const title = document.getElementById('auth-title');
-  const submitBtn = document.querySelector('#auth-form button[type="submit"]');
-  const confirmGroup = document.getElementById('auth-confirm-group');
-  const toggleText = document.getElementById('auth-toggle-text');
-  const toggleBtn = document.getElementById('auth-toggle-btn');
-  const error = document.getElementById('auth-error');
-  error.classList.add('hidden');
-  document.getElementById('auth-form').reset();
-  if (mode === 'signup') {
-    title.textContent = 'Sign Up';
-    submitBtn.textContent = 'SIGN UP';
-    confirmGroup.classList.remove('hidden');
-    toggleText.textContent = 'Already have an account?';
-    toggleBtn.textContent = 'LOG IN';
-    toggleBtn.dataset.mode = 'login';
-  } else {
-    title.textContent = 'Log In';
-    submitBtn.textContent = 'LOG IN';
-    confirmGroup.classList.add('hidden');
-    toggleText.textContent = "Don't have an account?";
-    toggleBtn.textContent = 'SIGN UP';
-    toggleBtn.dataset.mode = 'signup';
-  }
-}
-
-document.getElementById('auth-modal')?.addEventListener('click', function(e) {
-  if (e.target === this) toggleAuthModal(false);
-});
-document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
-
-document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
-  const mode = this.dataset.mode || 'login';
-  toggleAuthModal(true, mode);
-});
-
-document.getElementById('auth-form')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('auth-email').value.trim().toLowerCase();
-  const password = document.getElementById('auth-password').value;
-  const error = document.getElementById('auth-error');
-  const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    error.textContent = 'Please enter a valid email address.';
-    error.classList.remove('hidden');
-    return;
-  }
-  if (password.length < 4) {
-    error.textContent = 'Password must be at least 4 characters.';
-    error.classList.remove('hidden');
-    return;
-  }
-  const users = getUsers();
-  if (isSignup) {
-    const confirm = document.getElementById('auth-confirm').value;
-    if (password !== confirm) {
-      error.textContent = 'Passwords do not match.';
-      error.classList.remove('hidden');
-      return;
-    }
-    if (users[email]) {
-      error.textContent = 'An account with this email already exists.';
-      error.classList.remove('hidden');
-      return;
-    }
-    users[email] = { email, password };
-    saveUsers(users);
-    localStorage.setItem(SESSION_KEY, email);
-    error.classList.add('hidden');
-    toggleAuthModal(false);
-    updateAuthUI();
-  } else {
-    if (!users[email]) {
-      error.textContent = 'No account found with this email.';
-      error.classList.remove('hidden');
-      return;
-    }
-    if (users[email].password !== password) {
-      error.textContent = 'Incorrect password.';
-      error.classList.remove('hidden');
-      return;
-    }
-    localStorage.setItem(SESSION_KEY, email);
-    error.classList.add('hidden');
-    toggleAuthModal(false);
-    updateAuthUI();
-  }
-});
-
-function updateAuthUI() {
-  const loggedIn = isLoggedIn();
-  const email = getLoggedInEmail();
-  // Update subscribe form based on auth
-  const subBtn = document.querySelector('#subscribe-form button');
-  const subInput = document.getElementById('subscribe-email');
-  if (loggedIn) {
-    if (subInput && !subInput.disabled) {
-      subInput.value = email;
-      subInput.disabled = true;
-    }
-    if (subBtn && subBtn.textContent !== 'SUBSCRIBED') {
-      subBtn.textContent = 'SUBSCRIBED';
-      subBtn.style.opacity = '0.6';
-    }
-  }
-  const loginBtn = document.getElementById('nav-login-btn');
-  const logoutBtn = document.getElementById('logout-btn');
-  if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
-  if (logoutBtn) logoutBtn.classList.toggle('hidden', !loggedIn);
-}
-
-// Add log out button near subscribe
-const footerSection = document.querySelector('.py-20.border-t');
-if (footerSection) {
-  const logoutBtn = document.createElement('button');
-  logoutBtn.id = 'logout-btn';
-  logoutBtn.className = 'bg-transparent border border-on-surface/20 text-on-surface-variant px-6 py-2 font-label-caps text-label-caps hover:border-primary hover:text-primary transition-all mt-6 hidden';
-  logoutBtn.textContent = 'LOG OUT';
-  logoutBtn.addEventListener('click', () => {
-    localStorage.removeItem(SESSION_KEY);
-    location.reload();
+  document.getElementById('toggle-concerts-btn').addEventListener('click', () => {
+    showAllConcerts = !showAllConcerts;
+    renderConcerts();
   });
-  footerSection.querySelector('.max-w-2xl')?.appendChild(logoutBtn);
-}
 
-document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+  // ── Subscription system ──
+  const SUB_KEY = 'mm_subscriber';
+  const HASH_KEY = 'mm_concert_hash';
+  const LS_EMAIL = 'mm_sub_email';
 
-// init
-renderConcerts();
-renderTributeGrid();
-setupFilters();
-setupTypeDropdown();
-setupSort();
+  function concertHash() {
+    let s = '';
+    for (const c of concertData) s += c.date + c.venue + c.band;
+    let h = 0;
+    for (let i = 0; i < s.length; i++) {
+      h = ((h << 5) - h) + s.charCodeAt(i);
+      h |= 0;
+    }
+    return 'v' + h;
+  }
+
+  function checkForUpdates() {
+    const subscribed = localStorage.getItem(SUB_KEY) === 'true';
+    if (!subscribed) return;
+    const storedHash = localStorage.getItem(HASH_KEY);
+    const currentHash = concertHash();
+    if (storedHash && storedHash !== currentHash) {
+      const msg = document.getElementById('subscribe-msg');
+      if (msg) {
+        msg.classList.remove('hidden');
+        msg.innerHTML = '&#9733; New concerts have been added since your last visit! Scroll up to explore.';
+      }
+    }
+    localStorage.setItem(HASH_KEY, currentHash);
+  }
+
+  document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('subscribe-email').value.trim();
+    const msg = document.getElementById('subscribe-msg');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      msg.classList.remove('hidden');
+      msg.style.color = '#ba1a1a';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    msg.style.color = '';
+    localStorage.setItem(SUB_KEY, 'true');
+    localStorage.setItem(LS_EMAIL, email);
+    localStorage.setItem(HASH_KEY, concertHash());
+    msg.classList.remove('hidden');
+    msg.innerHTML = '&#10003; You\'re subscribed! You\'ll be notified when new concerts are added.';
+    this.querySelector('button').textContent = 'SUBSCRIBED';
+    this.querySelector('button').style.opacity = '0.6';
+    document.getElementById('subscribe-email').disabled = true;
+  });
+
+  // restore subscribed state on page load
+  (function() {
+    if (localStorage.getItem(SUB_KEY) === 'true') {
+      const email = document.getElementById('subscribe-email');
+      const btn = document.querySelector('#subscribe-form button');
+      if (email) { email.value = localStorage.getItem(LS_EMAIL) || ''; email.disabled = true; }
+      if (btn) { btn.textContent = 'SUBSCRIBED'; btn.style.opacity = '0.6'; }
+    }
+    checkForUpdates();
+  })();
+
+    // ── Auth System ──
+  const AUTH_KEY = 'mm_users';
+  const SESSION_KEY = 'mm_session';
+
+  function getUsers() {
+    try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || {}; } catch { return {}; }
+  }
+
+  function saveUsers(users) {
+    localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+  }
+
+  function isLoggedIn() {
+    return !!localStorage.getItem(SESSION_KEY);
+  }
+
+  function getLoggedInEmail() {
+    return localStorage.getItem(SESSION_KEY) || '';
+  }
+
+  function toggleAuthModal(show, mode) {
+    const modal = document.getElementById('auth-modal');
+    if (!modal) return;
+    modal.classList.toggle('hidden', !show);
+    if (!show) return;
+    const title = document.getElementById('auth-title');
+    const submitBtn = document.querySelector('#auth-form button[type="submit"]');
+    const confirmGroup = document.getElementById('auth-confirm-group');
+    const toggleText = document.getElementById('auth-toggle-text');
+    const toggleBtn = document.getElementById('auth-toggle-btn');
+    const error = document.getElementById('auth-error');
+    error.classList.add('hidden');
+    document.getElementById('auth-form').reset();
+    if (mode === 'signup') {
+      title.textContent = 'Sign Up';
+      submitBtn.textContent = 'SIGN UP';
+      confirmGroup.classList.remove('hidden');
+      toggleText.textContent = 'Already have an account?';
+      toggleBtn.textContent = 'LOG IN';
+      toggleBtn.dataset.mode = 'login';
+    } else {
+      title.textContent = 'Log In';
+      submitBtn.textContent = 'LOG IN';
+      confirmGroup.classList.add('hidden');
+      toggleText.textContent = "Don't have an account?";
+      toggleBtn.textContent = 'SIGN UP';
+      toggleBtn.dataset.mode = 'signup';
+    }
+  }
+
+  document.getElementById('auth-modal')?.addEventListener('click', function(e) {
+    if (e.target === this) toggleAuthModal(false);
+  });
+  document.getElementById('auth-close')?.addEventListener('click', () => toggleAuthModal(false));
+
+  document.getElementById('auth-toggle-btn')?.addEventListener('click', function() {
+    const mode = this.dataset.mode || 'login';
+    toggleAuthModal(true, mode);
+  });
+
+  document.getElementById('auth-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('auth-email').value.trim().toLowerCase();
+    const password = document.getElementById('auth-password').value;
+    const error = document.getElementById('auth-error');
+    const isSignup = document.getElementById('auth-title').textContent === 'Sign Up';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      error.textContent = 'Please enter a valid email address.';
+      error.classList.remove('hidden');
+      return;
+    }
+    if (password.length < 4) {
+      error.textContent = 'Password must be at least 4 characters.';
+      error.classList.remove('hidden');
+      return;
+    }
+    const users = getUsers();
+    if (isSignup) {
+      const confirm = document.getElementById('auth-confirm').value;
+      if (password !== confirm) {
+        error.textContent = 'Passwords do not match.';
+        error.classList.remove('hidden');
+        return;
+      }
+      if (users[email]) {
+        error.textContent = 'An account with this email already exists.';
+        error.classList.remove('hidden');
+        return;
+      }
+      users[email] = { email, password };
+      saveUsers(users);
+      localStorage.setItem(SESSION_KEY, email);
+      error.classList.add('hidden');
+      toggleAuthModal(false);
+      updateAuthUI();
+    } else {
+      if (!users[email]) {
+        error.textContent = 'No account found with this email.';
+        error.classList.remove('hidden');
+        return;
+      }
+      if (users[email].password !== password) {
+        error.textContent = 'Incorrect password.';
+        error.classList.remove('hidden');
+        return;
+      }
+      localStorage.setItem(SESSION_KEY, email);
+      error.classList.add('hidden');
+      toggleAuthModal(false);
+      updateAuthUI();
+    }
+  });
+
+  function updateAuthUI() {
+    const loggedIn = isLoggedIn();
+    const email = getLoggedInEmail();
+    const subBtn = document.querySelector('#subscribe-form button');
+    const subInput = document.getElementById('subscribe-email');
+    if (loggedIn) {
+      if (subInput && !subInput.disabled) {
+        subInput.value = email;
+        subInput.disabled = true;
+      }
+      if (subBtn && subBtn.textContent !== 'SUBSCRIBED') {
+        subBtn.textContent = 'SUBSCRIBED';
+        subBtn.style.opacity = '0.6';
+      }
+    }
+    const loginBtn = document.getElementById('nav-login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    if (loginBtn) loginBtn.classList.toggle('hidden', loggedIn);
+    if (logoutBtn) logoutBtn.classList.toggle('hidden', !loggedIn);
+  }
+
+  const footerSection = document.querySelector('.py-20.border-t');
+  if (footerSection) {
+    const logoutBtn = document.createElement('button');
+    logoutBtn.id = 'logout-btn';
+    logoutBtn.className = 'bg-transparent border border-on-surface/20 text-on-surface-variant px-6 py-2 font-label-caps text-label-caps hover:border-primary hover:text-primary transition-all mt-6 hidden';
+    logoutBtn.textContent = 'LOG OUT';
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem(SESSION_KEY);
+      location.reload();
+    });
+    footerSection.querySelector('.max-w-2xl')?.appendChild(logoutBtn);
+  }
+
+  document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
+
+  renderConcerts();
+  renderTributeGrid();
+  setupFilters();
+  setupTypeDropdown();
+  setupSort();
+});
 </script>
 </body></html>

@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script id="tailwind-config">try{
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -216,225 +217,45 @@
 </div>
 </div>
 <script>
-const albumsData = [
-  {
-    id: 'say-you-will', title: 'Say You Will', year: 2003, sales: 1000000,
-    streams: 1900000000, desc: 'A Triumphant Return',
-    era: 'buckingham-nicks', cert: 'Gold (500K US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/b/b0/Fleetwood_Mac_-_Say_You_Will.png', bgColor: null,
-    tracks: [
-      'What\'s the World Coming To?', 'Murrow Turning Over in His Grave', 'Illume (9/11)',
-      'Thrown Down', 'Miranda', 'Red Rover', 'Silver Girl', 'Steal Your Heart Away',
-      'Say You Will', 'Peacekeeper', 'Come', 'Smile at You', 'Running Through the Garden',
-      'Everybody Finds Out', 'Destiny Rules', 'Say Goodbye', 'Goodbye Baby'
-    ]
-  },
-  {
-    id: 'time', title: 'Time', year: 1995, sales: 150000,
-    streams: 37000000, desc: 'A Transitional Chapter',
-    era: 'post-buckingham', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/0/07/Timecdmac.jpg', bgColor: null,
-    tracks: [
-      'Talkin\' Heart to Heart', 'Hollywood (Some Other Kind of Town)',
-      'I Do', 'Nothing Without You', 'Dreamin\' the Dream', 'So Hard to Leave',
-      'Winds of Change', 'I\'ll Be Over You', 'These Strange Times',
-      'In the Back of My Mind', 'Temporary One', 'Down on the Street'
-    ]
-  },
-  {
-    id: 'behind-the-mask', title: 'Behind the Mask', year: 1990, sales: 2750000,
-    streams: 120000000, desc: 'A New Era Dawns',
-    era: 'post-buckingham', cert: 'Gold (500K US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/8/82/Fleetwood_Mac_-_Behind_the_Mask.jpg', bgColor: null,
-    tracks: [
-      'Skies the Limit', 'Love Is Dangerous', 'In the Back of My Mind',
-      'Do You Know', 'Save Me', 'Affairs of the Heart',
-      'When the Sun Goes Down', 'Behind the Mask', 'Stand on the Rock',
-      'Hard Feelings', 'Freedom', 'When It Comes to Love', 'The Second Time'
-    ]
-  },
-  {
-    id: 'tango-in-the-night', title: 'Tango in the Night', year: 1987, sales: 15000000,
-    streams: 4600000000, desc: 'A Return to Glamour',
-    era: 'buckingham-nicks', cert: '3× Platinum (3M US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/9/97/Fleetwood_Mac_-_Tango_in_the_Night.png',
+const supabaseClient = supabase.createClient(
+  'https://wqpnsuzulmrbsfuradjt.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcG5zdXp1bG1yYnNmdXJhZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA1NjEsImV4cCI6MjA5OTA4NjU2MX0.BFoI9LWKe9L5bvOOw45GeqYKw2GVmGC0ErdsMOsiwss'
+);
+
+let albumsData = [];
+
+async function loadAlbumsData() {
+  const { data: albums, error } = await supabaseClient
+    .from('albums')
+    .select('*')
+    .order('year', { ascending: false });
+  if (error) throw error;
+
+  const { data: songs, error: songsError } = await supabaseClient
+    .from('songs')
+    .select('title, album_id');
+  if (songsError) throw songsError;
+
+  const tracksByAlbum = {};
+  songs.forEach(s => {
+    if (!tracksByAlbum[s.album_id]) tracksByAlbum[s.album_id] = [];
+    tracksByAlbum[s.album_id].push(s.title);
+  });
+
+  albumsData = albums.map(a => ({
+    id: a.id,
+    title: a.title,
+    year: a.year,
+    sales: a.sales,
+    streams: a.streams,
+    desc: a.description,
+    era: a.era,
+    cert: a.cert,
+    image: a.image,
     bgColor: null,
-    tracks: [
-      'Big Love', 'Seven Wonders', 'Everywhere', 'Caroline',
-      'Tango in the Night', 'Mystified', 'Little Lies', 'Family Man',
-      'Welcome to the Room... Sara', 'Isn\'t It Midnight', 'When I See You Again',
-      'You and I, Part II'
-    ]
-  },
-  {
-    id: 'mirage', title: 'Mirage', year: 1982, sales: 2000000,
-    streams: 1800000000, desc: 'Soft-Rock Sophistication',
-    era: 'buckingham-nicks', cert: '2× Platinum (2M US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/7/76/Fleetwood_Mac_-_Mirage.png',
-    bgColor: null,
-    tracks: [
-      'Love in Store', 'Can\'t Go Back', 'That\'s Alright', 'Gypsy',
-      'Only Over You', 'Empire State', 'Straight Back', 'Hold Me',
-      'Oh Diane', 'Eyes of the World', 'Wish You Were Here', 'Book of Love'
-    ]
-  },
-  {
-    id: 'tusk', title: 'Tusk', year: 1979, sales: 4000000,
-    streams: 2100000000, desc: 'The Experimental Zenith',
-    era: 'buckingham-nicks', cert: '4× Platinum (4M US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/c/c5/Fleetwood_Mac_-_Tusk.png',
-    bgColor: null,
-    tracks: [
-      'Over & Over', 'The Ledge', 'Think About Me', 'Save Me a Place', 'Sara',
-      'What Makes You Think You\'re the One', 'Storms', 'That\'s All for Everyone',
-      'Not That Funny', 'Sisters of the Moon', 'Angel', 'That\'s Enough for Me',
-      'Brown Eyes', 'Never Make Me Cry', 'I Know I\'m Not Wrong', 'Honey Hi',
-      'Beautiful Child', 'Walk a Thin Line', 'Tusk', 'Never Forget'
-    ]
-  },
-  {
-    id: 'rumours', title: 'Rumours', year: 1977, sales: 40000000,
-    streams: 13500000000, desc: 'Multi-Platinum Legacy',
-    era: 'buckingham-nicks', cert: '21× Platinum (21M US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG',
-    bgColor: null,
-    tracks: [
-      'Second Hand News', 'Dreams', 'Never Going Back Again', 'Don\'t Stop',
-      'Go Your Own Way', 'Songbird', 'The Chain', 'You Make Loving Fun',
-      'I Don\'t Want to Know', 'Oh Daddy', 'Gold Dust Woman'
-    ]
-  },
-  {
-    id: 'fleetwood-mac-1975', title: 'Fleetwood Mac (White Album)', year: 1975, sales: 8000000,
-    streams: 3200000000, desc: 'The Rebirth',
-    era: 'buckingham-nicks', cert: '9× Platinum (9M US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/b/b1/Fleetwood_Mac_-_Fleetwood_Mac_%281975%29.png', bgColor: null,
-    tracks: [
-      'Monday Morning', 'Warm Ways', 'Blue Letter', 'Rhiannon',
-      'Over My Head', 'Crystal', 'Say You Love Me', 'Landslide',
-      'World Turning', 'Sugar Daddy', 'I\'m So Afraid'
-    ]
-  },
-  {
-    id: 'heroes', title: 'Heroes Are Hard to Find', year: 1974, sales: 500000,
-    streams: 80000000, desc: 'The Final Pre-Buckingham Album',
-    era: 'welsh', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/d/d5/Fleetwood_Mac_-_Heroes_Are_Hard_to_Find.jpg', bgColor: null,
-    tracks: [
-      'Heroes Are Hard to Find', 'Coming Home', 'Angel',
-      'Bermuda Triangle', 'Come, Little Donkey', 'Bad Loser',
-      'She\'s Changing Me', 'Silver Heels', 'River of Tears',
-      'Prove Your Love', 'Born Enchanter', 'Safe Harbour'
-    ]
-  },
-  {
-    id: 'mystery-to-me', title: 'Mystery to Me', year: 1973, sales: 500000,
-    streams: 120000000, desc: 'A Deep Cut Gem',
-    era: 'welsh', cert: 'Gold (500K US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/0/09/Mystery_to_Me_cover.jpg', bgColor: null,
-    tracks: [
-      'Emerald Eyes', 'Beloved Wife', 'The City', 'Miles Away',
-      'Somebody', 'The Way I Feel', 'For Your Love', 'Why',
-      'Keep On Going', 'Hypnotized', 'Forever', 'Just Crazy Love',
-      'Good Things (Come to Those Who Wait)'
-    ]
-  },
-  {
-    id: 'penguin', title: 'Penguin', year: 1973, sales: 300000,
-    streams: 45000000, desc: 'A Transitional Work',
-    era: 'welsh', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Penguin_%28Fleetwood_Mac_album_-_cover_art%29.jpg', bgColor: null,
-    tracks: [
-      'Remember Me', 'Bright Fire', 'Dissatisfied', '(I\'m a) Road Runner',
-      'The Derelict', 'Revelation', 'Did You Ever Love Me',
-      'Night Watch', 'Caught in the Rain'
-    ]
-  },
-  {
-    id: 'bare-trees', title: 'Bare Trees', year: 1972, sales: 1000000,
-    streams: 150000000, desc: 'A Cult Classic',
-    era: 'welsh', cert: 'Platinum (1M US)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/0/08/Baretreescd.jpg', bgColor: null,
-    tracks: [
-      'Child of Mine', 'The Ghost', 'Homeward Bound', 'Sunny Side of Heaven',
-      'Bare Trees', 'Sentimental Lady', 'Danny\'s Chanting',
-      'Spare Me a Little of Your Love', 'Dust', 'Thoughts on a Grey Day'
-    ]
-  },
-  {
-    id: 'future-games', title: 'Future Games', year: 1971, sales: 500000,
-    streams: 60000000, desc: 'The Dawn of a New Sound',
-    era: 'welsh', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/b/b5/Fleetwood_Mac_-_Future_Games.jpg', bgColor: null,
-    tracks: [
-      'Woman of 1000 Years', 'Morning Rain', 'What a Shame',
-      'Future Games', 'Sands of Time', 'Sometimes It\'s a Bitch',
-      'Lay It All Down', 'Show Me a Smile'
-    ]
-  },
-  {
-    id: 'kiln-house', title: 'Kiln House', year: 1970, sales: 500000,
-    streams: 70000000, desc: 'Post-Green Transition',
-    era: 'welsh', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/9/95/Kilnhouse.jpg', bgColor: null,
-    tracks: [
-      'This Is the Rock', 'Station Man', 'Blood on the Floor',
-      'Hi Ho Silver', 'Jewel Eyed Judy', 'Buddy\'s Song',
-      'Earl of the Mountain', 'One Together', 'Tell Me All the Things You Do',
-      'Mission Bell', 'Purple Dancer', 'Don\'t Be Cruel'
-    ]
-  },
-  {
-    id: 'chicago', title: 'Fleetwood Mac in Chicago', year: 1969, sales: 150000,
-    streams: 15000000, desc: 'Blues Jam with Chicago Legends',
-    era: 'peter-green', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/4/4a/Fleetwood-Mac-in-Chicago-LP.jpg', bgColor: null,
-    tracks: [
-      'Intro (Black Magic Woman)', 'Black Magic Woman', 'I\'m Worried Woman',
-      'I\'m Worried', 'All Your Love', 'Doctor Brown', 'Need Your Love Tonight',
-      'That\'s All Right', 'J.T.', 'World\'s in a Tangle', 'Talk with You',
-      'Like a Fool', 'Someday Soon Baby', 'Watch Out', 'Last Night',
-      'Red Hot Jam', 'I Held My Baby Last Night', 'Steelin\'', 'Knockin\' on Heaven\'s Door'
-    ]
-  },
-  {
-    id: 'then-play-on', title: 'Then Play On', year: 1969, sales: 1000000,
-    streams: 100000000, desc: 'The Blues-Rock Evolution',
-    era: 'peter-green', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/e/e3/Then_Play_On.jpg', bgColor: null,
-    tracks: [
-      'Coming Your Way', 'Closing My Eyes', 'Fighting for Madge',
-      'When You Say', 'Show Biz Blues', 'Underway', 'One Sunny Day',
-      'Although the Sun Is Shining', 'Rattlesnake Shake',
-      'Without You', 'Searching for Madge', 'My Dream',
-      'Like Crying', 'Before the Beginning'
-    ]
-  },
-  {
-    id: 'mr-wonderful', title: 'Mr. Wonderful', year: 1968, sales: 300000,
-    streams: 25000000, desc: 'Pure British Blues',
-    era: 'peter-green', cert: null,
-    image: 'https://upload.wikimedia.org/wikipedia/en/d/d3/Fleetwood_Mac_-_Mr._Wonderful.jpg', bgColor: null,
-    tracks: [
-      'Stop Messin\' Round', 'I\'ve Lost My Baby', 'Rollin\' Man',
-      'Dust My Broom', 'Love That Burns', 'Doctor Brown',
-      'Need Your Love Tonight', 'If You Be My Baby', 'Evenin\' Boogie',
-      'Lazy Poker Blues', 'Coming Home', 'Trying So Hard to Forget'
-    ]
-  },
-  {
-    id: 'fleetwood-mac-1968', title: 'Fleetwood Mac (Peter Green\'s)', year: 1968, sales: 500000,
-    streams: 180000000, desc: 'The Blues Foundation',
-    era: 'peter-green', cert: 'Silver (100K UK)',
-    image: 'https://upload.wikimedia.org/wikipedia/en/5/51/Fleetwood_Mac_-_Fleetwood_Mac_%281968%29.jpg', bgColor: null,
-    tracks: [
-      'My Heart Beat Like a Hammer', 'Merry Go Round', 'I Loved Another Woman',
-      'I Need Your Love So Bad', 'Doctor Brown', 'Now I\'m a Man',
-      'Shake Your Moneymaker', 'No Place to Go', 'My Baby\'s Good to Me',
-      'I Can\'t Hold Out', 'Long Grey Mare', 'Rambling Pony'
-    ]
-  }
-];
+    tracks: tracksByAlbum[a.id] || []
+  }));
+}
 
 let currentSort = 'year';
 let searchTerm = '';
@@ -597,7 +418,8 @@ searchInput.addEventListener('input', () => {
   sortAndRender();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadAlbumsData();
   sortAndRender();
   const needle = document.getElementById('needle-loader');
   let progress = 77;
