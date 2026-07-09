@@ -86,10 +86,10 @@
                 }
             }
         }
-    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface font-body-md text-on-surface paper-grain">
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface font-body-md text-on-surface paper-grain overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="docked full-width top-0 border-b border-on-surface/10 bg-surface z-50">
-<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-20">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop h-20">
 <a href="index.html" class="flex items-center gap-3 no-underline">
                 <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
                 <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
@@ -103,11 +103,27 @@
 <button class="cursor-pointer transition-opacity active:opacity-70">
 <span class="material-symbols-outlined text-primary">music_note</span>
 </button>
+<span class="material-symbols-outlined cursor-pointer md:hidden text-primary text-3xl" id="mobile-menu-btn">menu</span>
 </div>
-<button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
+<button id="nav-login-btn" class="hidden md:block font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
 </nav>
 </header>
-<main class="max-w-[1200px] mx-auto px-margin-desktop py-20">
+<!-- Mobile Nav Panel -->
+<div id="mobile-overlay" class="fixed inset-0 z-50 bg-black/40 hidden md:hidden"></div>
+<div id="mobile-panel" class="fixed top-0 right-0 z-50 h-full w-72 bg-surface shadow-2xl translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex justify-end p-6">
+        <span class="material-symbols-outlined text-primary text-3xl cursor-pointer" id="mobile-close">close</span>
+    </div>
+    <nav class="flex flex-col gap-6 px-8">
+        <a href="banda.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">The Band</a>
+        <a href="albumes.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">Discography</a>
+        <a href="canciones.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">The Ranking</a>
+        <a href="eventos.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">Events</a>
+        <a href="logros.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary font-bold">Achievements</a>
+        <button id="mobile-login-btn" class="font-label-caps text-label-caps px-4 py-3 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all mt-4 w-full">LOG IN</button>
+    </nav>
+</div>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-20">
 <!-- Hero Section -->
 <section class="mb-32 text-center">
 <span class="font-label-caps text-label-caps text-secondary mb-4 block">THE CULTURAL ODYSSEY</span>
@@ -165,7 +181,7 @@
 </section>
 
 <!-- Source Filter Buttons (pill style) -->
-<div class="flex flex-wrap justify-center gap-4 mb-16" id="source-tabs">
+<div class="flex flex-wrap justify-center gap-4 mb-12 md:mb-16" id="source-tabs">
 <button class="source-tab font-label-caps text-label-caps px-5 py-2 border transition-all bg-primary text-on-primary border-primary" data-source="rolling-stone" data-active="true">ROLLING STONE</button>
 <button class="source-tab font-label-caps text-label-caps px-5 py-2 border transition-all bg-transparent text-on-surface-variant border-on-surface/20" data-source="billboard" data-active="false">BILLBOARD</button>
 </div>
@@ -793,7 +809,7 @@ Billboard Year-End Charts
 </main>
 <!-- Footer -->
 <footer class="w-full mt-gutter border-t border-on-surface/5 bg-surface-container">
-<div class="flex flex-col items-center py-12 px-margin-desktop max-w-[1200px] mx-auto text-center">
+<div class="flex flex-col items-center py-12 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto text-center">
 <div class="font-display-lg text-headline-sm text-primary mb-8">THE MOON &amp; THE MUSIC</div>
 <div class="flex flex-wrap justify-center gap-8 mb-8">
 <a class="text-secondary font-label-caps text-label-caps hover:text-primary underline transition-all" href="index.html">History</a>
@@ -971,6 +987,26 @@ Billboard Year-End Charts
         }
         document.getElementById('nav-login-btn')?.addEventListener('click', () => toggleAuthModal(true, 'login'));
         updateAuthUI();
+
+        // Mobile nav
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobilePanel = document.getElementById('mobile-panel');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileClose = document.getElementById('mobile-close');
+        const mobileLogin = document.getElementById('mobile-login-btn');
+        function openMobileNav() {
+            mobilePanel?.classList.remove('translate-x-full');
+            mobileOverlay?.classList.remove('hidden');
+        }
+        function closeMobileNav() {
+            mobilePanel?.classList.add('translate-x-full');
+            mobileOverlay?.classList.add('hidden');
+        }
+        mobileBtn?.addEventListener('click', openMobileNav);
+        mobileClose?.addEventListener('click', closeMobileNav);
+        mobileOverlay?.addEventListener('click', closeMobileNav);
+        mobileLogin?.addEventListener('click', () => { closeMobileNav(); toggleAuthModal(true, 'login'); });
+        document.querySelectorAll('#mobile-panel a').forEach(a => a.addEventListener('click', closeMobileNav));
     </script>
 
 </body></html>

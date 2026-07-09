@@ -88,10 +88,10 @@
                 },
             }
         } catch (_e) {}
-    }catch(_e){}</script></head><body class="bg-surface text-primary">
+    }catch(_e){}</script></head><body class="bg-surface text-primary overflow-x-hidden">
     <!-- Navigation -->
     <header class="fixed top-0 left-0 w-full z-50 border-b border-primary/10 bg-surface/90 backdrop-blur-sm">
-        <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop h-20">
+        <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop h-20">
             <a href="index.html" class="flex items-center gap-3 no-underline">
                 <img src="https://www.image2url.com/r2/default/images/1783360284370-f7ab6237-24d5-4c46-b970-c5e34865fbd7.png" alt="The Moon &amp; The Music" class="h-8 md:h-10 w-auto">
                 <span class="font-display-lg text-headline-sm md:text-headline-md tracking-tighter text-primary">THE MOON &amp; THE MUSIC</span>
@@ -103,24 +103,38 @@
                 <a class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300" href="eventos.html">Events</a><a href="logros.html" class="font-label-caps text-label-caps text-primary/60 font-medium hover:text-primary transition-colors duration-300">Achievements</a>
                 <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 ml-4" data-icon="music_note">music_note</span>
             </div>
-            <button id="nav-login-btn" class="font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
             <!-- Mobile Menu Trigger -->
             <div class="md:hidden">
-                <span class="material-symbols-outlined text-primary text-3xl" data-icon="menu">menu</span>
+                <span class="material-symbols-outlined text-primary text-3xl cursor-pointer" id="mobile-menu-btn">menu</span>
             </div>
         </nav>
     </header>
+    <!-- Mobile Nav Panel -->
+    <div id="mobile-overlay" class="fixed inset-0 z-40 bg-black/40 hidden md:hidden"></div>
+    <div id="mobile-panel" class="fixed top-0 right-0 z-50 h-full w-72 bg-surface shadow-2xl translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex justify-end p-6">
+            <span class="material-symbols-outlined text-primary text-3xl cursor-pointer" id="mobile-close">close</span>
+        </div>
+        <nav class="flex flex-col gap-6 px-8">
+            <a href="banda.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">The Band</a>
+            <a href="albumes.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">Discography</a>
+            <a href="canciones.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">The Ranking</a>
+            <a href="eventos.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">Events</a>
+            <a href="logros.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">Achievements</a>
+            <button id="mobile-login-btn" class="font-label-caps text-label-caps px-4 py-3 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all mt-4 w-full">LOG IN</button>
+        </nav>
+    </div>
 
     <main class="pt-20">
         <!-- Hero Section -->
-        <section class="max-w-[1200px] mx-auto px-margin-desktop py-20 md:py-32 flex flex-col items-center text-center">
+        <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-32 flex flex-col items-center text-center">
             <div class="w-full mb-8 overflow-hidden">
                 <div id="loader" class="needle-loader"></div>
             </div>
             <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-12 fade-in">
                 FLEETWOOD MAC
             </h1>
-            <div class="w-full h-[400px] md:h-[600px] relative mb-16 fade-in" style="animation-delay: 0.2s;">
+            <div class="w-full h-[300px] md:h-[600px] relative mb-16 fade-in" style="animation-delay: 0.2s;">
                 <div class="absolute inset-0 sepia-hover cursor-pointer overflow-hidden rounded-sm bg-primary/5">
                     <img class="w-full h-full object-cover" alt="Fleetwood Mac Billboard 1977 official promotional photo" src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Fleetwood_Mac_Billboard_1977.jpg">
                 </div>
@@ -131,7 +145,7 @@
         </section>
 
         <!-- Content Section -->
-        <section class="max-w-[1200px] mx-auto px-margin-desktop py-20 bg-surface">
+        <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-20 bg-surface">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
                 <div class="md:col-span-5 mb-12 md:mb-0">
                     <h2 class="font-display-lg text-headline-md mb-6">The Architecture of a Legend</h2>
@@ -149,7 +163,7 @@
         </section>
 
         <!-- Timeline Bento -->
-        <section class="max-w-[1200px] mx-auto px-margin-desktop py-32">
+        <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-32">
             <h3 class="font-label-caps text-label-caps text-center tracking-[0.3em] mb-20 text-primary/60 uppercase">Milestones &amp; Moments</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- 1975 -->
@@ -206,7 +220,7 @@
         </section>
 
         <!-- Interactive Discography Peek -->
-        <section class="max-w-[1200px] mx-auto px-margin-desktop py-20 border-t border-primary/10">
+        <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-20 border-t border-primary/10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
                 <div>
                     <h2 class="font-display-lg text-headline-md mb-4">Song Ranking</h2>
@@ -287,7 +301,7 @@
 
     <!-- Footer -->
     <footer class="border-t border-primary/10 mt-gutter bg-surface">
-        <div class="flex flex-col items-center py-20 px-margin-desktop max-w-[1200px] mx-auto text-center">
+        <div class="flex flex-col items-center py-16 md:py-20 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto text-center">
             <a href="index.html" class="font-display-lg text-headline-sm text-primary mb-12 no-underline">THE MOON &amp; THE MUSIC</a>
             <div class="flex flex-wrap justify-center gap-12 mb-16">
                 <a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-all border-b border-transparent hover:border-primary" href="banda.html">History</a>
@@ -317,6 +331,26 @@
                     img.style.transform = `translateY(${scrolled * speed}px)`;
                 });
             });
+
+            // Mobile nav
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobilePanel = document.getElementById('mobile-panel');
+            const mobileOverlay = document.getElementById('mobile-overlay');
+            const mobileClose = document.getElementById('mobile-close');
+            const mobileLogin = document.getElementById('mobile-login-btn');
+            function openMobileNav() {
+                mobilePanel?.classList.remove('translate-x-full');
+                mobileOverlay?.classList.remove('hidden');
+            }
+            function closeMobileNav() {
+                mobilePanel?.classList.add('translate-x-full');
+                mobileOverlay?.classList.add('hidden');
+            }
+            mobileBtn?.addEventListener('click', openMobileNav);
+            mobileClose?.addEventListener('click', closeMobileNav);
+            mobileOverlay?.addEventListener('click', closeMobileNav);
+            mobileLogin?.addEventListener('click', () => { closeMobileNav(); toggleAuthModal(true, 'login'); });
+            document.querySelectorAll('#mobile-panel a').forEach(a => a.addEventListener('click', closeMobileNav));
         });
 
         // ── Auth System ──
