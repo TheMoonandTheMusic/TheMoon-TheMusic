@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script id="tailwind-config">try{
         try {
             tailwind.config = {
                 darkMode: "class",
@@ -144,6 +144,11 @@
             </div>
         </section>
 
+        <!-- Stats -->
+        <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-8">
+            <div id="stats-grid" class="grid grid-cols-2 md:grid-cols-5 gap-8"></div>
+        </section>
+
         <!-- Content Section -->
         <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-20 bg-surface">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
@@ -165,57 +170,7 @@
         <!-- Timeline Bento -->
         <section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-32">
             <h3 class="font-label-caps text-label-caps text-center tracking-[0.3em] mb-20 text-primary/60 uppercase">Milestones &amp; Moments</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 1975 -->
-                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
-                    <div>
-                        <span class="font-display-lg text-headline-sm block mb-4">1975</span>
-                        <h4 class="font-label-caps text-label-caps text-primary mb-4">THE REINVENTION</h4>
-                        <p class="font-body-md text-body-md text-primary/70">Buckingham and Nicks join the band, permanently altering the sonic landscape of rock.</p>
-                    </div>
-                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
-                        <div class="h-full bg-primary w-1/3 group-hover:translate-x-full transition-transform duration-700"></div>
-                    </div>
-                </div>
-                <!-- 1977 - Focal point using the deep black accent -->
-                <div class="bg-primary text-on-primary p-8 md:row-span-2 flex flex-col justify-center text-center">
-                    <span class="font-display-lg text-display-lg-mobile mb-4">RUMOURS</span>
-                    <p class="font-label-caps text-label-caps opacity-70 tracking-widest mb-8">31 WEEKS AT NUMBER ONE</p>
-                    <p class="font-body-lg text-body-lg leading-relaxed italic opacity-90">"Dreams are lonely like a heartbeat, drives you mad in the stillness of remembering..."</p>
-                </div>
-                <!-- 1979 -->
-                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
-                    <div>
-                        <span class="font-display-lg text-headline-sm block mb-4">1979</span>
-                        <h4 class="font-label-caps text-label-caps text-primary mb-4">THE AVANT-GARDE</h4>
-                        <p class="font-body-md text-body-md text-primary/70">The experimental double-album 'Tusk' challenges expectations and redefines the studio as an instrument.</p>
-                    </div>
-                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
-                        <div class="h-full bg-primary w-2/3 group-hover:translate-x-full transition-transform duration-700"></div>
-                    </div>
-                </div>
-                <!-- 1982 -->
-                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
-                    <div>
-                        <span class="font-display-lg text-headline-sm block mb-4">1982</span>
-                        <h4 class="font-label-caps text-label-caps text-primary mb-4">MIRAGE</h4>
-                        <p class="font-body-md text-body-md text-primary/70">A return to the lush, melodic perfection of the late 70s, hitting the top of the charts once again.</p>
-                    </div>
-                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
-                        <div class="h-full bg-primary w-1/2 group-hover:translate-x-full transition-transform duration-700"></div>
-                    </div>
-                </div>
-                <!-- 1987 -->
-                <div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
-                    <div>
-                        <span class="font-display-lg text-headline-sm block mb-4">1987</span>
-                        <h4 class="font-label-caps text-label-caps text-primary mb-4">TANGO IN THE NIGHT</h4>
-                        <p class="font-body-md text-body-md text-primary/70">A slick, modern pop masterpiece that secured their dominance in the digital era of MTV.</p>
-                    </div>
-                    <div class="mt-12 h-px bg-primary/20 overflow-hidden">
-                        <div class="h-full bg-primary w-full group-hover:translate-x-full transition-transform duration-700"></div>
-                    </div>
-                </div>
+            <div id="milestones-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
             </div>
         </section>
 
@@ -240,31 +195,7 @@
                             <th class="py-4 font-label-caps text-label-caps text-primary/40 text-right">YEAR</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
-                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">01</td>
-                            <td class="py-6 font-display-lg text-headline-sm">Go Your Own Way</td>
-                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Rumours</td>
-                            <td class="py-6 font-body-md text-primary/60 text-right">1977</td>
-                        </tr>
-                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
-                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">02</td>
-                            <td class="py-6 font-display-lg text-headline-sm">Dreams</td>
-                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Rumours</td>
-                            <td class="py-6 font-body-md text-primary/60 text-right">1977</td>
-                        </tr>
-                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
-                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">03</td>
-                            <td class="py-6 font-display-lg text-headline-sm">Rhiannon</td>
-                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Fleetwood Mac</td>
-                            <td class="py-6 font-body-md text-primary/60 text-right">1975</td>
-                        </tr>
-                        <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
-                            <td class="py-6 font-display-lg text-headline-sm text-primary/30 group-hover:text-primary transition-opacity">04</td>
-                            <td class="py-6 font-display-lg text-headline-sm">The Chain</td>
-                            <td class="py-6 font-body-md text-primary/60 hidden md:table-cell">Rumours</td>
-                            <td class="py-6 font-body-md text-primary/60 text-right">1977</td>
-                        </tr>
+                    <tbody id="rankings-tbody">
                     </tbody>
                 </table>
             </div>
@@ -351,6 +282,76 @@
             mobileOverlay?.addEventListener('click', closeMobileNav);
             mobileLogin?.addEventListener('click', () => { closeMobileNav(); toggleAuthModal(true, 'login'); });
             document.querySelectorAll('#mobile-panel a').forEach(a => a.addEventListener('click', closeMobileNav));
+        });
+
+        // ── Supabase Data Loading ──
+        const supabaseClient = supabase.createClient(
+          'https://wqpnsuzulmrbsfuradjt.supabase.co',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcG5zdXp1bG1yYnNmdXJhZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA1NjEsImV4cCI6MjA5OTA4NjU2MX0.BFoI9LWKe9L5bvOOw45GeqYKw2GVmGC0ErdsMOsiwss'
+        );
+
+        async function loadIndexStats() {
+          const { data: stats } = await supabaseClient.from('index_stats').select('*').order('order_index');
+          if (!stats) return;
+          const statsGrid = document.getElementById('stats-grid');
+          if (!statsGrid) return;
+          statsGrid.innerHTML = stats.map(s => `
+            <div class="text-center">
+              <div class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">${s.value}</div>
+              <div class="font-label-caps text-label-caps text-secondary tracking-widest">${s.label}</div>
+            </div>
+          `).join('');
+        }
+
+        async function loadMilestones() {
+          const { data: milestones } = await supabaseClient.from('milestones').select('*').order('year');
+          if (!milestones) return;
+          const keyMilestones = milestones.filter(m => [1975, 1977, 1979, 1982, 1987].includes(m.year));
+          const grid = document.getElementById('milestones-grid');
+          if (!grid) return;
+          grid.innerHTML = keyMilestones.map((m, i) => {
+            const isFeatured = m.year === 1977;
+            if (isFeatured) {
+              return `<div class="bg-primary text-on-primary p-8 md:row-span-2 flex flex-col justify-center text-center">
+                <span class="font-display-lg text-display-lg-mobile mb-4">${m.title}</span>
+                <p class="font-label-caps text-label-caps opacity-70 tracking-widest mb-8">31 WEEKS AT NUMBER ONE</p>
+                <p class="font-body-lg text-body-lg leading-relaxed italic opacity-90">"Dreams are lonely like a heartbeat, drives you mad in the stillness of remembering..."</p>
+              </div>`;
+            }
+            return `<div class="bg-surface border border-primary/10 p-8 flex flex-col justify-between hover:shadow-md transition-all group">
+              <div>
+                <span class="font-display-lg text-headline-sm block mb-4">${m.year}</span>
+                <h4 class="font-label-caps text-label-caps text-primary mb-4">${m.title}</h4>
+                <p class="font-body-md text-body-md text-primary/70">${m.description}</p>
+              </div>
+              <div class="mt-12 h-px bg-primary/20 overflow-hidden">
+                <div class="h-full bg-primary w-${i === 0 ? '1/3' : i === 2 ? '2/3' : i === 3 ? '1/2' : 'full'} group-hover:translate-x-full transition-transform duration-700"></div>
+              </div>
+            </div>`;
+          }).join('');
+        }
+
+        async function loadTopSongs() {
+          const { data: songs } = await supabaseClient
+            .from('songs')
+            .select('title, year, streams, rank, albums(title)')
+            .order('rank')
+            .limit(4);
+          if (!songs) return;
+          const tbody = document.getElementById('rankings-tbody');
+          if (!tbody) return;
+          tbody.innerHTML = songs.map(s => `
+            <tr class="border-b border-primary/5 transition-colors group cursor-pointer hover:bg-primary/5">
+              <td class="py-4 font-display-lg text-headline-sm text-primary/20">${String(s.rank).padStart(2, '0')}</td>
+              <td class="py-4 font-headline-sm text-headline-sm text-primary">${s.title}</td>
+              <td class="py-4 text-primary/60 hidden md:table-cell italic">${s.albums?.title || ''}</td>
+              <td class="py-4 text-primary/60 text-right">${s.year}</td>
+            </tr>
+          `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+          await Promise.all([loadIndexStats(), loadMilestones(), loadTopSongs()]);
         });
 
         // ── Auth System ──

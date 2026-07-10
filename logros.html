@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script id="tailwind-config">try{
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -198,28 +198,7 @@
 <span class="material-symbols-outlined text-primary">album</span>
 500 Greatest Albums
 </h3>
-<div class="space-y-4">
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Rumours</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-primary">#7</span>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Fleetwood Mac</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1975)</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-primary">#183</span>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Tusk</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1979)</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-primary">#225</span>
-</div>
+<div class="space-y-4" id="rs-albums-list">
 <div class="pt-3 flex justify-between items-center text-sm text-on-surface-variant italic">
 <span>2020 edition</span>
 <span>Entered list: 2003</span>
@@ -231,27 +210,7 @@
 <span class="material-symbols-outlined text-primary">music_note</span>
 500 Greatest Songs
 </h3>
-<div class="space-y-4">
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<span class="font-body-md font-bold">"Dreams"</span>
-<span class="font-headline-sm text-headline-sm text-primary">#9</span>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<span class="font-body-md font-bold">"Go Your Own Way"</span>
-<span class="font-headline-sm text-headline-sm text-primary">#120</span>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<span class="font-body-md font-bold">"Landslide"</span>
-<span class="font-headline-sm text-headline-sm text-primary">#170</span>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<span class="font-body-md font-bold">"The Chain"</span>
-<span class="font-headline-sm text-headline-sm text-primary">#264</span>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<span class="font-body-md font-bold">"Rhiannon"</span>
-<span class="font-headline-sm text-headline-sm text-primary">#488</span>
-</div>
+<div class="space-y-4" id="rs-songs-list">
 <div class="pt-3 flex justify-between items-center text-sm text-on-surface-variant italic">
 <span>2021 edition</span>
 <span>Entered list: 2004</span>
@@ -275,97 +234,7 @@
 <span class="material-symbols-outlined text-primary">album</span>
 Billboard 200 — Albums
 </h3>
-<div class="space-y-4">
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Rumours</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#1</div>
-<div class="text-xs text-on-surface-variant">31 weeks at #1</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Fleetwood Mac</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1975)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#1</div>
-<div class="text-xs text-on-surface-variant">136 weeks on chart</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Mirage</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1982)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#1</div>
-<div class="text-xs text-on-surface-variant">#1 US & UK</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">The Dance</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1997)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#1</div>
-<div class="text-xs text-on-surface-variant">5M copies sold</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Tusk</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1979)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#4</div>
-<div class="text-xs text-on-surface-variant">4M copies sold</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Tango in the Night</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#7</div>
-<div class="text-xs text-on-surface-variant">15M copies sold</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Say You Will</span>
-<span class="font-body-md text-on-surface-variant ml-2">(2003)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#3</div>
-<div class="text-xs text-on-surface-variant">Debut week</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">Behind the Mask</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1990)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#18</div>
-<div class="text-xs text-on-surface-variant">#1 UK</div>
-</div>
-</div>
-<div class="flex justify-between items-center pb-3">
-<div>
-<span class="font-body-md font-bold">Rumours (2020 re-entry)</span>
-<span class="font-body-md text-on-surface-variant ml-2">(2020)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">Top 10</div>
-<div class="text-xs text-on-surface-variant">#1 Vinyl Albums</div>
-</div>
-</div>
+<div class="space-y-4" id="bb-albums-list">
 <div class="pt-4 text-sm text-on-surface-variant italic border-t border-on-surface/10">
 <span>Rumours spent 139+ total weeks on the Billboard 200</span>
 </div>
@@ -378,142 +247,7 @@ Billboard 200 — Albums
 <span class="material-symbols-outlined text-primary">music_note</span>
 Billboard Hot 100 — Singles
 </h3>
-<div class="space-y-4">
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Dreams"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#1</div>
-<div class="text-xs text-on-surface-variant">1 week at #1</div>
-</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Don't Stop"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#3</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Hold Me"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1982)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#4</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Little Lies"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#4</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Big Love"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#5</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Sara"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1980)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#7</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Tusk"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1979)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#8</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Say You Love Me"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1976)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#9</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"You Make Loving Fun"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#9</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Go Your Own Way"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1977)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#10</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Rhiannon"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1976)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#11</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Gypsy"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1982)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#12</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Everywhere"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1988)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#14</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Seven Wonders"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1987)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#19</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Over My Head"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1975)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#20</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Think About Me"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1980)</span>
-</div>
-<div class="font-headline-sm text-headline-sm text-primary">#20</div>
-</div>
-<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
-<div>
-<span class="font-body-md font-bold">"Dreams" (2020 re-entry)</span>
-<span class="font-body-md text-on-surface-variant ml-2">(2020)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#21</div>
-<div class="text-xs text-on-surface-variant">TikTok viral</div>
-</div>
-</div>
-<div class="flex justify-between items-center pb-3">
-<div>
-<span class="font-body-md font-bold">"Over My Head" / "Rhiannon"</span>
-<span class="font-body-md text-on-surface-variant ml-2">(1976)</span>
-</div>
-<div class="text-right">
-<div class="font-headline-sm text-headline-sm text-primary">#1 AC</div>
-<div class="text-xs text-on-surface-variant">Easy Listening chart</div>
-</div>
-</div>
+<div class="space-y-4" id="bb-singles-list">
 <div class="pt-4 text-sm text-on-surface-variant italic border-t border-on-surface/10">
 <span>Fleetwood Mac charted 20+ singles on the Billboard Hot 100 between 1975–2020</span>
 </div>
@@ -607,151 +341,7 @@ Billboard Year-End Charts
 <h2 class="font-display-lg text-headline-md">Milestones</h2>
 <div class="flex-grow needle-line"></div>
 </div>
-<div class="space-y-24 max-w-4xl mx-auto">
-<!-- 1967 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1967</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Formation in London</h4>
-<p class="font-body-md text-on-surface-variant">Peter Green recruits Mick Fleetwood and John McVie from John Mayall's Bluesbreakers to form a new blues band. The name Fleetwood Mac is born, destined to outlast every founding member.</p>
-</div>
-</div>
-<!-- 1968 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1968</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Debut Album &amp; First Hits</h4>
-<p class="font-body-md text-on-surface-variant">The self-titled debut reaches #4 on the UK charts. Jeremy Spencer's slide guitar and Peter Green's songwriting establish the band as leaders of the British blues revival. "Albatross"—a haunting instrumental—becomes their first UK #1 single in January 1969.</p>
-</div>
-</div>
-<!-- 1969 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1969</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Peter Green's Peak</h4>
-<p class="font-body-md text-on-surface-variant">"Black Magic Woman", "Man of the World", and "Oh Well" cement Green's legacy as one of rock's greatest guitarists. <em>Then Play On</em> becomes the band's most adventurous record to date, blending blues with progressive and folk elements. Danny Kirwan joins as third guitarist.</p>
-</div>
-</div>
-<!-- 1970 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1970</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">The End of the Green Era</h4>
-<p class="font-body-md text-on-surface-variant">Peter Green's mental health collapses due to heavy LSD use. He walks offstage during a Munich concert on May 20 and never returns. Christine McVie (née Perfect) formally joins the band, bringing keyboards and a voice that will define the Mac sound for five decades.</p>
-</div>
-</div>
-<!-- 1971 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1971</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">American Expansion Begins</h4>
-<p class="font-body-md text-on-surface-variant">Jeremy Spencer vanishes during a Los Angeles tour, joining the Children of God cult. Bob Welch, an American guitarist, answers an ad in Melody Maker and joins the band. <em>Future Games</em> marks the first step toward the California soft-rock sound.</p>
-</div>
-</div>
-<!-- 1973 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1973</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">The Welch Era Matures</h4>
-<p class="font-body-md text-on-surface-variant">Danny Kirwan is fired after a breakdown on stage. Bob Welch becomes de facto leader. <em>Penguin</em> and <em>Mystery to Me</em> feature "Hypnotized", a FM radio staple that becomes the band's biggest US hit of the pre-Nicks era. Christine McVie emerges as a primary songwriter.</p>
-</div>
-</div>
-<!-- 1975 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1975</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">The California Transition</h4>
-<p class="font-body-md text-on-surface-variant">On New Year's Eve 1974, Mick Fleetwood invites Lindsey Buckingham and Stevie Nicks to join the band. The self-titled "White Album" reaches #1 on the Billboard 200, selling 5M+ copies in the US. "Rhiannon", "Over My Head", and "Say You Love Me" become instant classics. A new era begins.</p>
-</div>
-</div>
-<!-- 1977 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1977</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Rumours Perfection</h4>
-<p class="font-body-md text-on-surface-variant">Recorded amid divorce, betrayal, and heartbreak, <em>Rumours</em> spends 31 weeks at #1, wins the Grammy for Album of the Year, and sells over 40 million copies worldwide. "Dreams" becomes the band's only Billboard #1 single. Rolling Stone ranks it #7 on the 500 Greatest Albums of All Time. The album also receives 5 Grammy nominations across multiple categories, cementing its status as a critical and commercial benchmark.</p>
-</div>
-</div>
-<!-- 1979 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1979</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">The Tusk Experiment</h4>
-<p class="font-body-md text-on-surface-variant">Lindsey Buckingham's avant-garde double album <em>Tusk</em> sells 4 million copies—a commercial "disappointment" that becomes a cult masterpiece. The innovative use of a marching band on the title track and Buckingham's lo-fi production redefine the band's artistic ambition. NME later calls it "the only Fleetwood Mac album that matters."</p>
-</div>
-</div>
-<!-- 1982 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1982</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Mirage: The Return to #1</h4>
-<p class="font-body-md text-on-surface-variant">After solo projects dominate 1980-1981—Nicks' <em>Bella Donna</em> sells 4M copies, Buckingham releases <em>Law and Order</em>—the band reunites at Château d'Hérouville. <em>Mirage</em> hits #1 in the US and UK. "Hold Me", "Gypsy", and "Love in Store" dominate radio.</p>
-</div>
-</div>
-<!-- 1987 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1987</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Tango in the Night</h4>
-<p class="font-body-md text-on-surface-variant">A commercial resurgence in the digital age. <em>Tango in the Night</em> sells 15 million copies, becoming their second-bestselling album. "Big Love", "Everywhere", and "Little Lies" define late-80s pop-rock. Buckingham quits weeks before the tour; Burnette and Vito replace him.</p>
-</div>
-</div>
-<!-- 1990 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1990</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Behind the Mask &amp; Nicks' Exit</h4>
-<p class="font-body-md text-on-surface-variant"><em>Behind the Mask</em> debuts at #1 in the UK. Stevie Nicks leaves the band after the subsequent tour, frustrated with the direction. The classic era effectively ends.</p>
-</div>
-</div>
-<!-- 1997 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1997</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">The Dance: Worldwide Reunion</h4>
-<p class="font-body-md text-on-surface-variant">The five classic members reunite for a live album and TV special. <em>The Dance</em> debuts at #1 on the Billboard 200, selling 5M copies. The 89-date tour grosses $80M. "Silver Springs" is finally performed live, 21 years after its recording.</p>
-</div>
-</div>
-<!-- 1998 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">1998</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Rock &amp; Roll Hall of Fame</h4>
-<p class="font-body-md text-on-surface-variant">Fleetwood Mac is inducted into the Rock and Roll Hall of Fame. Stevie Nicks delivers an emotional speech. The band performs "The Chain" and "Silver Springs" with the raw intensity of their prime.</p>
-</div>
-</div>
-<!-- 2003 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2003</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Say You Will</h4>
-<p class="font-body-md text-on-surface-variant">The first studio album in 15 years without Christine McVie. <em>Say You Will</em> debuts at #3 on the Billboard 200. The subsequent world tour—the band's longest ever with 120 shows—grosses $75M and proves Fleetwood Mac still commands stadiums.</p>
-</div>
-</div>
-<!-- 2014 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2014</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">On With the Show</h4>
-<p class="font-body-md text-on-surface-variant">Christine McVie rejoins after a decade away. The classic five-piece lineup tours together for the first time since 1998. The tour grosses over $100M with 1.2M tickets sold worldwide. Reviewers call it "triumphant" and "historic."</p>
-</div>
-</div>
-<!-- 2020 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2020</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">Viral Renaissance &amp; Streaming Records</h4>
-<p class="font-body-md text-on-surface-variant">"Dreams" goes viral on TikTok, gaining 75M+ streams in a single week and re-entering the Billboard Hot 100 for the first time since 1977. The band's streaming catalog surges by 420% in Gen-Z demographics, surpassing <strong>1.2 billion Spotify streams</strong> across all releases. <em>Rumours</em> re-enters the Billboard 200 top 10, 43 years after its release, and reaches <strong>#1 on Billboard's Vinyl Albums chart</strong>.</p>
-</div>
-</div>
-<!-- 2022 -->
-<div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
-<div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">2022</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm mb-4">The Loss of Christine McVie</h4>
-<p class="font-body-md text-on-surface-variant">On November 30, Christine McVie passes away at 79. Tributes pour in from across the music world. Her compositions—"Songbird", "Don't Stop", "Everywhere", "Little Lies"—remain among the most beloved in the rock canon. The band's cumulative sales stand at over <strong>120 million records worldwide</strong>, solidifying their place among the ten best-selling music acts in history. The remaining members announce they will never perform again.</p>
-</div>
-</div>
+<div class="space-y-24 max-w-4xl mx-auto" id="milestones-timeline">
 </div>
 </section>
 <!-- Longevity & Impact: Editorial Section -->
@@ -873,6 +463,86 @@ Billboard Year-End Charts
                     // This could be used for a progress effect if needed
                 }
             });
+        });
+
+        // ── Supabase Data Loading ──
+        const supabaseClient = supabase.createClient(
+          'https://wqpnsuzulmrbsfuradjt.supabase.co',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcG5zdXp1bG1yYnNmdXJhZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA1NjEsImV4cCI6MjA5OTA4NjU2MX0.BFoI9LWKe9L5bvOOw45GeqYKw2GVmGC0ErdsMOsiwss'
+        );
+
+        function createRankingItem(title, rankValue, year, extraInfo) {
+          if (extraInfo) {
+            return `<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+              <div>
+                <span class="font-body-md font-bold">${title}</span>
+                <span class="font-body-md text-on-surface-variant ml-2">${year ? `(${year})` : ''}</span>
+              </div>
+              <div class="text-right">
+                <div class="font-headline-sm text-headline-sm text-primary">${rankValue}</div>
+                <div class="text-xs text-on-surface-variant">${extraInfo}</div>
+              </div>
+            </div>`;
+          }
+          return `<div class="flex justify-between items-center border-b border-on-surface/10 pb-3">
+            <div>
+              <span class="font-body-md font-bold">${title}</span>
+              <span class="font-body-md text-on-surface-variant ml-2">${year ? `(${year})` : ''}</span>
+            </div>
+            <span class="font-headline-sm text-headline-sm text-primary">${rankValue}</span>
+          </div>`;
+        }
+
+        async function loadRankings() {
+          const { data: rankings } = await supabaseClient.from('chart_rankings').select('*');
+
+          // RS Albums
+          const rsAlbums = rankings.filter(r => r.chart_source === 'Rolling Stone' && r.chart_category === 'albums');
+          const rsAlbumList = document.getElementById('rs-albums-list');
+          if (rsAlbumList) {
+            rsAlbumList.innerHTML = rsAlbums.map(r => createRankingItem(r.title, r.rank_value, r.year, r.extra_info)).join('') + rsAlbumList.innerHTML;
+          }
+
+          // RS Songs
+          const rsSongs = rankings.filter(r => r.chart_source === 'Rolling Stone' && r.chart_category === 'songs');
+          const rsSongList = document.getElementById('rs-songs-list');
+          if (rsSongList) {
+            rsSongList.innerHTML = rsSongs.map(r => createRankingItem(r.title, r.rank_value, r.year, r.extra_info)).join('') + rsSongList.innerHTML;
+          }
+
+          // BB Albums
+          const bbAlbums = rankings.filter(r => r.chart_source === 'Billboard' && r.chart_category === 'albums');
+          const bbAlbumList = document.getElementById('bb-albums-list');
+          if (bbAlbumList) {
+            bbAlbumList.innerHTML = bbAlbums.map(r => createRankingItem(r.title, r.rank_value, r.year, r.extra_info)).join('') + bbAlbumList.innerHTML;
+          }
+
+          // BB Singles
+          const bbSingles = rankings.filter(r => r.chart_source === 'Billboard' && r.chart_category === 'songs');
+          const bbSingleList = document.getElementById('bb-singles-list');
+          if (bbSingleList) {
+            bbSingleList.innerHTML = bbSingles.map(r => createRankingItem(r.title, r.rank_value, r.year, r.extra_info)).join('') + bbSingleList.innerHTML;
+          }
+        }
+
+        async function loadMilestones() {
+          const { data: milestones } = await supabaseClient.from('milestones').select('*').order('year');
+          if (!milestones) return;
+          const timeline = document.getElementById('milestones-timeline');
+          if (!timeline) return;
+          timeline.innerHTML = milestones.map(m => `
+            <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-12 group">
+              <div class="font-label-caps text-headline-sm text-primary group-hover:translate-x-2 transition-transform">${m.year}</div>
+              <div>
+                <h4 class="font-headline-sm text-headline-sm mb-4">${m.title}</h4>
+                <p class="font-body-md text-on-surface-variant">${m.description}</p>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+          await Promise.all([loadRankings(), loadMilestones()]);
         });
 
         // ── Auth System ──

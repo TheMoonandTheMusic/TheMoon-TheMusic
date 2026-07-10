@@ -3,6 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>FLEETWOOD MAC | The Rumours Era Tribute</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -423,159 +424,9 @@
 </div>
 <!-- Member Selector Interface -->
 <div class="flex overflow-x-auto gap-4 md:gap-8 mb-16 border-b border-on-surface/10 pb-4 px-4 -mx-4 md:mx-0 md:px-0 md:justify-center scrollbar-hide" id="member-tabs">
-<button class="member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap member-tab-active" data-member="mick" onclick="showMember('mick')">MICK FLEETWOOD</button>
-<button class="member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap text-on-surface-variant hover:text-primary" data-member="john" onclick="showMember('john')">JOHN MCVIE</button>
-<button class="member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap text-on-surface-variant hover:text-primary" data-member="stevie" onclick="showMember('stevie')">STEVIE NICKS</button>
-<button class="member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap text-on-surface-variant hover:text-primary" data-member="lindsey" onclick="showMember('lindsey')">LINDSEY BUCKINGHAM</button>
-<button class="member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap text-on-surface-variant hover:text-primary" data-member="christine" onclick="showMember('christine')">CHRISTINE MCVIE</button>
 </div>
 <!-- Member Display Area -->
 <div class="relative min-h-[600px]" id="member-content">
-<!-- Mick Fleetwood -->
-<div class="member-profile grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center opacity-100 transition-opacity duration-500" id="mick">
-<div class="relative group">
-<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
-<div class="bg-surface shadow-lg p-3 member-card">
-<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Mick Fleetwood" src="fleetwood.jpg" style="object-position: center;">
-</div>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-secondary" data-icon="drum_click">drag_click</span>
-<span class="font-label-caps text-secondary">FOUNDER / DRUMS</span>
-</div>
-<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Mick Fleetwood</h3>
-<p class="text-on-surface-variant mb-8 text-lg">
-                            The rhythmic anchor and tall, eccentric heart of the band. Mick's distinctive percussion style and towering presence kept the band together through decades of upheaval.
-                        </p>
-<div class="space-y-6">
-<div>
-<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
-<p class="text-body-md text-on-surface-variant">Cheyne Walk, The Bo Street Runners, and Peter Green's Shotgun Express.</p>
-</div>
-<div>
-<h4 class="font-label-caps text-primary mb-2">NOTABLE CONTRIBUTIONS</h4>
-<p class="text-body-md text-on-surface-variant">The Chain, Tusk (The marching band concept), World Turning.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- John McVie -->
-<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="john">
-<div class="relative group">
-<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
-<div class="bg-surface shadow-lg p-3 member-card">
-<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="John McVie 1970s" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Fleetwood_mac_john_mcvie.jpg" style="object-position: center;">
-</div>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-secondary" data-icon="music_video">music_video</span>
-<span class="font-label-caps text-secondary">BASS GUITAR</span>
-</div>
-<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">John McVie</h3>
-<p class="text-on-surface-variant mb-8 text-lg">
-                            The silent strength behind the Mac sound. John's melodic bass lines provided the sophisticated foundation that allowed the band's pop sensibilities to soar.
-                        </p>
-<div class="space-y-6">
-<div>
-<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
-<p class="text-body-md text-on-surface-variant">John Mayall &amp; the Bluesbreakers (The definitive UK blues apprenticeship).</p>
-</div>
-<div>
-<h4 class="font-label-caps text-primary mb-2">NOTABLE CONTRIBUTIONS</h4>
-<p class="text-body-md text-on-surface-variant">The foundational bass melody of 'The Chain', Dreams, Rhiannon.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Stevie Nicks -->
-<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="stevie">
-<div class="relative group">
-<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
-<div class="bg-surface shadow-lg p-3 member-card">
-<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Stevie Nicks" src="nicks.jpg" style="object-position: center;">
-</div>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
-<span class="font-label-caps text-secondary">VOCALS / SONGWRITER</span>
-</div>
-<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Stevie Nicks</h3>
-<p class="text-on-surface-variant mb-8 text-lg">
-                            The high priestess of rock. Stevie brought a mystical, poetic sensibility and an iconic vocal rasp that defined the band's most legendary hits.
-                        </p>
-<div class="space-y-6">
-<div>
-<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
-<p class="text-body-md text-on-surface-variant">Fritz (opening for Hendrix and Janis Joplin), Buckingham Nicks.</p>
-</div>
-<div>
-<h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4>
-<p class="text-body-md text-on-surface-variant">Dreams, Rhiannon, Landslide, Gold Dust Woman, Silver Springs.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Lindsey Buckingham -->
-<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="lindsey">
-<div class="relative group">
-<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
-<div class="bg-surface shadow-lg p-3 member-card">
-<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Lindsey Buckingham 1977" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Lindsey_Buckingham_1977.jpg" style="object-position: 45% center;">
-</div>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
-<span class="font-label-caps text-secondary">LEAD GUITAR / VOCALS</span>
-</div>
-<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Lindsey Buckingham</h3>
-<p class="text-on-surface-variant mb-8 text-lg">
-                            The sonic architect. Lindsey’s intricate fingerpicking and obsessive production style transformed the band into a studio powerhouse.
-                        </p>
-<div class="space-y-6">
-<div>
-<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
-<p class="text-body-md text-on-surface-variant">Fritz, Buckingham Nicks (working as a session musician and cleaning houses).</p>
-</div>
-<div>
-<h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4>
-<p class="text-body-md text-on-surface-variant">Go Your Own Way, Tusk, Big Love, Never Going Back Again.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Christine McVie -->
-<div class="member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500" id="christine">
-<div class="relative group">
-<div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
-<div class="bg-surface shadow-lg p-3 member-card">
-<img class="w-full aspect-[4/5] object-cover sepia-effect" alt="Christine McVie 1977" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Christine_McVie_-_Fleetwood_Mac_(1977).jpg" style="object-position: center;">
-</div>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-secondary" data-icon="piano">piano</span>
-<span class="font-label-caps text-secondary">KEYBOARDS / VOCALS</span>
-</div>
-<h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">Christine McVie</h3>
-<p class="text-on-surface-variant mb-8 text-lg">
-                            The perfect pop songwriter. Christine’s warm vocals and melodic piano compositions provided the commercial and emotional balance to the band's edgier elements.
-                        </p>
-<div class="space-y-6">
-<div>
-<h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4>
-<p class="text-body-md text-on-surface-variant">Chicken Shack (The UK blues scene’s breakout female vocalist).</p>
-</div>
-<div>
-<h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4>
-<p class="text-body-md text-on-surface-variant">Don't Stop, Songbird, You Make Loving Fun, Everywhere, Little Lies.</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -682,6 +533,85 @@
                 }
             });
         }
+
+        const supabaseClient = supabase.createClient(
+          'https://wqpnsuzulmrbsfuradjt.supabase.co',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcG5zdXp1bG1yYnNmdXJhZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA1NjEsImV4cCI6MjA5OTA4NjU2MX0.BFoI9LWKe9L5bvOOw45GeqYKw2GVmGC0ErdsMOsiwss'
+        );
+
+        const memberIcons = {
+          'mick': 'drag_click',
+          'john': 'music_video',
+          'stevie': 'auto_awesome',
+          'lindsey': 'bolt',
+          'christine': 'piano'
+        };
+
+        async function loadMembers() {
+          const { data: members, error } = await supabaseClient
+            .from('band_members')
+            .select('*')
+            .order('id');
+
+          if (error || !members) return;
+
+          const tabsContainer = document.getElementById('member-tabs');
+          const contentContainer = document.getElementById('member-content');
+
+          members.forEach((member, index) => {
+            const memberId = member.name.toLowerCase();
+            const icon = memberIcons[memberId] || 'person';
+
+            // Create tab button
+            const tab = document.createElement('button');
+            tab.className = index === 0
+              ? 'member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap member-tab-active'
+              : 'member-tab font-label-caps tracking-widest transition-all pb-2 whitespace-nowrap text-on-surface-variant hover:text-primary';
+            tab.setAttribute('data-member', memberId);
+            tab.setAttribute('onclick', `showMember('${memberId}')`);
+            tab.textContent = member.name.toUpperCase();
+            tabsContainer.appendChild(tab);
+
+            // Create profile div
+            const profile = document.createElement('div');
+            profile.className = index === 0
+              ? 'member-profile grid md:grid-cols-2 gap-12 items-center opacity-100 transition-opacity duration-500'
+              : 'member-profile hidden grid md:grid-cols-2 gap-12 items-center opacity-0 transition-opacity duration-500';
+            profile.id = memberId;
+
+            let detailsHTML = '';
+            if (member.before_fm) {
+              detailsHTML += `<div><h4 class="font-label-caps text-primary mb-2">BEFORE FLEETWOOD MAC</h4><p class="text-body-md text-on-surface-variant">${member.before_fm}</p></div>`;
+            }
+            if (member.contributions) {
+              detailsHTML += `<div><h4 class="font-label-caps text-primary mb-2">NOTABLE CONTRIBUTIONS</h4><p class="text-body-md text-on-surface-variant">${member.contributions}</p></div>`;
+            }
+            if (member.composed_songs) {
+              detailsHTML += `<div><h4 class="font-label-caps text-primary mb-2">COMPOSED SONGS</h4><p class="text-body-md text-on-surface-variant">${member.composed_songs}</p></div>`;
+            }
+
+            profile.innerHTML = `
+              <div class="relative group">
+                <div class="absolute -inset-4 border border-primary/10 -z-10 group-hover:inset-0 transition-all"></div>
+                <div class="bg-surface shadow-lg p-3 member-card">
+                  <img class="w-full aspect-[4/5] object-cover sepia-effect" alt="${member.name}" src="${member.image_url}" style="object-position: center;">
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <span class="material-symbols-outlined text-secondary" data-icon="${icon}">${icon}</span>
+                  <span class="font-label-caps text-secondary">${member.role}</span>
+                </div>
+                <h3 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-6">${member.name}</h3>
+                <p class="text-on-surface-variant mb-8 text-lg">${member.bio}</p>
+                <div class="space-y-6">${detailsHTML}</div>
+              </div>
+            `;
+            contentContainer.appendChild(profile);
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMembers);
 
         // Scroll Spy — highlight active sidebar link
         (function scrollSpy() {
