@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script id="tailwind-config">try{
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script id="tailwind-config">try{
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -86,7 +86,7 @@
                 }
             }
         }
-    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface font-body-md text-on-surface paper-grain overflow-x-hidden">
+    }catch(_e){}</script><meta charset="utf-8"><style>html{overscroll-behavior:none;-webkit-text-size-adjust:100%}.safe-bottom{padding-bottom:env(safe-area-inset-bottom)}</style></head><body class="bg-surface font-body-md text-on-surface paper-grain overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="docked full-width top-0 border-b border-on-surface/10 bg-surface z-50">
 <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop h-20">
@@ -103,7 +103,7 @@
 <button class="cursor-pointer transition-opacity active:opacity-70">
 <span class="material-symbols-outlined text-primary">music_note</span>
 </button>
-<span class="material-symbols-outlined cursor-pointer md:hidden text-primary text-3xl" id="mobile-menu-btn">menu</span>
+<span class="material-symbols-outlined cursor-pointer md:hidden text-primary text-3xl" id="mobile-menu-btn" aria-label="Open menu" role="button" tabindex="0">menu</span>
 </div>
 <button id="nav-login-btn" class="hidden md:block font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-all">LOG IN</button>
 </nav>
@@ -112,7 +112,7 @@
 <div id="mobile-overlay" class="fixed inset-0 z-50 bg-black/40 hidden md:hidden"></div>
 <div id="mobile-panel" class="fixed top-0 right-0 z-50 h-full w-72 bg-surface shadow-2xl translate-x-full transition-transform duration-300 md:hidden">
     <div class="flex justify-end p-6">
-        <span class="material-symbols-outlined text-primary text-3xl cursor-pointer" id="mobile-close">close</span>
+        <span class="material-symbols-outlined text-primary text-3xl cursor-pointer" id="mobile-close" aria-label="Close menu" role="button" tabindex="0">close</span>
     </div>
     <nav class="flex flex-col gap-6 px-8">
         <a href="banda.html" class="font-label-caps text-label-caps py-3 border-b border-primary/10 text-primary hover:text-secondary transition-colors">The Band</a>
@@ -377,15 +377,15 @@ Billboard Year-End Charts
     <form id="auth-form">
       <div id="auth-email-group" class="mb-4">
         <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">EMAIL</label>
-        <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+        <input id="auth-email" type="email" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 min-h-[44px] font-body-md outline-none focus:border-primary transition-colors" required>
       </div>
       <div class="mb-4">
         <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PASSWORD</label>
-        <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors" required>
+        <input id="auth-password" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 min-h-[44px] font-body-md outline-none focus:border-primary transition-colors" required>
       </div>
       <div id="auth-confirm-group" class="mb-6 hidden">
         <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CONFIRM PASSWORD</label>
-        <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 font-body-md outline-none focus:border-primary transition-colors">
+        <input id="auth-confirm" type="password" class="w-full bg-surface-container-low border border-outline/30 px-4 py-3 min-h-[44px] font-body-md outline-none focus:border-primary transition-colors">
       </div>
       <p id="auth-error" class="font-body-md text-error mb-4 hidden" style="color:#ba1a1a"></p>
       <button type="submit" class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-on-surface-variant transition-colors">LOG IN</button>
