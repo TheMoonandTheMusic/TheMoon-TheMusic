@@ -4,10 +4,10 @@
   const CONFIG = {
     supabaseUrl: 'https://wqpnsuzulmrbsfuradjt.supabase.co',
     supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcG5zdXp1bG1yYnNmdXJhZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA1NjEsImV4cCI6MjA5OTA4NjU2MX0.BFoI9LWKe9L5bvOOw45GeqYKw2GVmGC0ErdsMOsiwss',
-    useAI: true,
+    useAI: false,
     aiProvider: 'gemini',
-    useN8N: false,
-    n8nWebhookUrl: '',
+    useN8N: true,
+    n8nWebhookUrl: 'https://n8n.ingeniard.com/webhook-test/58d0c259-7a87-46a2-9c41-a7ad63df63fd',
     botName: 'Gerry',
     botTitle: 'Fleetwood Mac Expert'
   };
@@ -973,15 +973,41 @@
      n8n FALLBACK
      ═══════════════════════════════════════════════ */
 
+  function buildN8NContext() {
+    var parts = [];
+    staticFacts.forEach(function (f) { parts.push(f.text.replace(/<[^>]+>/g, '')); });
+    knowledge.forEach(function (k) {
+      var d = k.data;
+      if (k.table === 'band_members' && d.name)
+        parts.push('Member: ' + d.name + ', Role: ' + (d.role || '') + ', Bio: ' + (d.bio || '') + ', Songs: ' + (d.composed_songs || ''));
+      else if (k.table === 'albums' && d.title)
+        parts.push('Album: ' + d.title + ' (' + (d.year || '') + '), Sales: ' + (d.sales || '') + ', Desc: ' + (d.description || ''));
+      else if (k.table === 'songs' && d.title)
+        parts.push('Song: ' + d.title + ', Album: ' + (d.album_title || '') + ', Writer: ' + (d.writer_name || ''));
+      else if (k.table === 'chart_rankings' && d.item_name)
+        parts.push('Chart: ' + d.item_name + ', Source: ' + (d.source || '') + ', Rank: ' + (d.rank || ''));
+      else if (k.table === 'milestones' && d.title)
+        parts.push(d.year + ': ' + d.title + ' - ' + (d.description || ''));
+      else if (k.table === 'achievements' && d.title)
+        parts.push('Achievement: ' + d.title + ' - ' + (d.description || ''));
+    });
+    return parts.join('\n');
+  }
+
   async function callN8N(query) {
     try {
       var res = await fetch(CONFIG.n8nWebhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: query, history: chatHistory.slice(-10) })
+        body: JSON.stringify({
+          message: query,
+          history: chatHistory.slice(-10),
+          context: buildN8NContext(),
+          supabase: { url: CONFIG.supabaseUrl, key: CONFIG.supabaseKey }
+        })
       });
       var data = await res.json();
-      addBotMessage(data.response || data.output || '...');
+      addBotMessage(data.response || data.output || (typeof data === 'string' ? data : JSON.stringify(data)) || '...');
     } catch (e) {
       addBotMessage('Sorry, I could not reach the n8n AI service. Please try again later.');
     }
