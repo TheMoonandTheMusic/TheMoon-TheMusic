@@ -101,6 +101,8 @@
     document.getElementById('gerry-input').addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
     });
+    const trigger = document.getElementById('gerry-trigger');
+    if (trigger) trigger.addEventListener('click', openPanel);
   }
 
   function togglePanel() {
