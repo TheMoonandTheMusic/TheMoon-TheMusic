@@ -7,7 +7,7 @@
     useAI: false,
     aiProvider: 'gemini',
     useN8N: true,
-    n8nWebhookUrl: 'https://n8n.ingeniard.com/webhook-test/58d0c259-7a87-46a2-9c41-a7ad63df63fd',
+    n8nWebhookUrl: 'https://n8n.ingeniard.com/webhook/58d0c259-7a87-46a2-9c41-a7ad63df63fd',
     botName: 'Gerry',
     botTitle: 'Fleetwood Mac Expert'
   };
